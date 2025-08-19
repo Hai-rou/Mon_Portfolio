@@ -1,10 +1,3 @@
-footer {
-  background-color: grey;
-}
-footer .Footnav .github-btn {
-  cursor: pointer;
-}
-
 header .Navbar {
   display: flex;
 }
@@ -27,4 +20,4 @@ header .Navbar ul li a {
 header .Navbar ul li a:hover {
   background-color: grey !important;
   color: white;
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=header.css.map */

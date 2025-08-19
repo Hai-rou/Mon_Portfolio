@@ -1,0 +1,28 @@
+header{
+    .Navbar{
+        display: flex;
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+           li{
+            border: solid 1px black;
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: black;
+                display: block;
+                padding: 10px;
+
+                &:hover{
+                    background-color: grey !important;
+                    color: white;
+                }
+            }
+            
+        } 
+        }
+        
+    }
+}

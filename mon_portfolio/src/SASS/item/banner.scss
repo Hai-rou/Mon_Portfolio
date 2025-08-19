@@ -1,0 +1,113 @@
+// Variables
+$animation-duration: 6s;
+$animation-easing: ease-in-out;
+$float-distance: -20px;
+$rotation-angle: 180deg;
+.banner{
+    background-color: grey;
+    height: 250px;
+    .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 250px !important;
+            z-index: 1;
+        }
+
+        .floating-circle {
+            animation: float $animation-duration $animation-easing infinite;
+            transform-origin: center;
+            
+            &.delay-1 { 
+                animation-delay: -2s; 
+            }
+            
+            &.delay-2 { 
+                animation-delay: -4s; 
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            50% { 
+                transform: translateY($float-distance) rotate($rotation-angle); 
+            }
+        }
+
+}
+    
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .typing-wrapper {
+        position: relative;
+        display: inline-block;
+        font-family: monospace;
+        font-size: 2rem;
+         /* sert au “saut à la ligne” du curseur */
+        .line {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            }
+        /* Ligne 1 : 22 caractères */
+        .line1 {
+            width: 0;
+            animation: type1 3s steps(22, end) forwards;
+            }
+        @keyframes type1 {
+            from { width: 0 }
+            to   { width: 22ch }
+        }
+
+        /* Ligne 2 : 15 caractères, démarre après la ligne 1 */
+        .line2 {
+            width: 0;
+            animation: type2 3s steps(15, end) forwards;
+            animation-delay: 3s; /* même durée que la ligne 1 */
+        }
+        @keyframes type2 {
+            from { width: 0 }
+            to   { width: 15ch }
+        }
+
+        /* Curseur unique qui suit les 2 lignes */
+        .caret {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 1.2em;
+            background: black;
+            pointer-events: none;
+            animation:
+                caretMove 6s forwards,      /* 3s + 3s */
+                blink 0.7s step-end infinite;
+        }
+
+        /* Déplacement du curseur : 
+        - 0→50% : tape 22ch sur la 1ʳᵉ ligne en 22 “steps”
+        - à 50% : saute à la 2ᵉ ligne
+        - 50→100% : tape 15ch sur la 2ᵉ ligne en 15 “steps”
+        */
+        @keyframes caretMove {
+            0%   { top: 0;      transform: translateX(0);    animation-timing-function: steps(22, end); }
+            50%  { top: 0;      transform: translateX(22ch); }
+            50.01% { top: 1.4em; transform: translateX(0);    animation-timing-function: steps(15, end); }
+            100% { top: 1.4em;  transform: translateX(15ch); }
+        }
+
+        /* Clignotement du curseur */
+        @keyframes blink {
+            from, to { opacity: 0 }
+            50%      { opacity: 1 }
+        }
+    }
+
+}
