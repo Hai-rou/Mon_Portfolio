@@ -1,0 +1,96 @@
+// Container principal des compétences
+.skills-container {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+// Titre principal
+.skills-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+// Section des compétences
+.skills {
+  max-width: 600px;
+  margin: 20px auto;
+
+  // Compétence individuelle
+  .skill {
+    margin: 25px 0;
+
+    // Informations de la compétence (nom + pourcentage)
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+
+      // Label de la compétence
+      .skill-label {
+        font-weight: bold;
+        color: #333;
+        font-size: 16px;
+
+        // Icône
+        i {
+          margin-right: 8px;
+          font-size: 18px;
+        }
+      }
+
+      // Pourcentage
+      .percentage {
+        font-weight: bold;
+        color: #666;
+        font-size: 14px;
+      }
+    }
+
+    // Barre de progression
+    .bar {
+      background: #e9ecef;
+      border-radius: 25px;
+      overflow: hidden;
+      height: 12px;
+      position: relative;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      // Remplissage de la barre
+      .fill {
+        height: 100%;
+        border-radius: 25px;
+        transition: width 1.5s ease-in-out;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+        position: relative;
+
+        // Couleurs spécifiques par technologie
+        &.html5 {
+          background-color: #e44d26;
+        }
+
+        &.css3 {
+          background-color: #1572b6;
+        }
+
+        &.javascript {
+          background-color: #f7df1e;
+        }
+
+        &.react {
+          background-color: #61dafb;
+        }
+
+        &.astro {
+          background-color: #339933;
+        }
+
+        &.python {
+          background-color: #3776ab;
+        }
+      }
+    }
+  }
+}

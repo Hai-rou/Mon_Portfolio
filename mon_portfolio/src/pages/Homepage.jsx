@@ -1,4 +1,5 @@
 import '../SASS/pages/homepage.css'
+import  SkillsComponent from '../components/item/competence'
 
 function Homepage () {
     return(
@@ -25,7 +26,8 @@ function Homepage () {
                         Rêves d’exploration est une agence de voyage à domicile qui vous offre un service personnalisé, 
                         directement chez vous ou à distance, selon vos préférences.<br />
                         Avec plus de six ans d’expérience et des milliers de voyageurs comblés, 
-                        j’inaugure ma propre agence de voyages sur mesure.
+                        j’inaugure ma propre agence de voyages sur mesure.<br />
+                        
                     </p>
                     <div className='tech'>
                         <p>Nouvelle technologie abordée pour le projet</p>
@@ -100,7 +102,7 @@ function Homepage () {
             </section>
             <section id="competences" className="competences">
                 <h2>Compétences</h2>
-
+                <SkillsComponent /> 
             </section>
             <section id="contact" className="contact">
                 <h2>Demarrons un projet ensemble, n'hesitez pas à me contacter</h2>
