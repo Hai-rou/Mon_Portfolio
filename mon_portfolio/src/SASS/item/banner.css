@@ -1,7 +1,11 @@
 @charset "UTF-8";
 .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: grey;
-  height: 250px;
+  height: 400px;
+  width: 100%;
 }
 .banner .animated-bg {
   position: absolute;

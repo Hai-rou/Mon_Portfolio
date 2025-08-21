@@ -1,28 +1,40 @@
-header{
-    .Navbar{
-        display: flex;
-        ul{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-           li{
-            border: solid 1px black;
-            list-style: none;
-            a{
-                text-decoration: none;
-                color: black;
-                display: block;
-                padding: 10px;
+.navbar {
+    display: flex;
+    width: 100%;
+    transition: all 0.3s ease;
+    background-color: grey;
 
-                &:hover{
-                    background-color: grey !important;
-                    color: white;
-                }
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        li {
+        border: solid 1px black;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px;
+
+            &:hover {
+            background-color: grey !important;
+            color: white;
             }
-            
-        } 
         }
-        
+        }
     }
+}
+
+ // état sticky appliqué par React
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }

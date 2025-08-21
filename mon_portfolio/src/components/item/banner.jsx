@@ -10,7 +10,7 @@ export function AnimatedBanner() {
                 <circle className="floating-circle delay-2" cx="500" cy="150" r="25" fill="#8b5cf6" />
                 {/* Ajoutez plus de formes */}
             </svg>
-            <div className="banner-content">
+            <div id="accueil" className="banner-content">
                 <p>Bonjour</p>
                 <h1 className="typing-wrapper">
                     <span className="line line1">Je suis Haïrou Houmadi</span><br />

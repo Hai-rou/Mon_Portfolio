@@ -4,8 +4,12 @@ $animation-easing: ease-in-out;
 $float-distance: -20px;
 $rotation-angle: 180deg;
 .banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: grey;
-    height: 250px;
+    height: 400px;
+    width: 100%;
     .animated-bg {
             position: absolute;
             top: 0;

@@ -3,28 +3,4 @@ footer {
 }
 footer .Footnav .github-btn {
   cursor: pointer;
-}
-
-header .Navbar {
-  display: flex;
-}
-header .Navbar ul {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-header .Navbar ul li {
-  border: solid 1px black;
-  list-style: none;
-}
-header .Navbar ul li a {
-  text-decoration: none;
-  color: black;
-  display: block;
-  padding: 10px;
-}
-header .Navbar ul li a:hover {
-  background-color: grey !important;
-  color: white;
 }/*# sourceMappingURL=main.css.map */
