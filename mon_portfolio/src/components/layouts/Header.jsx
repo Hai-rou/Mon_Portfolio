@@ -1,6 +1,6 @@
 import "../../SASS/layouts/header.css"
 import { useState, useEffect, useRef } from 'react'
-import { AnimatedBanner } from "../item/banner"
+import { AnimatedBanner } from "../item/AnimatedBanner"
 
 function Header () {
   const [isSticky, setIsSticky] = useState(false)

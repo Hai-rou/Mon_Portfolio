@@ -1,8 +1,23 @@
 footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: grey;
-    .Footnav{
+    padding: 10px;
+    .footnav{
+        display: flex;
         .github-btn{
             cursor: pointer;
+            img{
+                width: 20%;
+            }
+        }
+        .mail-btn{
+            cursor: pointer;
+            .fa-envelope{
+                width: 20%;
+                color: black;
+            }
         }
     }
 }

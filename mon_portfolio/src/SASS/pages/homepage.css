@@ -1,4 +1,4 @@
-.Homepage section h2 {
+.homepage section h2 {
   position: relative;
   right: -41%;
   text-align: center;
@@ -8,30 +8,30 @@
   color: red;
   padding-bottom: 20px;
 }
-.Homepage .realisation .reali {
+.homepage .realisation .reali {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.Homepage .realisation .reali .reve {
+.homepage .realisation .reali .reve {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-.Homepage .realisation .reali .reve p {
+.homepage .realisation .reali .reve p {
   margin: 0;
 }
-.Homepage .realisation .reali .reve img {
+.homepage .realisation .reali .reve img {
   width: 200px;
   height: 200px;
   border-radius: 10px;
 }
-.Homepage .realisation .reali .info {
+.homepage .realisation .reali .info {
   text-align: center;
   width: 40%;
 }
-.Homepage .realisation .reali .tech {
+.homepage .realisation .reali .tech {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -41,7 +41,7 @@
   background-color: rgb(25, 25, 25);
   color: white;
 }
-.Homepage .realisation .reali .tech .tech-item {
+.homepage .realisation .reali .tech .tech-item {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -51,7 +51,7 @@
   border-radius: 10px;
   padding: 5px;
 }
-.Homepage .realisation .reali .tech .tech-item img {
+.homepage .realisation .reali .tech .tech-item img {
   border: solid 1px white;
   background-color: white;
   border-radius: 10px;
@@ -59,82 +59,13 @@
   height: 44px;
   padding: 10px;
 }
-.Homepage .activites .act-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 10px;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-}
-.Homepage .activites .act-container .git-container {
+.homepage .contact {
   display: flex;
   flex-direction: column;
-  border: solid 1px green;
-  border-radius: 10px;
-  padding: 10px;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  background-color: rgb(25, 25, 25);
-  color: white;
-}
-.Homepage .activites .act-container .git-container p {
-  margin-block-start: 0;
-}
-.Homepage .activites .act-container .git-container .Act-Bank {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.Homepage .activites .act-container .git-container .Act-Bank a {
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: white;
+  margin-bottom: 10px;
 }
-.Homepage .activites .act-container .git-container .Act-Bank a img {
-  width: 20%;
-  height: 30px;
-  padding: 10px;
-  border: solid 1px red;
-  border-radius: 10px;
-  background-color: rgb(212, 202, 202);
-}
-.Homepage .activites .act-container .diplo-container {
-  display: flex;
-  flex-direction: column;
-  border: solid 1px violet;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: rgb(25, 25, 25);
-  color: white;
-}
-.Homepage .activites .act-container .diplo-container p {
-  margin-block-start: 0;
-}
-.Homepage .activites .act-container .diplo-container .item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-}
-.Homepage .activites .act-container .diplo-container .item img {
-  width: 64px;
-  height: 64px;
-}
-.Homepage .activites .act-container .diplo-container .item .context h3 {
-  margin: 0;
-}
-.Homepage .activites .act-container .reseau-container {
-  display: flex;
-  border: solid 1px yellow;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: rgb(25, 25, 25);
-  color: white;
-}
-.Homepage .activites .act-container .reseau-container p {
-  margin-block-start: 0;
+.homepage .contact h2 {
+  right: 0;
+  width: 70%;
 }/*# sourceMappingURL=homepage.css.map */

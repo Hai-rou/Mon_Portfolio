@@ -1,0 +1,173 @@
+.activites .act-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.activites .act-container .git-container {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px green;
+  border-radius: 10px;
+  padding: 10px;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+.activites .act-container .git-container p {
+  margin-block-start: 0;
+}
+.activites .act-container .git-container .Act-Bank {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.activites .act-container .git-container .Act-Bank a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+.activites .act-container .git-container .Act-Bank a img {
+  width: 20%;
+  height: 30px;
+  padding: 10px;
+  border: solid 1px red;
+  border-radius: 10px;
+  background-color: rgb(212, 202, 202);
+}
+.activites .act-container .diplo-container {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px violet;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+.activites .act-container .diplo-container p {
+  margin-block-start: 0;
+}
+.activites .act-container .diplo-container .item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.activites .act-container .diplo-container .item img {
+  width: 64px;
+  height: 64px;
+}
+.activites .act-container .diplo-container .item .context h3 {
+  margin: 0;
+}
+.activites .act-container .reseau-container {
+  display: flex;
+  border: solid 1px yellow;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+.activites .act-container .reseau-container p {
+  margin-block-start: 0;
+}
+
+.project-modal {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #e1e5e9;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  min-width: 300px;
+  max-width: 400px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.project-modal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-modal .modal-content {
+  padding: 0;
+}
+.project-modal .modal-content .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+.project-modal .modal-content .modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.project-modal .modal-content .modal-header .status {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.project-modal .modal-content .modal-body {
+  padding: 20px;
+}
+.project-modal .modal-content .modal-body .description {
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.project-modal .modal-content .modal-body .project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.project-modal .modal-content .modal-body .project-details .detail-item {
+  font-size: 13px;
+  color: #6b7280;
+}
+.project-modal .modal-content .modal-body .project-details .detail-item strong {
+  color: #374151;
+  margin-right: 8px;
+}
+.project-modal .modal-content .modal-body .project-details .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.project-modal .modal-content .modal-body .project-details .tech-tags .tech-tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  background: #f9fafb;
+  border-radius: 0 0 12px 12px;
+  border-top: 1px solid #f0f0f0;
+}
+.modal-footer small {
+  color: #9ca3af;
+  font-size: 11px;
+  font-style: italic;
+}/*# sourceMappingURL=activites.css.map */

@@ -1,0 +1,191 @@
+.activites{
+        .act-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 10px;
+            column-gap: 10px;
+            .git-container{
+                display: flex;
+                flex-direction: column;
+                border: solid 1px green;
+                border-radius: 10px;
+                padding: 10px;
+                grid-column-start: 1;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                background-color: rgb(25, 25, 25);
+                color: white;
+                p{
+                    margin-block-start: 0;
+                }
+                .Act-Bank{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    a{
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        gap: 10px;
+                        text-decoration: none;
+                        color: white;
+                        img{
+                            width: 20%;
+                            height: 30px;
+                            padding: 10px;
+                            border: solid 1px red;
+                            border-radius: 10px;
+                            background-color: rgb(212, 202, 202);
+                        }
+                    }
+
+                }
+            }
+            .diplo-container{
+                display: flex;
+                flex-direction: column;
+                border: solid 1px violet;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: rgb(25, 25, 25);
+                color: white;
+                p{
+                    margin-block-start: 0;
+                }
+                .item{
+                   display: flex;
+                   flex-wrap: wrap;
+                   align-items: center;
+                   gap: 20px;
+                   img{
+                    width: 64px;
+                    height: 64px;
+                   }
+                   .context{
+                    h3{
+                        margin: 0;
+                    }
+                   }
+                }
+            }
+            .reseau-container{
+                display: flex;
+                border: solid 1px yellow;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: rgb(25, 25, 25);
+                color: white;
+                p{
+                    margin-block-start: 0;
+                }
+            }
+        }
+    }
+
+// Style modal //
+.project-modal {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    min-width: 300px;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+
+    // Animation fluide
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    pointer-events: none; // empêche de bloquer le hover
+    .modal-content {
+        padding: 0;
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px 12px 0 0;
+
+            h3 {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            .status {
+                padding: 4px 8px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 500;
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+            }
+
+        }
+        .modal-body {
+            padding: 20px;
+
+            .description {
+                color: #374151;
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 16px;
+            }
+
+            .project-details {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                .detail-item {
+                    font-size: 13px;
+                    color: #6b7280;
+
+                    strong {
+                        color: #374151;
+                        margin-right: 8px;
+                    }
+                }
+
+                .tech-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    margin-top: 4px;
+
+                    .tech-tag {
+                        background: #f3f4f6;
+                        color: #374151;
+                        padding: 3px 8px;
+                        border-radius: 12px;
+                        font-size: 11px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  background: #f9fafb;
+  border-radius: 0 0 12px 12px;
+  border-top: 1px solid #f0f0f0;
+
+  small {
+    color: #9ca3af;
+    font-size: 11px;
+    font-style: italic;
+  }
+}
+

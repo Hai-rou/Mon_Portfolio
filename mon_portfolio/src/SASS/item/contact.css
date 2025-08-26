@@ -1,0 +1,11 @@
+.contact-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.contact-content form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 10px;
+}/*# sourceMappingURL=contact.css.map */
