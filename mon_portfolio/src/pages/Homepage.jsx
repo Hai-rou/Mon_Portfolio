@@ -1,6 +1,6 @@
 import '../SASS/pages/homepage.css'
 import  SkillsComponent from '../components/item/SkillsComponent'
-import Contact from '../components/item/contact'
+import ContactForm from '../components/item/ContactForm'
 import Activites from '../components/item/Activite'
 
 function Homepage () {
@@ -55,7 +55,7 @@ function Homepage () {
             </section>
             <section id="contact" className="contact">
                 <h2>Demarrons un projet ensemble, n'hesitez pas à me contacter</h2>
-                <Contact />
+                <ContactForm />
             </section>
         </div>
         
