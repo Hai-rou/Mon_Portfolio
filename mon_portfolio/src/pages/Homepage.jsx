@@ -51,7 +51,11 @@ function Homepage () {
             </section>
             <section id="competences" className="competences">
                 <h2>Compétences</h2>
-                <SkillsComponent /> 
+                <div className='skills'>
+                    <img src="../src/assets/logo-H..webp" alt="Logo avec mon Pseudo" />
+                    <SkillsComponent /> 
+                </div>
+                
             </section>
             <section id="contact" className="contact">
                 <h2>Demarrons un projet ensemble, n'hesitez pas à me contacter</h2>

@@ -11,7 +11,11 @@
             padding-bottom: 20px;
         }
     }
+    .presentation{
+        height: 200px;
+    }
     .realisation{
+
         .reali{
             display: flex;
             justify-content: space-around;
@@ -64,6 +68,7 @@
             }
         }
     }
+    
     .contact{
         display: flex;
         flex-direction: column;

@@ -3,44 +3,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: grey;
+  background-color: #38132D;
+  background-image: url("../../assets/logo-h.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.banner .banner-3 {
   height: 400px;
   width: 100%;
-}
-.banner .animated-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 250px !important;
-  z-index: 1;
-}
-.banner .floating-circle {
-  animation: float 6s ease-in-out infinite;
-  transform-origin: center;
-}
-.banner .floating-circle.delay-1 {
-  animation-delay: -2s;
-}
-.banner .floating-circle.delay-2 {
-  animation-delay: -4s;
-}
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
-}
-
-.banner-content {
+  height: 100vh;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  overflow: hidden;
+}
+.banner .banner-content {
+  position: absolute;
   z-index: 2;
+  top: 10%;
+  left: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
-.banner-content .typing-wrapper {
+.banner .banner-content .typing-wrapper {
   position: relative;
   display: inline-block;
   font-family: monospace;
@@ -56,12 +45,12 @@
   */
   /* Clignotement du curseur */
 }
-.banner-content .typing-wrapper .line {
+.banner .banner-content .typing-wrapper .line {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
 }
-.banner-content .typing-wrapper .line1 {
+.banner .banner-content .typing-wrapper .line1 {
   width: 0;
   animation: type1 3s steps(22, end) forwards;
 }
@@ -73,7 +62,7 @@
     width: 22ch;
   }
 }
-.banner-content .typing-wrapper .line2 {
+.banner .banner-content .typing-wrapper .line2 {
   width: 0;
   animation: type2 3s steps(15, end) forwards;
   animation-delay: 3s; /* même durée que la ligne 1 */
@@ -86,7 +75,7 @@
     width: 15ch;
   }
 }
-.banner-content .typing-wrapper .caret {
+.banner .banner-content .typing-wrapper .caret {
   position: absolute;
   left: 0;
   top: 0;

@@ -2,29 +2,36 @@
     display: flex;
     width: 100%;
     transition: all 0.3s ease;
-    background-color: grey;
+    background-color: #38132D;
 
     ul {
         width: 100%;
         display: flex;
         justify-content: center;
         gap: 10px;
-
-        li {
-        border: solid 1px black;
-        list-style: none;
-
-        a {
+        a{
             text-decoration: none;
             color: white;
             display: block;
-            padding: 10px;
-
-            &:hover {
-            background-color: grey !important;
-            color: white;
-            }
+            padding: 10
         }
+        li {
+            border: solid 2px #A74F17;
+            border-radius: 20px;
+            list-style: none;
+            
+            a {
+                text-decoration: none;
+                color: white;
+                display: block;
+                padding: 10px;
+
+                &:hover {
+                background-color: #D5AD27 !important;
+                border-radius: 20px;
+                color: white;
+                }
+            }
         }
     }
 }

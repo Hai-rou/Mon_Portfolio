@@ -1,6 +1,7 @@
 import "../../SASS/layouts/header.css"
 import { useState, useEffect, useRef } from 'react'
 import { AnimatedBanner } from "../item/AnimatedBanner"
+import { Link } from "react-router-dom"
 
 function Header () {
   const [isSticky, setIsSticky] = useState(false)
@@ -29,7 +30,7 @@ function Header () {
 
   return (
     <div>
-      <header>
+      <header id="accueil">
         <AnimatedBanner />
       </header>
 
@@ -45,7 +46,9 @@ function Header () {
           <li><a href="#activites">Activités</a></li>
           <li><a href="#competences">Compétences</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#cv">CV</a></li>
+          <li>
+            <Link to="/About">A propos</Link>
+          </li>
         </ul>
       </nav>
 

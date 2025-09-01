@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.post("/send", async (req, res) => {
     const { nom, email, message } = req.body;
 
-    console.log("📩 Données reçues du front:", req.body);
+    console.log("Données reçues du front:", req.body);
 
 
   try {
@@ -53,7 +53,7 @@ app.post("/send", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Serveur en écoute sur http://localhost:${PORT}`);
+  console.log(`Serveur en écoute sur http://localhost:${PORT}`);
 });
 
 

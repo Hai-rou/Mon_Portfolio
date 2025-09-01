@@ -1,14 +1,20 @@
 import { Routes, Route } from "react-router-dom"
 import Header from "./components/layouts/Header.jsx"
 import Footer from "./components/layouts/Footer.jsx"
-// Importez vos pages
+// pages
 import Homepage from "./pages/Homepage.jsx"
+import Error from "./pages/Error.jsx"
+import About from "./pages/About.jsx"
 
 function App() {
   return (
     <>
       <Header />
-      <Homepage />
+      <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Error />} />
+      </Routes>
       <Footer />
     </>
   )
