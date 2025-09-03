@@ -30,7 +30,7 @@ function initParticles(canvas) {
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgb(250, 166, 27)';
+            ctx.fillStyle = '#3FB950 ';
             ctx.fill();
         }
     }
@@ -94,6 +94,7 @@ export function AnimatedBanner() {
 
     return (
         <div className="banner">
+            <img src="./src/assets/logo-h.webp" alt="Logo de Haïrou" />
             <div className="banner-3">
                 <canvas ref={canvasRef}></canvas>
             </div>

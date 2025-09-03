@@ -1,15 +1,39 @@
+.homepage section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+  height: 600px;
+}
 .homepage section h2 {
   position: relative;
-  right: -41%;
+  right: -40%;
   text-align: center;
-  border-bottom: solid 2px green;
+  border-bottom: solid 2px grey;
   border-bottom-width: medium;
   width: 20%;
-  color: red;
-  padding-bottom: 20px;
+  color: #E6EDF3;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 .homepage .presentation {
-  height: 200px;
+  height: 400px;
+  background-color: #21262D;
+  padding: 20px;
+}
+.homepage .presentation .pres-content {
+  display: flex;
+  align-items: center;
+}
+.homepage .presentation .pres-content img {
+  width: 20%;
+}
+.homepage .presentation .pres-content p {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  color: white;
+  left: 10%;
 }
 .homepage .realisation .reali {
   display: flex;
@@ -24,6 +48,7 @@
 }
 .homepage .realisation .reali .reve p {
   margin: 0;
+  color: #8B949E;
 }
 .homepage .realisation .reali .reve img {
   width: 200px;
@@ -31,6 +56,7 @@
   border-radius: 10px;
 }
 .homepage .realisation .reali .info {
+  color: #8B949E;
   text-align: center;
   width: 40%;
 }
@@ -38,11 +64,17 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: solid 1px red;
   border-radius: 10px;
   padding: 15px;
-  background-color: rgb(25, 25, 25);
-  color: white;
+  background-color: #21262D;
+  width: 20%;
+}
+.homepage .realisation .reali .tech p {
+  font-size: 10px;
+  color: #58A6FF;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
 }
 .homepage .realisation .reali .tech .tech-item {
   display: flex;
@@ -53,6 +85,9 @@
   background-color: grey;
   border-radius: 10px;
   padding: 5px;
+}
+.homepage .realisation .reali .tech .tech-item span {
+  color: white;
 }
 .homepage .realisation .reali .tech .tech-item img {
   border: solid 1px white;
@@ -67,8 +102,17 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
+  background-color: #21262D;
 }
 .homepage .contact h2 {
   right: 0;
   width: 70%;
+}
+.homepage .competences .competences-container {
+  display: flex;
+  justify-content: space-between;
+}
+.homepage .competences .competences-container img {
+  width: 40%;
+  border-radius: 10px;
 }/*# sourceMappingURL=homepage.css.map */

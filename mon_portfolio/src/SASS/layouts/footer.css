@@ -2,11 +2,13 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: grey;
+  background-color: #0D1117;
   padding: 10px;
+  color: #E6EDF3;
 }
 footer .footnav {
   display: flex;
+  margin-bottom: 10px;
 }
 footer .footnav .github-btn {
   cursor: pointer;
@@ -19,5 +21,5 @@ footer .footnav .mail-btn {
 }
 footer .footnav .mail-btn .fa-envelope {
   width: 20%;
-  color: black;
+  color: #E6EDF3;
 }/*# sourceMappingURL=footer.css.map */

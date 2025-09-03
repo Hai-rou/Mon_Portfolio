@@ -1,22 +1,27 @@
 .activites{
+        background-color: #21262D;
         .act-container{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             row-gap: 10px;
             column-gap: 10px;
+            padding: 10px;
             .git-container{
                 display: flex;
                 flex-direction: column;
-                border: solid 1px green;
                 border-radius: 10px;
-                padding: 10px;
+                padding: 20px;
                 grid-column-start: 1;
                 grid-row-start: 1;
                 grid-row-end: 3;
-                background-color: rgb(25, 25, 25);
-                color: white;
+                background-color: #0D1117;
+                color: #58A6FF;
+                text-transform: uppercase;
+                font-weight: bold;
                 p{
                     margin-block-start: 0;
+                    padding: 5px;
+                    margin-bottom: 10px;
                 }
                 .Act-Bank{
                     display: flex;
@@ -33,7 +38,6 @@
                             width: 20%;
                             height: 30px;
                             padding: 10px;
-                            border: solid 1px red;
                             border-radius: 10px;
                             background-color: rgb(212, 202, 202);
                         }
@@ -44,39 +48,48 @@
             .diplo-container{
                 display: flex;
                 flex-direction: column;
-                border: solid 1px violet;
                 border-radius: 10px;
-                padding: 10px;
-                background-color: rgb(25, 25, 25);
-                color: white;
+                padding: 20px;
+                background-color: #0D1117;
                 p{
                     margin-block-start: 0;
+                    padding: 5px;
+                    margin-bottom: 10px;
+                    color: #58A6FF;
+                    text-transform: uppercase;
+                    font-weight: bold;
                 }
                 .item{
                    display: flex;
+                   justify-content: space-around;
                    flex-wrap: wrap;
                    align-items: center;
                    gap: 20px;
+                   color: white;
                    img{
                     width: 64px;
                     height: 64px;
                    }
                    .context{
-                    h3{
-                        margin: 0;
-                    }
+                        margin-left: -50px;
+                        h3{
+                            margin: 0;
+                        }
                    }
                 }
             }
             .reseau-container{
                 display: flex;
-                border: solid 1px yellow;
                 border-radius: 10px;
-                padding: 10px;
-                background-color: rgb(25, 25, 25);
-                color: white;
+                padding: 20px;
+                background-color: #0D1117;
+                color: #58A6FF;
+                text-transform: uppercase;
+                font-weight: bold;
                 p{
                     margin-block-start: 0;
+                    padding: 5px;
+                    margin-bottom: 10px
                 }
             }
         }
@@ -84,8 +97,8 @@
 
 // Style modal //
 .project-modal {
-    background: rgba(255, 255, 255, 0.98);
-    border: 1px solid #e1e5e9;
+    background: #8B949E;
+    border: 1px solid #0D1117;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     padding: 0;
@@ -111,8 +124,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 16px 20px;
-            border-bottom: 1px solid #f0f0f0;
-            background: #38132D;
+            border-bottom: 1px solid #0D1117;
+            background: linear-gradient(to right, #58A6FF, #3FB950);
             color: white;
             border-radius: 12px 12px 0 0;
 
@@ -126,7 +139,7 @@
                 border-radius: 20px;
                 font-size: 12px;
                 font-weight: 500;
-                background: rgba(255, 255, 255, 0.2);
+                background: #0D1117 ;
                 color: white;
             }
 
@@ -135,7 +148,7 @@
             padding: 20px;
 
             .description {
-                color: #374151;
+                color: #0D1117;
                 font-size: 14px;
                 line-height: 1.5;
                 margin-bottom: 16px;
@@ -148,10 +161,10 @@
 
                 .detail-item {
                     font-size: 13px;
-                    color: #6b7280;
+                    color: #0D1117;
 
                     strong {
-                        color: #374151;
+                        color: #0D1117;
                         margin-right: 8px;
                     }
                 }
@@ -163,8 +176,8 @@
                     margin-top: 4px;
 
                     .tech-tag {
-                        background: #f3f4f6;
-                        color: #374151;
+                        background: #3FB950;
+                        color: #0D1117;
                         padding: 3px 8px;
                         border-radius: 12px;
                         font-size: 11px;
@@ -178,9 +191,9 @@
 
 .modal-footer {
   padding: 12px 20px;
-  background: #f9fafb;
+  background: #21262D;
   border-radius: 0 0 12px 12px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid #0D1117;
 
   small {
     color: #9ca3af;

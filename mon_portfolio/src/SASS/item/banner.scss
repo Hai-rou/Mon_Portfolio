@@ -3,15 +3,15 @@ $animation-duration: 6s;
 $animation-easing: ease-in-out;
 $float-distance: -20px;
 $rotation-angle: 180deg;
-.banner{
+.banner{    
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #38132D;
-    background-image: url("../../assets/logo-h.webp");
-    background-repeat: no-repeat;
-    background-position: center;
-
+    background: #0D1117  ;
+    img{
+        z-index: 1;
+        position: absolute;
+    }
     .banner-3{
         height: 400px;
         width: 100%;
@@ -21,7 +21,10 @@ $rotation-angle: 180deg;
         align-items: center;
         justify-content: center;
         position: relative;
-        overflow: hidden; 
+        overflow: hidden;
+        canvas{
+            width: 100%;
+        } 
     }
    
     .banner-content {

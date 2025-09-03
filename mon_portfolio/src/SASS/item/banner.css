@@ -3,10 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #38132D;
-  background-image: url("../../assets/logo-h.webp");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: #0D1117;
+}
+.banner img {
+  z-index: 1;
+  position: absolute;
 }
 .banner .banner-3 {
   height: 400px;
@@ -18,6 +19,9 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+}
+.banner .banner-3 canvas {
+  width: 100%;
 }
 .banner .banner-content {
   position: absolute;

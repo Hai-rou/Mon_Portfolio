@@ -1,96 +1,89 @@
 // Container principal des compétences
 .skills-container {
-  padding: 40px 20px;
-  background-color: #f8f9fa;
-}
+  width: 60%;
+  background: linear-gradient(to right, #E6EDF3, #8B949E);
+  border-radius: 10px;
+  // Section des compétences
+  .skills {
+    max-width: 600px;
+    margin: 20px auto;
 
-// Titre principal
-.skills-title {
-  text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-}
+    // Compétence individuelle
+    .skill {
+      margin: 25px 0;
 
-// Section des compétences
-.skills {
-  max-width: 600px;
-  margin: 20px auto;
+      // Informations de la compétence (nom + pourcentage)
+      .skill-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
 
-  // Compétence individuelle
-  .skill {
-    margin: 25px 0;
+        // Label de la compétence
+        .skill-label {
+          font-weight: bold;
+          color: black;
+          font-size: 16px;
 
-    // Informations de la compétence (nom + pourcentage)
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
+          // Icône
+          i {
+            margin-right: 8px;
+            font-size: 18px;
+          }
+        }
 
-      // Label de la compétence
-      .skill-label {
-        font-weight: bold;
-        color: #333;
-        font-size: 16px;
-
-        // Icône
-        i {
-          margin-right: 8px;
-          font-size: 18px;
+        // Pourcentage
+        .percentage {
+          font-weight: bold;
+          color: black;
+          font-size: 14px;
         }
       }
 
-      // Pourcentage
-      .percentage {
-        font-weight: bold;
-        color: #666;
-        font-size: 14px;
-      }
-    }
-
-    // Barre de progression
-    .bar {
-      background: #e9ecef;
-      border-radius: 25px;
-      overflow: hidden;
-      height: 12px;
-      position: relative;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-
-      // Remplissage de la barre
-      .fill {
-        height: 100%;
+      // Barre de progression
+      .bar {
+        background: #e9ecef;
         border-radius: 25px;
-        transition: width 1.5s ease-in-out;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+        overflow: hidden;
+        height: 12px;
         position: relative;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 
-        // Couleurs spécifiques par technologie
-        &.html5 {
-          background-color: #e44d26;
-        }
+        // Remplissage de la barre
+        .fill {
+          height: 100%;
+          border-radius: 25px;
+          transition: width 1.5s ease-in-out;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+          position: relative;
 
-        &.css3 {
-          background-color: #1572b6;
-        }
+          // Couleurs spécifiques par technologie
+          &.html5 {
+            background-color: #e44d26;
+          }
 
-        &.javascript {
-          background-color: #f7df1e;
-        }
+          &.css3 {
+            background-color: #1572b6;
+          }
 
-        &.react {
-          background-color: #61dafb;
-        }
+          &.javascript {
+            background-color: #f7df1e;
+          }
 
-        &.astro {
-          background-color: #339933;
-        }
+          &.react {
+            background-color: #61dafb;
+          }
 
-        &.python {
-          background-color: #3776ab;
+          &.astro {
+            background-color: #339933;
+          }
+
+          &.python {
+            background-color: #3776ab;
+          }
         }
       }
     }
   }
 }
+

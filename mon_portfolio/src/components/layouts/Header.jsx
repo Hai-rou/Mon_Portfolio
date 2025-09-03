@@ -39,6 +39,7 @@ function Header () {
         ref={navbarRef}
         className={`navbar ${isSticky ? 'sticky' : ''}`}
       >
+        <div className="name">&lt;/&gt; HHoumadi</div>
         <ul>
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#Presenta">Présentation</a></li>

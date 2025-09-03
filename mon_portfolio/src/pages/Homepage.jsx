@@ -9,12 +9,15 @@ function Homepage () {
         <div className="homepage">
             <section id="Presenta" className="presentation">
                 <h2>Présentation</h2>
-                <p>
-                    Longtemps passionné par le domaine du codage information, 
-                    j'ai l'occasion aujourd'hui de pouvoir transformer mon hobby en métier.
-                    Actuellement développeur web, je conçois des sites web sous react. 
-                    Dans un avenir proche, je vais commencer à faire du Back-end sous Python avec le framework Django.
-                </p>
+                <div className='pres-content'>
+                    <img src="../src/assets/logo-h.webp" alt="Logo avec mon Pseudo" />
+                     <p>
+                        Longtemps passionné par le domaine du codage information, 
+                        j'ai l'occasion aujourd'hui de pouvoir transformer mon hobby en métier.<br />
+                        Actuellement développeur web, je conçois des sites web sous react. 
+                        Dans un avenir proche, je vais commencer à faire du Back-end sous Python avec le framework Django.
+                    </p>
+                </div>
             </section>
             <section id="realisation" className="realisation">
                 <h2>Réalisation en cours</h2>
@@ -35,11 +38,11 @@ function Homepage () {
                         <p>Nouvelle technologie abordée pour le projet</p>
                         <div className='tech-item'>
                             <img src="./src/assets/realisation/astro.svg" alt="Logo de la technologie Astro" />
-                            <p>Astro</p>
+                            <span>Astro</span>
                         </div>
                         <div className='tech-item'>
                             <img src="./src/assets/realisation/tailwind2.webp" alt="Logo de la technologie Tailwind" />
-                            <p>Tailwind</p>
+                            <span>Tailwind</span>
                         </div>
                     </div>
                 </div>
@@ -51,7 +54,7 @@ function Homepage () {
             </section>
             <section id="competences" className="competences">
                 <h2>Compétences</h2>
-                <div className='skills'>
+                <div className='competences-container'>
                     <img src="../src/assets/logo-H..webp" alt="Logo avec mon Pseudo" />
                     <SkillsComponent /> 
                 </div>

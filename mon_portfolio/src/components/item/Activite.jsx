@@ -154,10 +154,10 @@ function Activites() {
                     <img src={OpenClassroomsLogo} alt="Logo Openclassrooms" />
                     <div className="context">
                         <h3>Intégrateur Web</h3>
-                        <p>OpenClassrooms</p>
+                        <span>OpenClassrooms</span>
                     </div>
-                    <p>Formations</p>
-                    <p>2025</p>
+                    <span>Formations</span>
+                    <span>2025</span>
                 </div>
             </div>
 
