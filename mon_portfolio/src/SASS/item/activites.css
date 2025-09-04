@@ -1,4 +1,5 @@
 .activites {
+  height: 600px;
   background-color: #21262D;
 }
 .activites .act-container {
@@ -21,6 +22,7 @@
   color: #58A6FF;
   text-transform: uppercase;
   font-weight: bold;
+  height: 100%;
 }
 .activites .act-container .git-container p {
   margin-block-start: 0;
@@ -30,7 +32,9 @@
 .activites .act-container .git-container .Act-Bank {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
+  height: 100%;
 }
 .activites .act-container .git-container .Act-Bank a {
   display: flex;
@@ -64,7 +68,7 @@
 }
 .activites .act-container .diplo-container .item {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   gap: 20px;

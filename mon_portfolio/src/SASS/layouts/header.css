@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .navbar {
   display: flex;
   width: 100%;
@@ -49,4 +50,75 @@
   right: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    align-items: center;
+  }
+  .navbar .name {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .navbar ul {
+    gap: 5px;
+    padding: 0;
+  }
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar ul li a {
+    padding: 10px 0;
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    align-items: center;
+  }
+  .navbar .name {
+    width: 50%;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .navbar ul {
+    gap: 5px;
+    padding: 0;
+  }
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar ul li a {
+    padding: 8px 0;
+    font-size: 7px;
+  }
+  /* Quand sticky sur mobile → horizontal */
+  .navbar.sticky {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    width: 20%;
+    height: 100%;
+  }
+  .navbar.sticky .name {
+    width: auto;
+    margin: 0;
+  }
+  .navbar.sticky ul {
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .navbar.sticky ul li {
+    width: auto;
+    text-align: left;
+  }
+  .navbar.sticky ul li a {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }/*# sourceMappingURL=header.css.map */

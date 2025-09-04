@@ -103,3 +103,30 @@ $rotation-angle: 180deg;
 
     }
 }
+
+@media (max-width: 1024px) {
+    .banner{
+        .banner-content {
+            top: 5%;
+            left: 5%;
+            .typing-wrapper {
+                font-size: 1.5rem;
+                .line1 {
+                    animation: type1-tablette 3s steps(22, end) forwards;
+                }
+                @keyframes type1-tablette {
+                    from { width: 0 }
+                    to   { width: 22ch }
+                }
+                .line2 {
+                    animation: type2-tablette 3s steps(15, end) forwards;
+                    animation-delay: 3s; /* même durée que la ligne 1 */
+                }
+                @keyframes type2-tablette {
+                    from { width: 0 }
+                    to   { width: 15ch }
+                }
+            }
+        }
+    }
+}

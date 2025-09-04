@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 20px;
-  height: 600px;
+  margin-bottom: 10px;
 }
 .homepage section h2 {
   position: relative;
@@ -17,9 +16,8 @@
   padding-bottom: 10px;
 }
 .homepage .presentation {
-  height: 400px;
   background-color: #21262D;
-  padding: 20px;
+  height: 400px;
 }
 .homepage .presentation .pres-content {
   display: flex;
@@ -34,6 +32,9 @@
   text-align: center;
   color: white;
   left: 10%;
+}
+.homepage .realisation {
+  height: 400px;
 }
 .homepage .realisation .reali {
   display: flex;
@@ -98,6 +99,7 @@
   padding: 10px;
 }
 .homepage .contact {
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,11 +110,61 @@
   right: 0;
   width: 70%;
 }
+.homepage .competences {
+  height: 500px;
+  padding: 20px;
+}
 .homepage .competences .competences-container {
   display: flex;
   justify-content: space-between;
 }
 .homepage .competences .competences-container img {
   width: 40%;
-  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .homepage section h2 {
+    right: 0;
+    width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .homepage section h2 {
+    right: 0;
+    width: 70%;
+  }
+  .homepage .presentation {
+    height: auto;
+  }
+  .homepage .presentation .pres-content {
+    flex-direction: column;
+  }
+  .homepage .presentation .pres-content img {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .homepage .presentation .pres-content p {
+    width: 80%;
+    left: 0;
+  }
+  .homepage .realisation {
+    height: auto;
+  }
+  .homepage .realisation .reali {
+    flex-direction: column;
+  }
+  .homepage .realisation .reali .reve img {
+    width: 80%;
+    height: auto;
+  }
+  .homepage .realisation .reali .info {
+    width: 80%;
+    margin: 20px 0;
+  }
+  .homepage .realisation .reali .tech {
+    width: 80%;
+  }
+  .homepage .realisation .reali .tech .tech-item {
+    justify-content: center;
+  }
 }/*# sourceMappingURL=homepage.css.map */

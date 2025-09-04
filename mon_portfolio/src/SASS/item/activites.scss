@@ -1,99 +1,103 @@
 .activites{
-        background-color: #21262D;
-        .act-container{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            row-gap: 10px;
-            column-gap: 10px;
-            padding: 10px;
-            .git-container{
+    height: 600px;
+    background-color: #21262D;
+    .act-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+        column-gap: 10px;
+        padding: 10px;
+        .git-container{
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            padding: 20px;
+            grid-column-start: 1;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            background-color: #0D1117;
+            color: #58A6FF;
+            text-transform: uppercase;
+            font-weight: bold;
+            height: 100%;
+            p{
+                margin-block-start: 0;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+            .Act-Bank{
                 display: flex;
                 flex-direction: column;
-                border-radius: 10px;
-                padding: 20px;
-                grid-column-start: 1;
-                grid-row-start: 1;
-                grid-row-end: 3;
-                background-color: #0D1117;
-                color: #58A6FF;
-                text-transform: uppercase;
-                font-weight: bold;
-                p{
-                    margin-block-start: 0;
-                    padding: 5px;
-                    margin-bottom: 10px;
-                }
-                .Act-Bank{
+                justify-content: center;
+                gap: 20px;
+                height: 100%;
+                a{
                     display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                    a{
-                        display: flex;
-                        flex-wrap: wrap;
-                        align-items: center;
-                        gap: 10px;
-                        text-decoration: none;
-                        color: white;
-                        img{
-                            width: 20%;
-                            height: 30px;
-                            padding: 10px;
-                            border-radius: 10px;
-                            background-color: rgb(212, 202, 202);
-                        }
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 10px;
+                    text-decoration: none;
+                    color: white;
+                    img{
+                        width: 20%;
+                        height: 30px;
+                        padding: 10px;
+                        border-radius: 10px;
+                        background-color: rgb(212, 202, 202);
                     }
+                }
 
-                }
             }
-            .diplo-container{
-                display: flex;
-                flex-direction: column;
-                border-radius: 10px;
-                padding: 20px;
-                background-color: #0D1117;
-                p{
-                    margin-block-start: 0;
-                    padding: 5px;
-                    margin-bottom: 10px;
-                    color: #58A6FF;
-                    text-transform: uppercase;
-                    font-weight: bold;
-                }
-                .item{
-                   display: flex;
-                   justify-content: space-around;
-                   flex-wrap: wrap;
-                   align-items: center;
-                   gap: 20px;
-                   color: white;
-                   img{
-                    width: 64px;
-                    height: 64px;
-                   }
-                   .context{
-                        margin-left: -50px;
-                        h3{
-                            margin: 0;
-                        }
-                   }
-                }
-            }
-            .reseau-container{
-                display: flex;
-                border-radius: 10px;
-                padding: 20px;
-                background-color: #0D1117;
+        }
+        .diplo-container{
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #0D1117;
+            p{
+                margin-block-start: 0;
+                padding: 5px;
+                margin-bottom: 10px;
                 color: #58A6FF;
                 text-transform: uppercase;
                 font-weight: bold;
-                p{
-                    margin-block-start: 0;
-                    padding: 5px;
-                    margin-bottom: 10px
+            }
+            .item{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 20px;
+                color: white;
+                img{
+                width: 64px;
+                height: 64px;
+                }
+                .context{
+                    margin-left: -50px;
+                    h3{
+                        margin: 0;
+                    }
                 }
             }
         }
+        .reseau-container{
+            display: flex;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #0D1117;
+            color: #58A6FF;
+            text-transform: uppercase;
+            font-weight: bold;
+            p{
+                margin-block-start: 0;
+                padding: 5px;
+                margin-bottom: 10px
+            }
+        }
     }
+}
 
 // Style modal //
 .project-modal {
