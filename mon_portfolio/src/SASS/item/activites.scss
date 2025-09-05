@@ -206,3 +206,27 @@
   }
 }
 
+@media (max-width: 768px) {
+    .activites{
+        height: auto;
+        .act-container{
+            display: flex;
+            flex-direction: column;
+            .git-container{
+                grid-column-start: auto;
+                grid-row-start: auto;
+                grid-row-end: auto;
+                height: auto;
+            }
+            .diplo-container{
+                .item{
+                    text-align: center;
+                    font-size: 15px;
+                    .context{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

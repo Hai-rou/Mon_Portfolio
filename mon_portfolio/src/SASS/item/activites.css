@@ -191,4 +191,27 @@
   color: #9ca3af;
   font-size: 11px;
   font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .activites {
+    height: auto;
+  }
+  .activites .act-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .activites .act-container .git-container {
+    grid-column-start: auto;
+    grid-row-start: auto;
+    grid-row-end: auto;
+    height: auto;
+  }
+  .activites .act-container .diplo-container .item {
+    text-align: center;
+    font-size: 15px;
+  }
+  .activites .act-container .diplo-container .item .context {
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=activites.css.map */

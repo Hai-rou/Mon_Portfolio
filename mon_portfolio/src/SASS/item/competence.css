@@ -62,4 +62,17 @@
 }
 .skills-container .skills .skill .bar .fill.python {
   background-color: #3776ab;
+}
+
+@media (max-width: 768px) {
+  .competences-container img {
+    display: none;
+  }
+  .competences-container .skills-container {
+    width: 100%;
+  }
+  .competences-container .skills-container .skills .skill .skill-info {
+    align-items: flex-start;
+    gap: 5px;
+  }
 }/*# sourceMappingURL=competence.css.map */

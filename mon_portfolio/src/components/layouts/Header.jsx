@@ -1,13 +1,14 @@
 import "../../SASS/layouts/header.css"
 import { useState, useEffect, useRef } from 'react'
 import { AnimatedBanner } from "../item/AnimatedBanner"
-import { Link } from "react-router-dom"
 
 function Header () {
   const [isSticky, setIsSticky] = useState(false)
   const navbarRef = useRef(null)
   const [navbarHeight, setNavbarHeight] = useState(0)
   const [scrollPosition, setScrollPosition] = useState(0)
+
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     const navbar = navbarRef.current
@@ -40,16 +41,17 @@ function Header () {
         className={`navbar ${isSticky ? 'sticky' : ''}`}
       >
         <div className="name">&lt;/&gt; HHoumadi</div>
-        <ul>
+          {/* Bouton Hamburger */}
+        <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "✖" : "☰"}
+        </button>
+        <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#Presenta">Présentation</a></li>
           <li><a href="#realisation">Réalisation</a></li>
           <li><a href="#activites">Activités</a></li>
           <li><a href="#competences">Compétences</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li>
-            <Link to="/About">A propos</Link>
-          </li>
         </ul>
       </nav>
 

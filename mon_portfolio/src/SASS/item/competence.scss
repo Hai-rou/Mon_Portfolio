@@ -87,3 +87,21 @@
   }
 }
 
+@media (max-width: 768px) {
+  .competences-container{
+    img{
+      display: none;
+    }
+    .skills-container {
+      width: 100%;
+      .skills {
+        .skill {
+          .skill-info {
+            align-items: flex-start;
+            gap: 5px;
+          }
+        }
+      }
+    }
+  } 
+}

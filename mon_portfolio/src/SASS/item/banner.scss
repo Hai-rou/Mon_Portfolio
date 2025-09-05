@@ -130,3 +130,35 @@ $rotation-angle: 180deg;
         }
     }
 }
+
+@media (max-width: 768px) {
+    .banner{
+        img{
+            width: 50%;
+            height: auto;
+        }
+
+        .banner-content {
+            top: 5%;
+            left: 5%;
+            .typing-wrapper {
+                font-size: 1rem;
+                .line1 {
+                    animation: type1-mobile 3s steps(22, end) forwards;
+                }
+                @keyframes type1-mobile {
+                    from { width: 0 }
+                    to   { width: 22ch }
+                }
+                .line2 {
+                    animation: type2-mobile 3s steps(15, end) forwards;
+                    animation-delay: 3s; /* même durée que la ligne 1 */
+                }
+                @keyframes type2-mobile {
+                    from { width: 0 }
+                    to   { width: 15ch }
+                }
+            }
+        }
+    }
+}

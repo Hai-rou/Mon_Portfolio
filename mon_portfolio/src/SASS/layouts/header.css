@@ -14,30 +14,37 @@
   font-size: 1.2rem;
   width: 20%;
 }
-.navbar ul {
+.navbar .menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.navbar .nav-links {
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 10px;
   padding: 10px;
 }
-.navbar ul a {
+.navbar .nav-links a {
   text-decoration: none;
   color: white;
   display: block;
 }
-.navbar ul li {
+.navbar .nav-links li {
   border-radius: 20px;
   list-style: none;
 }
-.navbar ul li a {
+.navbar .nav-links li a {
   text-decoration: none;
   color: #3FB950;
   text-transform: uppercase;
   display: block;
   padding: 10px;
 }
-.navbar ul li a:hover {
+.navbar .nav-links li a:hover {
   background: linear-gradient(to right, #58A6FF, #3FB950) !important;
   border-radius: 20px;
   color: white;
@@ -59,66 +66,94 @@
   .navbar .name {
     width: 30%;
     text-align: center;
-    margin-bottom: 10px;
   }
-  .navbar ul {
+  .navbar .nav-links {
     gap: 5px;
     padding: 0;
   }
-  .navbar ul li {
+  .navbar .nav-links li {
     width: 100%;
     text-align: center;
   }
-  .navbar ul li a {
+  .navbar .nav-links li a {
     padding: 10px 0;
     font-size: 10px;
   }
 }
 @media (max-width: 768px) {
   .navbar {
+    justify-content: space-between;
     align-items: center;
+    border-top: solid 5px #58A6FF;
   }
   .navbar .name {
-    width: 50%;
+    width: 30%;
     font-size: 10px;
-    margin-bottom: 10px;
   }
-  .navbar ul {
+  .navbar .nav-links {
     gap: 5px;
     padding: 0;
   }
-  .navbar ul li {
+  .navbar .nav-links li {
     width: 100%;
     text-align: center;
   }
-  .navbar ul li a {
+  .navbar .nav-links li a {
     padding: 8px 0;
     font-size: 7px;
   }
   /* Quand sticky sur mobile → horizontal */
   .navbar.sticky {
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 5px 10px;
-    width: 20%;
-    height: 100%;
+    width: 100%;
+    height: 50px;
+  }
+  .navbar.sticky .menu-btn {
+    display: block;
+    padding-right: 40px;
   }
   .navbar.sticky .name {
-    width: auto;
+    width: 30%;
     margin: 0;
   }
-  .navbar.sticky ul {
+  .navbar.sticky .nav-links.open {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: #0D1117;
+    border-left: solid 5px #58A6FF;
+    border-bottom: solid 5px #58A6FF;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    width: 150px;
+    border-radius: 10px;
+    padding: 10px 0;
+    animation: downToUp 0.9s ease forwards;
+  }
+  @keyframes downToUp {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .navbar.sticky .nav-links {
+    display: none;
     justify-content: flex-end;
     gap: 8px;
   }
-  .navbar.sticky ul li {
+  .navbar.sticky .nav-links li {
     width: auto;
     text-align: left;
   }
-  .navbar.sticky ul li a {
-    font-size: 12px;
+  .navbar.sticky .nav-links li a {
+    font-size: 8px;
     padding: 6px 10px;
   }
 }/*# sourceMappingURL=header.css.map */
