@@ -10,7 +10,7 @@ function Homepage () {
             <section id="Presenta" className="presentation">
                 <h2>Présentation</h2>
                 <div className='pres-content'>
-                    <img src="../src/assets/logo-h.webp" alt="Logo avec mon Pseudo" />
+                    <img src="/assets/logo-h.webp" alt="Logo avec mon Pseudo" />
                      <p>
                         Longtemps passionné par le domaine du codage information, 
                         j'ai l'occasion aujourd'hui de pouvoir transformer mon hobby en métier.<br />
@@ -23,7 +23,7 @@ function Homepage () {
                 <h2>Réalisation en cours</h2>
                 <div className='reali'>
                     <div className='reve'>
-                        <img src="./src/assets/realisation/logo.webp" alt="Logo de l'entreprise Reve d'exploration" />
+                        <img src="/assets/realisation/logo.webp" alt="Logo de l'entreprise Reve d'exploration" />
                         <p>Du Lundi au Samedi de 9H à 19H</p>
                         <p>test@revesexploration.com</p>
                     </div>
@@ -37,11 +37,11 @@ function Homepage () {
                     <div className='tech'>
                         <p>Nouvelle technologie abordée pour le projet</p>
                         <div className='tech-item'>
-                            <img src="./src/assets/realisation/astro.svg" alt="Logo de la technologie Astro" />
+                            <img src="../assets/realisation/astro.svg" alt="Logo de la technologie Astro" />
                             <span>Astro</span>
                         </div>
                         <div className='tech-item'>
-                            <img src="./src/assets/realisation/tailwind2.webp" alt="Logo de la technologie Tailwind" />
+                            <img src="../assets/realisation/tailwind2.webp" alt="Logo de la technologie Tailwind" />
                             <span>Tailwind</span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ function Homepage () {
             <section id="competences" className="competences">
                 <h2>Compétences</h2>
                 <div className='competences-container'>
-                    <img src="../src/assets/logo-H..webp" alt="Logo avec mon Pseudo" />
+                    <img src="../assets/logo-H..webp" alt="Logo avec mon Pseudo" />
                     <SkillsComponent /> 
                 </div>
                 

@@ -1,19 +1,12 @@
 import { useState } from 'react';
 import '../../SASS/item/activites.css';
 
-// Images 
-import ArgentBankLogo from "../../assets/argentBankLogo.webp";
-import Logo724 from "../../assets/724.webp";
-import SophieLogo from "../../assets/sophie.webp";
-import NinaLogo from "../../assets/nina.webp";
-import OpenClassroomsLogo from "../../assets/openclassrooms.webp";
-
 // Données des projets avec descriptions
 const projectsData = [
     {
         id: 'argent-bank',
         title: 'Projet Argent Bank',
-        image: ArgentBankLogo,
+        image: "/assets/argentBankLogo.webp", // chemin public
         url: 'https://github.com/Hai-rou/Argent-Bank',
         className: 'Bank-btn',
         description: 'Application bancaire React avec authentification JWT',
@@ -24,7 +17,7 @@ const projectsData = [
     {
         id: '724-events',
         title: '724 Events',
-        image: Logo724,
+        image: "/assets/724.webp",
         url: 'https://github.com/Hai-rou/Projet_9-Debuggez-une-application-React.js',
         className: 'events-btn',
         description: 'Débogage et optimisation d\'une application React d\'événements',
@@ -35,7 +28,7 @@ const projectsData = [
     {
         id: 'sophie-bluel',
         title: 'Sophie Bluel',
-        image: SophieLogo,
+        image: "/assets/sophie.webp",
         url: 'https://github.com/Hai-rou/Projet_6',
         className: 'sophie-btn',
         description: 'Site portfolio d\'architecte avec interface d\'administration',
@@ -46,7 +39,7 @@ const projectsData = [
     {
         id: 'nina-carducci',
         title: 'Nina Carducci',
-        image: NinaLogo,
+        image: "/assets/nina.webp",
         url: 'https://github.com/Hai-rou/Projet_8-Nina_Carducci',
         className: 'nina-btn',
         description: 'Optimisation SEO et performance d\'un site de photographe',
@@ -151,7 +144,7 @@ function Activites() {
             <div className="diplo-container">
                 <p>Dernier diplôme, emploi et projet</p>
                 <div className="item">
-                    <img src={OpenClassroomsLogo} alt="Logo Openclassrooms" />
+                    <img src="/assets/openclassrooms.webp" alt="Logo Openclassrooms" />
                     <div className="context">
                         <h3>Intégrateur Web</h3>
                         <span>OpenClassrooms</span>

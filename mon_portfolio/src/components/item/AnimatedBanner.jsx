@@ -94,7 +94,7 @@ export function AnimatedBanner() {
 
     return (
         <div className="banner">
-            <img src="./src/assets/logo-h.webp" alt="Logo de Haïrou" />
+            <img src="../assets/logo-h.webp" alt="Logo de Haïrou" />
             <div className="banner-3">
                 <canvas ref={canvasRef}></canvas>
             </div>
