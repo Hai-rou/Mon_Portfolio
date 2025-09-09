@@ -1,0 +1,93 @@
+main{
+    background: linear-gradient(45deg, #21262D, #8B949E, #21262D, #8B949E);
+    background-size: 400% 400%;
+    animation: gradient-shift 5s ease infinite;
+    padding: 20px;
+    border: solid 2px #58A6FF;
+    border-radius: 10px;
+    @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    h1{
+        text-align: center;
+        color: #58A6FF;
+    }
+    h2{
+        text-align: center;
+        color: #3FB950;
+    }
+    .about-me{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .arrow{
+            display: flex;
+            align-items: center;
+            svg{
+                transform: rotate(270deg);
+            }
+        }
+        .photos{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 20%;
+            .item{
+                width: 100%;
+                height: 100%;
+            }
+ 
+        }
+        figure{
+            width: 20%;
+            img{
+                width: 200px;
+                margin: 0 auto;
+                display: block;
+                border-radius: 5px;
+            }
+            figcaption{
+                text-align: center;
+                font-style: italic;
+                margin-top: 10px;
+            }
+        }
+    }
+    .skills-fusion{
+        .skills-diagram-animated {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+            .fixed-circle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                text {
+                    position: absolute; 
+                    z-index: 10;        
+                    pointer-events: none; // le texte ne gêne pas les interactions
+                }
+            }
+            .rotating-arrows {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 300px;
+                height: 300px;
+                animation: rotateArrows 4s linear infinite;
+                transform-origin: 50% 50%;
+            }
+
+            @keyframes rotateArrows {
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+    
+}

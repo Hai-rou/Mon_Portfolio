@@ -36,18 +36,16 @@
             border-radius: 20px;
             list-style: none;
             
-            a {
-                text-decoration: none;
-                color: #3FB950;
-                text-transform: uppercase;
-                display: block;
-                padding: 10px;
+            text-decoration: none;
+            color: #3FB950;
+            text-transform: uppercase;
+            display: block;
+            padding: 10px;
 
-                &:hover {
+            &:hover {
                 background: linear-gradient(to right,#58A6FF, #3FB950 ) !important;
                 border-radius: 20px;
                 color: white;
-                }
             }
         }
     }

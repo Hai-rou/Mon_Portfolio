@@ -36,15 +36,13 @@
 .navbar .nav-links li {
   border-radius: 20px;
   list-style: none;
-}
-.navbar .nav-links li a {
   text-decoration: none;
   color: #3FB950;
   text-transform: uppercase;
   display: block;
   padding: 10px;
 }
-.navbar .nav-links li a:hover {
+.navbar .nav-links li:hover {
   background: linear-gradient(to right, #58A6FF, #3FB950) !important;
   border-radius: 20px;
   color: white;

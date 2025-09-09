@@ -8,4 +8,12 @@
   flex-direction: column;
   width: 40%;
   gap: 10px;
+}
+.contact-content form input {
+  height: 25px;
+  border-radius: 5px;
+}
+.contact-content form .message {
+  height: 150px;
+  resize: none;
 }/*# sourceMappingURL=contact.css.map */

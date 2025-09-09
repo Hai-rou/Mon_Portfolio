@@ -1,5 +1,6 @@
 import "../../SASS/layouts/header.css"
 import { useState, useEffect, useRef } from 'react'
+import { Link } from "react-router-dom"
 import { AnimatedBanner } from "../item/AnimatedBanner"
 
 function Header () {
@@ -29,6 +30,17 @@ function Header () {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToNav = () => {
+    const nav = document.querySelector('nav');
+    if (nav) {
+      nav.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
       <header id="accueil">
@@ -46,9 +58,15 @@ function Header () {
           {isOpen ? "✖" : "☰"}
         </button>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#Presenta">Présentation</a></li>
-          <li><a href="#realisation">Réalisation</a></li>
+          <Link to="/" onClick={scrollToTop}>
+            <li>Accueil</li>
+          </Link>
+          <Link to="/about" onClick={scrollToNav}>
+            <li>Présentation</li>
+          </Link>
+          <Link to="/realisation" onClick={scrollToNav}>
+            <li>Réalisation</li>
+          </Link>
           <li><a href="#activites">Activités</a></li>
           <li><a href="#competences">Compétences</a></li>
           <li><a href="#contact">Contact</a></li>

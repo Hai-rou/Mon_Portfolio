@@ -7,5 +7,13 @@
         flex-direction: column;
         width: 40%;
         gap: 10px;
+        input{
+            height: 25px;
+            border-radius: 5px;
+        }
+        .message{
+            height: 150px;
+            resize: none;
+        }
     }
 }

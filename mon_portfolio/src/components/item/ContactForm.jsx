@@ -87,6 +87,7 @@ function ContactForm() {
           disabled={loading}
         />
         <textarea
+          className="message"
           name="message"
           placeholder="Votre message"
           value={formData.message}
