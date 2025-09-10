@@ -1,0 +1,61 @@
+.toggle-section {
+  width: 100%;
+  background: linear-gradient(to right, #8B949E, #E6EDF3);
+  border: solid 5px #58A6FF;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.toggle-section h3 {
+  text-transform: uppercase;
+}
+.toggle-section .toggle-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+.toggle-section .toggle-content ul li {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: downUp 0.5s ease-in-out;
+}
+@keyframes downUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.toggle-section .toggle-content ul li h4 {
+  display: inline;
+}
+.toggle-section .toggle-content .technologies {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+  animation: downUp 0.5s ease-in-out;
+}
+@keyframes downUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.toggle-section .toggle-content .technologies .front-back .techno-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.toggle-section .toggle-content .technologies .front-back h4 {
+  text-align: center;
+}/*# sourceMappingURL=togglesection.css.map */

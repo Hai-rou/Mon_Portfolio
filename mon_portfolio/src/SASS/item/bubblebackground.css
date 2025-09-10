@@ -1,0 +1,29 @@
+.bubbles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.bubbles-background .bubble {
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to right, #0D1117, #8B949E);
+  border-radius: 50%;
+  animation: rise 8s infinite linear;
+  left: calc(2% + 96% * var(--i));
+  animation-delay: calc(0.5s * var(--i));
+}
+
+@keyframes rise {
+  to {
+    bottom: 100%;
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}/*# sourceMappingURL=bubblebackground.css.map */

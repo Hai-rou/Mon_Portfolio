@@ -1,9 +1,31 @@
 .vers-realisation{
+    position: relative;
     background: linear-gradient(to right, #58A6FF, #3FB950);
     border: solid 3px #E6EDF3;
     border-radius: 10px;
     padding: 10px;
+    width: 100%;
+    height: 100%;
     h1{
         text-align: center;
+    }
+    .projet-en-cours{
+        .reves{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            .reves-maquette{
+                position: relative;
+                width: 40%;
+                img{
+                    width: 100%;
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+            }
+            .reves-item{
+                padding-right: 20px;
+            }
+        }
     }
 }
