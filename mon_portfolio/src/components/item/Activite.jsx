@@ -2,52 +2,7 @@ import { useState } from 'react';
 import '../../SASS/item/activites.css';
 
 // Données des projets avec descriptions
-const projectsData = [
-    {
-        id: 'argent-bank',
-        title: 'Projet Argent Bank',
-        image: "/assets/argentBankLogo.webp", // chemin public
-        url: 'https://github.com/Hai-rou/Argent-Bank',
-        className: 'Bank-btn',
-        description: 'Application bancaire React avec authentification JWT',
-        technologies: ['React', 'Redux', 'Node.js', 'MongoDB'],
-        status: 'Projet : Terminé',
-        duration: '3 mois'
-    },
-    {
-        id: '724-events',
-        title: '724 Events',
-        image: "/assets/724.webp",
-        url: 'https://github.com/Hai-rou/Projet_9-Debuggez-une-application-React.js',
-        className: 'events-btn',
-        description: 'Débogage et optimisation d\'une application React d\'événements',
-        technologies: ['React', 'JavaScript', 'SASS', 'Jest'],
-        status: 'Projet : Terminé',
-        duration: '2 mois'
-    },
-    {
-        id: 'sophie-bluel',
-        title: 'Sophie Bluel',
-        image: "/assets/sophie.webp",
-        url: 'https://github.com/Hai-rou/Projet_6',
-        className: 'sophie-btn',
-        description: 'Site portfolio d\'architecte avec interface d\'administration',
-        technologies: ['JavaScript', 'HTML5', 'CSS3', 'API REST'],
-        status: 'Projet : Terminé',
-        duration: '2 mois'
-    },
-    {
-        id: 'nina-carducci',
-        title: 'Nina Carducci',
-        image: "/assets/nina.webp",
-        url: 'https://github.com/Hai-rou/Projet_8-Nina_Carducci',
-        className: 'nina-btn',
-        description: 'Optimisation SEO et performance d\'un site de photographe',
-        technologies: ['JavaScript', 'HTML5', 'CSS3', 'SEO', 'Lighthouse'],
-        status: 'Projet : Terminé',
-        duration: '1 mois'
-    }
-];
+import { projectsData } from '../../data/projetsData';
 
 // Composant Modal
 const ProjectModal = ({ project, position, isVisible }) => {

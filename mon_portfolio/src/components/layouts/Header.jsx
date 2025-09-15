@@ -1,14 +1,12 @@
 import "../../SASS/layouts/header.css"
 import { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom"
-import { AnimatedBanner } from "../item/AnimatedBanner"
 
-function Header () {
+const Header = () => {
   const [isSticky, setIsSticky] = useState(false)
   const navbarRef = useRef(null)
   const [navbarHeight, setNavbarHeight] = useState(0)
   const [scrollPosition, setScrollPosition] = useState(0)
-
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -20,12 +18,12 @@ function Header () {
 
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      setScrollPosition(Math.round(scrollTop)) // pour l’indicateur
+      setScrollPosition(Math.round(scrollTop))
       setIsSticky(scrollTop >= navbarOffsetTop)
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // appelle une fois au montage
+    handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -43,17 +41,11 @@ function Header () {
 
   return (
     <div>
-      <header id="accueil">
-        <AnimatedBanner />
-      </header>
-
-      {/* Navbar */}
       <nav
         ref={navbarRef}
         className={`navbar ${isSticky ? 'sticky' : ''}`}
       >
         <div className="name">&lt;/&gt; HHoumadi</div>
-          {/* Bouton Hamburger */}
         <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "✖" : "☰"}
         </button>
@@ -67,15 +59,14 @@ function Header () {
           <Link to="/realisation" onClick={scrollToNav}>
             <li>Réalisation</li>
           </Link>
-          <li><a href="#activites">Activités</a></li>
+          <Link to="/activites" onClick={scrollToNav}>
+            <li>Activités</li>
+          </Link>
           <li><a href="#competences">Compétences</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      {/* Ajoute un "spacer" pour éviter le saut quand la navbar devient sticky */}
       {isSticky && <div style={{ height: `${navbarHeight}px` }} />}
-
     </div>
   )
 }

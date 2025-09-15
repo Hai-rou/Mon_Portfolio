@@ -1,0 +1,120 @@
+.activites-page {
+  position: relative;
+  z-index: 1;
+  background-color: grey;
+  border: solid 1px red;
+  border-radius: 10px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.activites-page h1 {
+  text-align: center;
+}
+.activites-page .projects-container {
+  display: flex;
+  justify-content: center;
+}
+.activites-page .projects-container .projects-list {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  padding: 20px;
+}
+.activites-page .projects-container .projects-list a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+.activites-page .projects-container .projects-list a img {
+  width: 40%;
+  height: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(212, 202, 202);
+}
+.activites-page .projects-container .projects-list .project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.activites-page .projects-container .projects-list .project-card .see-more-btn {
+  background: grey;
+  color: #3fb950;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.activites-page .projects-container .projects-list .project-card .see-more-btn:hover {
+  background: linear-gradient(to right, #58a6ff, #3fb950);
+  color: white;
+  border-radius: 40px;
+}
+.activites-page .modal-overlay {
+  display: flex;
+  justify-content: center;
+}
+.activites-page .modal-overlay .modal-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(212, 202, 202);
+  border-radius: 20px;
+  padding: 20px;
+}
+.activites-page .modal-overlay .modal-content img {
+  width: 40%;
+}
+.activites-page .modal-overlay .modal-content h2 {
+  text-align: center;
+  font-size: 30px;
+}
+.activites-page .modal-overlay .modal-content .close-btn {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+.activites-page .modal-overlay .modal-content .info-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.activites-page .modal-overlay .modal-content .info-list strong {
+  text-align: center;
+}
+.activites-page .modal-overlay .modal-content .tech-list {
+  background: grey;
+  padding: 10px;
+  border-radius: 20px;
+}
+.activites-page .modal-overlay .modal-content .tech-list strong {
+  text-align: center;
+}
+.activites-page .modal-overlay .modal-content a {
+  text-align: center;
+  color: black;
+  font-style: italic;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.activites-page .modal-overlay .modal-content a:hover {
+  background: linear-gradient(to right, #58a6ff, #3fb950);
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}/*# sourceMappingURL=acti.css.map */

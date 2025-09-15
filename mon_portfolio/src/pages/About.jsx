@@ -1,9 +1,23 @@
 import '../SASS/pages/about.css'
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
 
 function About () {
+    const containerRef = useRef();
+    useEffect(() => {
+        gsap.fromTo(
+            containerRef.current,
+            { opacity: 0, y: 150 },
+            { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }
+        );
+        return () => {
+            gsap.to(containerRef.current, { opacity: 0, y: -50, duration: 0.4, ease: "power2.in" });
+        };
+    }, []);
+
     return(
         <>
-        <main>
+        <main ref={containerRef} className="about-page">
             <h1>A propos de moi</h1>
             <p>
                 Je m'appelle Haïrou, j'ai 28 ans et je suis développeur web front-end. Passionné par le développement web, 
