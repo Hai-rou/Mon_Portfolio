@@ -1,4 +1,3 @@
-import { object } from "framer-motion/client";
 
 export const projectsData = [
     {

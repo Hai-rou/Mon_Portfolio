@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import "../SASS/pages/acti.scss";
 import { projectsData } from "../data/projetsData";
+import { activitesData } from "../data/activitesData";
 import gsap from "gsap";
-import { div } from "framer-motion/client";
 
 function Activites() {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -56,113 +56,91 @@ function Activites() {
                 <Modal selectedProject={selectedProject} setShowModal={setShowModal} />
             )}
             <div className="formation-section">
-                <h2>Formation</h2>
-                <div className="formation-list">
-                    <div className="formation-item">
-                        <img src="/assets/openclassrooms.webp" alt="Logo OpenClassrooms" />
-                    </div>
+                <h2>Formations</h2>
+                <p>Voici une liste de mes formations récentes.</p>
+                <div className="activities-list">
+                    {activitesData.map((activity) => (
+                        <div key={activity.id} className="activity-card">
+                            <div className="activity-info">
+                                <img src={activity.image} alt={`Image ${activity.title}`} />
+                                <div className="activity-text">
+                                    <h3>{activity.title}</h3>
+                                    <span>{activity.description}</span>
+                                    <p>{activity.certification}</p>
+                                </div>
+                            </div>
+                            <div className="activity-body">
+                                    <span>{activity.information}</span>
+                            </div>
+                            <div className="activity-footer">
+                                {activity.skills.map((skill, idx) => (
+                                    <span key={idx} className="skill-badge">{skill}</span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
     );
-    function Modal({ selectedProject, setShowModal }) {
-        const modalRef = React.useRef(null);
-        React.useEffect(() => {
-            if (modalRef.current) {
-                gsap.fromTo(
-                    modalRef.current,
-                    { opacity: 0, scale: 0.8 },
-                    { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }
-                );
-            }
-            return () => {
-                if (modalRef.current) {
-                    gsap.to(modalRef.current, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power2.in" });
-                }
-            };
-        }, []);
-        return (
-            <div className="modal-overlay" onClick={() => setShowModal(false)}>
-                <div className="modal-content" ref={modalRef} onClick={e => e.stopPropagation()}>
-                    <button className="close-btn" onClick={() => setShowModal(false)}>×</button>
-                    <h2>{selectedProject.title}</h2>
-                    <img src={selectedProject.image} alt={`Image ${selectedProject.title}`} style={{ maxWidth: "100%" }} />
-                    <p>{selectedProject.description || "Pas de description disponible."}</p>
-                    {selectedProject.technologies && (
-                        <div className="tech-list">
-                            <strong>Technologies :</strong>
-                            <ul>
-                                {selectedProject.technologies.map((tech, idx) => (
-                                    <li key={idx}>{tech}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    <a href={selectedProject.url} target="_blank" rel="noopener noreferrer" className="demo-link">
-                        Voir le projet sur GitHub
-                    </a>
-                </div>
-            </div>
-        );
-    }
-
-    // Modal component for GSAP animation
-    function Modal({ selectedProject, setShowModal }) {
-        const modalRef = React.useRef(null);
-        React.useEffect(() => {
-            if (modalRef.current) {
-                gsap.fromTo(
-                    modalRef.current,
-                    { opacity: 0, scale: 0.1},
-                    { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }
-                );
-            }
-            return () => {
-                if (modalRef.current) {
-                    gsap.to(modalRef.current, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power2.in" });
-                }
-            };
-        }, []);
-        return (
-            <div className="modal-overlay" onClick={() => setShowModal(false)}>
-                <div className="modal-content" ref={modalRef} onClick={e => e.stopPropagation()}>
-                    <button className="close-btn" onClick={() => setShowModal(false)}>×</button>
-                    <h2>{selectedProject.title}</h2>
-                    <img src={selectedProject.image} alt={`Image ${selectedProject.title}`} style={{ maxWidth: "100%" }} />
-                    <p>{selectedProject.description || "Pas de description disponible."}</p>
-                    {selectedProject.information && (
-                        <div className="info-list">
-                            <strong>Informations :</strong>
-                            <p>{selectedProject.information}</p>
-                        </div>
-                    )}
-                    {selectedProject.objectives && (
-                        <div className="objectives-list">
-                            <strong>Objectifs :</strong>
-                            <ul>
-                                {selectedProject.objectives.map((objective, idx) => (
-                                    <li key={idx}>{objective}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    {selectedProject.technologies && (
-                        <div className="tech-list">
-                            <strong>Technologies :</strong>
-                            <ul>
-                                {selectedProject.technologies.map((tech, idx) => (
-                                    <li key={idx}>{tech}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    <a href={selectedProject.url} target="_blank" rel="noopener noreferrer" className="demo-link">
-                        Voir le projet sur GitHub
-                    </a>
-                </div>
-            </div>
-        );
-    }
-    
 }
+
+// Modal component for GSAP animation
+function Modal({ selectedProject, setShowModal }) {
+    const modalRef = React.useRef(null);
+    React.useEffect(() => {
+        if (modalRef.current) {
+            gsap.fromTo(
+                modalRef.current,
+                { opacity: 0, scale: 0.1},
+                { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }
+            );
+        }
+        return () => {
+            if (modalRef.current) {
+                gsap.to(modalRef.current, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power2.in" });
+            }
+        };
+    }, []);
+    return (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+            <div className="modal-content" ref={modalRef} onClick={e => e.stopPropagation()}>
+                <button className="close-btn" onClick={() => setShowModal(false)}>×</button>
+                <h2>{selectedProject.title}</h2>
+                <img src={selectedProject.image} alt={`Image ${selectedProject.title}`} style={{ maxWidth: "100%" }} />
+                <p>{selectedProject.description || "Pas de description disponible."}</p>
+                {selectedProject.information && (
+                    <div className="info-list">
+                        <strong>Informations :</strong>
+                        <p>{selectedProject.information}</p>
+                    </div>
+                )}
+                {selectedProject.objectives && (
+                    <div className="objectives-list">
+                        <strong>Objectifs :</strong>
+                        <ul>
+                            {selectedProject.objectives.map((objective, idx) => (
+                                <li key={idx}>{objective}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+                {selectedProject.technologies && (
+                    <div className="tech-list">
+                        <strong>Technologies :</strong>
+                        <ul>
+                            {selectedProject.technologies.map((tech, idx) => (
+                                <li key={idx}>{tech}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+                <a href={selectedProject.url} target="_blank" rel="noopener noreferrer" className="demo-link">
+                    Voir le projet sur GitHub
+                </a>
+            </div>
+        </div>
+    );
+}
+
 export default Activites;
