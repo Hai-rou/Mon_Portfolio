@@ -10,6 +10,8 @@ import Error from "./pages/Error.jsx";
 import About from "./pages/About.jsx";
 import Realisation from "./pages/Realisation.jsx";
 import Activites from "./pages/Acti.jsx";
+import Competence from "./pages/Competence.jsx";
+//gsap
 import gsap from "gsap";
 
 function App() {
@@ -50,6 +52,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/realisation" element={<Realisation />} />
               <Route path="/activites" element={<Activites />} />
+              <Route path="/competence" element={<Competence />} />
               <Route path="*" element={<Error />} />
             </Routes>
           <Footer />

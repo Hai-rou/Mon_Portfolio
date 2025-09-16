@@ -62,8 +62,12 @@ const Header = () => {
           <Link to="/activites" onClick={scrollToNav}>
             <li>Activités</li>
           </Link>
-          <li><a href="#competences">Compétences</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <Link to="/competence" onClick={scrollToNav}>
+            <li>Compétences</li>
+          </Link>
+          <Link to="/contact" onClick={scrollToNav}>
+            <li>Contact</li>
+          </Link>
         </ul>
       </nav>
       {isSticky && <div style={{ height: `${navbarHeight}px` }} />}
