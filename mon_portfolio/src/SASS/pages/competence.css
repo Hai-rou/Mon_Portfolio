@@ -1,25 +1,45 @@
 .competences-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
   border-radius: 10px;
   padding: 10px;
   max-width: 1440px;
   margin: 0 auto;
+  background: linear-gradient(45deg, #58a6ff, #3fb950, #58a6ff, #3fb950);
+}
+.competences-page .orbs-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.competences-page .orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 33, 35, 0.8), transparent);
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
 }
 .competences-page p {
   width: 70%;
   text-align: center;
 }
-.competences-page .logo-anime {
+.competences-page .competence-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.competences-page .competence-content .logo-anime {
   margin: 20px auto;
   width: 300px;
   height: 300px;
   animation: rotateScale 4s infinite;
 }
-.competences-page .logo-anime img {
+.competences-page .competence-content .logo-anime img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -36,40 +56,39 @@
     transform: rotate(360deg) scale(1);
   }
 }
-.competences-page .title-competence {
+.competences-page .competence-content .title-competence {
   margin-bottom: 40px;
 }
-.competences-page .title-competence h1 {
+.competences-page .competence-content .title-competence h1 {
   text-align: center;
 }
-.competences-page .title-competence p {
+.competences-page .competence-content .title-competence p {
   margin: 0 auto;
 }
-.competences-page .tech-portfolio {
+.competences-page .competence-content .tech-portfolio {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
   width: 100%;
 }
-.competences-page .tech-portfolio h4 {
+.competences-page .competence-content .tech-portfolio h4 {
   width: 100%;
   text-align: center;
   color: #58a6ff;
   font-weight: bold;
   font-size: 20px;
 }
-.competences-page .tech-portfolio .tech-item {
+.competences-page .competence-content .tech-portfolio .tech-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px #ccc;
   padding: 10px;
   border-radius: 10px;
   width: 100%;
   background-color: #21262d;
 }
-.competences-page .tech-portfolio .tech-item .tech-list {
+.competences-page .competence-content .tech-portfolio .tech-item .tech-list {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -79,17 +98,17 @@
   background: linear-gradient(to right, #58a6ff, #3fb950);
   border-radius: 10px;
 }
-.competences-page .tech-portfolio .tech-item .tech-list .tech-card {
+.competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
-.competences-page .tech-portfolio .tech-item .tech-list .tech-card i {
+.competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card i {
   font-size: 2rem;
   color: #ffffff;
 }
-.competences-page .tech-portfolio .tech-item .tech-list .tech-card span {
+.competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card span {
   font-size: 1rem;
   color: #ffffff;
 }/*# sourceMappingURL=competence.css.map */

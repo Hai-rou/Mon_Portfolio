@@ -2,7 +2,6 @@
     position: relative;
     z-index: 1;
     background-color: grey;
-    border: solid 1px red;
     border-radius: 10px;
     max-width: 1440px;
     margin: 0 auto;
@@ -15,8 +14,9 @@
         justify-content: center;
         .projects-list{
             display: flex;
-            justify-content: space-between;
-            width: 75%;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
             padding: 20px;
             a{
                 display: flex;
@@ -66,7 +66,6 @@
             margin-top: 20px;
             
             .activity-card{
-                border: solid 1px black;
                 border-radius: 10px;
                 padding: 20px;
                 width: 400px;
@@ -100,6 +99,7 @@
                 }
                 .activity-footer{
                     display: flex;
+                    justify-content: center;
                     gap: 10px;
                     flex-wrap: wrap;
                     .skill-badge{
