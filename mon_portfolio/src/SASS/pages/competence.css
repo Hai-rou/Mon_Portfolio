@@ -113,6 +113,31 @@
   color: #ffffff;
 }
 
+@media (max-width: 1024px) {
+  .competences-page {
+    margin: 10px;
+  }
+  .competences-page .competence-content .logo-anime {
+    width: 250px;
+    height: 250px;
+  }
+  .competences-page .competence-content .tech-portfolio {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .competences-page .competence-content .tech-portfolio .tech-item {
+    width: 70%;
+    padding: 0;
+  }
+  .competences-page .competence-content .tech-portfolio .tech-item .tech-list {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card {
+    padding: 10px;
+  }
+}
 @media (max-width: 768px) {
   .competences-page {
     margin: 10px;

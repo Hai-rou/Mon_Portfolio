@@ -101,13 +101,16 @@
     padding: 20px;
   }
   .about-page .about-me .photos {
-    width: 30%;
+    width: 80%;
   }
   .about-page .about-me figure {
-    width: 30%;
+    width: 80%;
   }
   .about-page .about-me figure img {
-    width: 150px;
+    width: 100%;
+  }
+  .about-page .about-me figure figcaption {
+    font-size: 10px;
   }
 }
 @media (max-width: 768px) {

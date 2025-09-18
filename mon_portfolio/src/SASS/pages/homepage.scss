@@ -132,6 +132,29 @@
 
 @media (max-width: 1024px){
     .homepage{
+        padding: 10px;
+        .realisation{
+            height: auto;
+            .reali{
+                .reve{
+                    img{
+                        width: 80%;
+                        height: auto;
+                    }
+                }
+                .info{
+                    width: 80%;
+                    margin: 20px 0;
+                }
+                .tech{
+                    width: 50%;
+                    .tech-item{
+                        gap: 10px;
+                    }
+                   
+                }
+            }
+        }
         section{
             h2{
                 right: 0;
@@ -154,7 +177,7 @@
             .pres-content{
                 flex-direction: column;
                 img{
-                    width: 50%;
+                    width: 30%;
                     margin-bottom: 20px;
                 }
                 p{
@@ -178,11 +201,19 @@
                     margin: 20px 0;
                 }
                 .tech{
-                    width: 80%;
+                    width: 50%;
                     .tech-item{
-                        justify-content: center;
+                        gap: 10px;
                     }
+                   
                 }
+            }
+        }
+        .contact{
+            height: auto;
+            padding-bottom: 20px;
+            h2{
+                width: 90%;
             }
         }
     }

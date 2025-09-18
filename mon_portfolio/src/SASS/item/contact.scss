@@ -17,3 +17,20 @@
         }
     }
 }
+
+@media (max-width: 1024px){
+    .contact-content{
+        padding-bottom: 20px;
+        form{
+            width: 60%;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .contact-content{
+        form{
+            width: 80%;
+        }
+    }
+}

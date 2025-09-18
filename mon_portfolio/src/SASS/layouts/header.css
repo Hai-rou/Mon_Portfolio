@@ -1,9 +1,9 @@
-@charset "UTF-8";
 .navbar {
   display: flex;
   width: 100%;
   transition: all 0.3s ease;
   background-color: #0D1117;
+  position: relative;
 }
 .navbar .name {
   display: flex;
@@ -20,6 +20,11 @@
   border: none;
   color: white;
   cursor: pointer;
+  outline: none;
+}
+.navbar .menu-btn:focus {
+  outline: 2px solid #58A6FF;
+  outline-offset: 2px;
 }
 .navbar .nav-links {
   width: 100%;
@@ -60,9 +65,10 @@
 @media (max-width: 1024px) {
   .navbar {
     align-items: center;
+    height: 60px;
   }
   .navbar .name {
-    width: 30%;
+    width: 20%;
     text-align: center;
   }
   .navbar .nav-links {
@@ -86,9 +92,14 @@
   }
   .navbar .name {
     width: 30%;
-    font-size: 10px;
+    font-size: 17px;
+  }
+  .navbar .menu-btn {
+    display: block;
+    padding-right: 40px;
   }
   .navbar .nav-links {
+    display: none;
     gap: 5px;
     padding: 0;
   }
@@ -98,25 +109,9 @@
   }
   .navbar .nav-links li a {
     padding: 8px 0;
-    font-size: 7px;
+    font-size: 11px;
   }
-  /* Quand sticky sur mobile → horizontal */
-  .navbar.sticky {
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-    width: 100%;
-    height: 50px;
-  }
-  .navbar.sticky .menu-btn {
-    display: block;
-    padding-right: 40px;
-  }
-  .navbar.sticky .name {
-    width: 30%;
-    margin: 0;
-  }
-  .navbar.sticky .nav-links.open {
+  .navbar .nav-links.open {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,12 +119,13 @@
     border-left: solid 5px #58A6FF;
     border-bottom: solid 5px #58A6FF;
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: 40px;
-    width: 150px;
+    width: 200px;
     border-radius: 10px;
     padding: 10px 0;
-    animation: downToUp 0.9s ease forwards;
+    animation: downToUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transition: opacity 0.3s, transform 0.3s;
   }
   @keyframes downToUp {
     from {
@@ -140,18 +136,5 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-  .navbar.sticky .nav-links {
-    display: none;
-    justify-content: flex-end;
-    gap: 8px;
-  }
-  .navbar.sticky .nav-links li {
-    width: auto;
-    text-align: left;
-  }
-  .navbar.sticky .nav-links li a {
-    font-size: 8px;
-    padding: 6px 10px;
   }
 }/*# sourceMappingURL=header.css.map */

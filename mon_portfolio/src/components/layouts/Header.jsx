@@ -46,7 +46,17 @@ const Header = () => {
         className={`navbar ${isSticky ? 'sticky' : ''}`}
       >
         <div className="name">&lt;/&gt; HHoumadi</div>
-        <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="menu-btn"
+          onClick={() => {
+            if (!isOpen && navbarRef.current) {
+              setIsOpen(true);
+              navbarRef.current.scrollIntoView({ behavior: "smooth" });
+            } else {
+              setIsOpen(false);
+            }
+          }}
+        >
           {isOpen ? "✖" : "☰"}
         </button>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`}>

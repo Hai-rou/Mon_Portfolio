@@ -152,12 +152,18 @@
 }
 @media (max-width: 768px) {
   .banner img {
-    width: 50%;
+    width: 80%;
     height: auto;
   }
   .banner .banner-content {
     top: 5%;
     left: 5%;
+  }
+  .banner .banner-content .subtitle {
+    width: 100%;
+    position: absolute;
+    bottom: -400%;
+    left: 100%;
   }
   .banner .banner-content .typing-wrapper {
     font-size: 1rem;

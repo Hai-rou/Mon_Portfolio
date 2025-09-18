@@ -186,6 +186,45 @@
   font-weight: bold;
 }
 
+@media (max-width: 1024px) {
+  .activites-page {
+    margin: 20px;
+    padding: 20px;
+  }
+  .activites-page .projects-container .projects-list {
+    flex-direction: column;
+  }
+  .activites-page .projects-container .projects-list a {
+    margin-bottom: 20px;
+  }
+  .activites-page .projects-container .projects-list a img {
+    width: 100px;
+  }
+  .activites-page .formation-section {
+    margin-bottom: 20px;
+  }
+  .activites-page .formation-section .activities-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .activites-page .formation-section .activities-list .activity-card {
+    width: 50%;
+  }
+  .activites-page .formation-section .activities-list .activity-card .activity-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .activites-page .formation-section .activities-list .activity-card .activity-info img {
+    width: 80px;
+    height: 80px;
+  }
+  .activites-page .modal-overlay .modal-content {
+    width: 90%;
+  }
+  .activites-page .modal-overlay .modal-content img {
+    width: 80%;
+  }
+}
 @media (max-width: 768px) {
   .activites-page {
     margin: 10px;
@@ -199,7 +238,7 @@
     margin-bottom: 20px;
   }
   .activites-page .projects-container .projects-list a img {
-    width: 200px;
+    width: 150px;
     height: 50px;
   }
   .activites-page .formation-section {

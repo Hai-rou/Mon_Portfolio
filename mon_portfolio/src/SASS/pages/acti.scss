@@ -46,6 +46,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
+               
                 .see-more-btn{
                     background: grey;
                     color: #3fb950;
@@ -186,6 +187,52 @@
    
 }
 
+@media (max-width: 1024px) {
+    .activites-page {
+        margin: 20px;
+        padding: 20px;
+        .projects-container{
+            .projects-list{
+                flex-direction: column;
+                a{
+                    margin-bottom: 20px;
+                    img{
+                        width: 100px;
+                    }
+                }
+                
+            }
+        }
+        .formation-section{
+            margin-bottom: 20px;
+            .activities-list{
+                flex-direction: column;
+                align-items: center;
+                .activity-card{
+                    width: 50%;
+                    .activity-info{
+                        flex-direction: column;
+                        align-items: center;
+                        img{
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                }
+            }
+        }
+        .modal-overlay{
+            .modal-content{
+                width: 90%;
+                img{
+                    width: 80%;
+                }
+            }
+        }
+    }
+    
+}
+
 @media (max-width: 768px) {
     .activites-page {
         margin: 10px;
@@ -197,7 +244,7 @@
                 a{
                     margin-bottom: 20px;
                     img{
-                        width: 200px;
+                        width: 150px;
                         height: 50px;
                     }
                 }

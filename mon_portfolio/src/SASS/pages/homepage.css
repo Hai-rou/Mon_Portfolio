@@ -127,6 +127,26 @@
 }
 
 @media (max-width: 1024px) {
+  .homepage {
+    padding: 10px;
+  }
+  .homepage .realisation {
+    height: auto;
+  }
+  .homepage .realisation .reali .reve img {
+    width: 80%;
+    height: auto;
+  }
+  .homepage .realisation .reali .info {
+    width: 80%;
+    margin: 20px 0;
+  }
+  .homepage .realisation .reali .tech {
+    width: 50%;
+  }
+  .homepage .realisation .reali .tech .tech-item {
+    gap: 10px;
+  }
   .homepage section h2 {
     right: 0;
     width: 70%;
@@ -144,7 +164,7 @@
     flex-direction: column;
   }
   .homepage .presentation .pres-content img {
-    width: 50%;
+    width: 30%;
     margin-bottom: 20px;
   }
   .homepage .presentation .pres-content p {
@@ -166,9 +186,16 @@
     margin: 20px 0;
   }
   .homepage .realisation .reali .tech {
-    width: 80%;
+    width: 50%;
   }
   .homepage .realisation .reali .tech .tech-item {
-    justify-content: center;
+    gap: 10px;
+  }
+  .homepage .contact {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .homepage .contact h2 {
+    width: 90%;
   }
 }/*# sourceMappingURL=homepage.css.map */

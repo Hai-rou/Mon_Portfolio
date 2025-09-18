@@ -117,7 +117,7 @@ export function AnimatedBanner() {
                     <span className="line line2">développeur Web</span>
                     <span className="caret" aria-hidden="true"></span>
                 </h1>
-                <p>Création moderne et responsive pour web</p>
+                <p className="subtitle">Création moderne et responsive pour web</p>
             </div>
         </div>
     );

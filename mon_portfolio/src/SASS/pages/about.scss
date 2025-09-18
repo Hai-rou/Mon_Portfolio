@@ -100,12 +100,15 @@
         padding: 20px;
         .about-me{
             .photos{
-                width: 30%;
+                width: 80%;
             }
             figure{
-                width: 30%;
+                width: 80%;
                 img{
-                    width: 150px;
+                    width: 100%;
+                }
+                figcaption{
+                    font-size: 10px;
                 }
             }
         }
