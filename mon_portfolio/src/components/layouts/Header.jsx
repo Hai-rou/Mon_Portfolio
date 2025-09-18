@@ -75,9 +75,11 @@ const Header = () => {
           <Link to="/competence" onClick={scrollToNav}>
             <li>Compétences</li>
           </Link>
-          <Link to="/contact" onClick={scrollToNav}>
-            <li>Contact</li>
-          </Link>
+          <a 
+          href="/assets/CV/CV 2025.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >CV</a>
         </ul>
       </nav>
       {isSticky && <div style={{ height: `${navbarHeight}px` }} />}

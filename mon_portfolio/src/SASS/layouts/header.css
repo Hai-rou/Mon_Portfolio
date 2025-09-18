@@ -38,7 +38,7 @@
   color: white;
   display: block;
 }
-.navbar .nav-links li {
+.navbar .nav-links li, .navbar .nav-links a {
   border-radius: 20px;
   list-style: none;
   text-decoration: none;
@@ -47,7 +47,7 @@
   display: block;
   padding: 10px;
 }
-.navbar .nav-links li:hover {
+.navbar .nav-links li:hover, .navbar .nav-links a:hover {
   background: linear-gradient(to right, #58A6FF, #3FB950) !important;
   border-radius: 20px;
   color: white;
