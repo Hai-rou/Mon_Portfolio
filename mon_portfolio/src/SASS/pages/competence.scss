@@ -115,3 +115,27 @@
     }
 }
 
+@media (max-width: 768px) {
+    .competences-page{
+        margin: 10px;
+        .competence-content{
+            .logo-anime {
+                width: 200px;
+                height: 200px;
+            }
+            .tech-portfolio{
+                flex-direction: column;
+                .tech-item{
+                    padding: 0;
+                    .tech-list{
+                        flex-wrap: wrap;
+                        height: auto;
+                        .tech-card{
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

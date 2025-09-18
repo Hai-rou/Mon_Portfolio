@@ -1,6 +1,6 @@
 // Container principal des compétences
 .skills-container {
-  width: 60%;
+  width: 100%;
   background: linear-gradient(to right, #E6EDF3, #8B949E);
   border-radius: 10px;
   // Section des compétences
@@ -85,6 +85,19 @@
       }
     }
   }
+}
+
+@media (max-width: 1024px) {
+  .competences-container{
+    flex-direction: column;
+    align-items: center;
+    img{
+      margin-bottom: 20px;
+    }
+    .skills-container {
+      width: 80%;
+    }
+  } 
 }
 
 @media (max-width: 768px) {

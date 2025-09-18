@@ -93,4 +93,47 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+@media (max-width: 1024px) {
+  .about-page {
+    margin: 20px;
+    padding: 20px;
+  }
+  .about-page .about-me .photos {
+    width: 30%;
+  }
+  .about-page .about-me figure {
+    width: 30%;
+  }
+  .about-page .about-me figure img {
+    width: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .about-page {
+    margin: 20px;
+    padding: 20px;
+  }
+  .about-page .about-me {
+    flex-direction: column;
+  }
+  .about-page .about-me .arrow {
+    margin: 20px 0;
+  }
+  .about-page .about-me .arrow svg {
+    transform: rotate(0deg);
+  }
+  .about-page .about-me .photos {
+    width: 50%;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+  }
+  .about-page .about-me figure {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .about-page .about-me figure img {
+    width: 100%;
+  }
 }/*# sourceMappingURL=about.css.map */

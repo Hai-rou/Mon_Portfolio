@@ -3,14 +3,22 @@
     background: linear-gradient(to right, #58A6FF, #3FB950);
     border: solid 3px #E6EDF3;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     height: 100%;
     max-width: 1440px;
     margin: 0 auto;    
     h1{
         text-align: center;
     }
+    p{
+        text-align: center;
+        font-size: 1.2rem;
+        color: white;
+    }
     .projet-en-cours{
+        h2{
+            text-align: center;
+        }
         .reves{
             display: flex;
             justify-content: space-around;
@@ -26,6 +34,45 @@
             }
             .reves-item{
                 padding-right: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .vers-realisation{
+        margin: 20px;
+        padding: 20px;
+        .projet-en-cours{
+            .reves{
+                align-items: center;
+                .reves-maquette{
+                    width: 90%;
+                    margin-bottom: 20px;
+                    img{
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .vers-realisation{
+        .projet-en-cours{
+            .reves{
+                flex-direction: column;
+                align-items: center;
+                .reves-maquette{
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+                .reves-item{
+                    padding-right: 0;
+                }
             }
         }
     }

@@ -3,12 +3,20 @@
   background: linear-gradient(to right, #58A6FF, #3FB950);
   border: solid 3px #E6EDF3;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
 }
 .vers-realisation h1 {
+  text-align: center;
+}
+.vers-realisation p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+}
+.vers-realisation .projet-en-cours h2 {
   text-align: center;
 }
 .vers-realisation .projet-en-cours .reves {
@@ -28,4 +36,36 @@
 }
 .vers-realisation .projet-en-cours .reves .reves-item {
   padding-right: 20px;
+}
+
+@media (max-width: 1024px) {
+  .vers-realisation {
+    margin: 20px;
+    padding: 20px;
+  }
+  .vers-realisation .projet-en-cours .reves {
+    align-items: center;
+  }
+  .vers-realisation .projet-en-cours .reves .reves-maquette {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .vers-realisation .projet-en-cours .reves .reves-maquette img {
+    width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .vers-realisation .projet-en-cours .reves {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vers-realisation .projet-en-cours .reves .reves-maquette {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .vers-realisation .projet-en-cours .reves .reves-item {
+    padding-right: 0;
+  }
 }/*# sourceMappingURL=realisation.css.map */

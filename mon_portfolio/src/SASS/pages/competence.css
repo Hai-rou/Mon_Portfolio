@@ -111,4 +111,27 @@
 .competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card span {
   font-size: 1rem;
   color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .competences-page {
+    margin: 10px;
+  }
+  .competences-page .competence-content .logo-anime {
+    width: 200px;
+    height: 200px;
+  }
+  .competences-page .competence-content .tech-portfolio {
+    flex-direction: column;
+  }
+  .competences-page .competence-content .tech-portfolio .tech-item {
+    padding: 0;
+  }
+  .competences-page .competence-content .tech-portfolio .tech-item .tech-list {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card {
+    padding: 10px;
+  }
 }/*# sourceMappingURL=competence.css.map */

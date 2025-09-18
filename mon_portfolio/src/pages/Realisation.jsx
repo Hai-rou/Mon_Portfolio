@@ -37,6 +37,12 @@ function Realisation() {
             <p>
                 Actuellement, je travaille sur un projet de site web pour une entreprise basée dans le Calvados.
             </p>
+            <p>
+                Ce projet est une excellente opportunité pour moi de mettre en pratique mes compétences en développement web et d'apprendre de nouvelles technologies.
+            </p>
+            <p>
+                Le site est en cours de développement et je suis enthousiaste à l'idée de le partager une fois qu'il sera terminé.
+            </p>
             <div>
                 <h2>Reves d'exploration</h2>
                 <p>

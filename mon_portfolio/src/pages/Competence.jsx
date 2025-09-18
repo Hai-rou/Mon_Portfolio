@@ -18,7 +18,7 @@ const techStackBackEnd = [
 function initOrbs(ref) {
     const container = ref;
     const orbs = [];
-    const orbCount = 10;
+    const orbCount = 15;
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
 
@@ -80,6 +80,13 @@ function Competence() {
         if (bgRef.current) {
             initOrbs(bgRef.current);
         }
+        // Cleanup: remove orbs on unmount
+        return () => {
+            if (bgRef.current) {
+                const orbs = bgRef.current.querySelectorAll('.orb');
+                orbs.forEach(orb => orb.remove());
+            }
+        };
     }, []);
     return(
         <div id="competence-bg" className="competences-page" ref={containerRef}>

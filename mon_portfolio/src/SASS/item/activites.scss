@@ -206,6 +206,21 @@
   }
 }
 
+@media (max-width: 1024px) {
+    .activites{
+        height: auto;
+        .act-container{
+            grid-template-columns: 1fr;
+            .git-container{
+                grid-column-start: auto;
+                grid-row-start: auto;
+                grid-row-end: auto;
+                height: auto;
+            }
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .activites{
         height: auto;

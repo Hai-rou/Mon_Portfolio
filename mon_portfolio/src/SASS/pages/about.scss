@@ -93,3 +93,50 @@
     }
     
 }
+
+@media (max-width: 1024px) {
+    .about-page{
+        margin: 20px;
+        padding: 20px;
+        .about-me{
+            .photos{
+                width: 30%;
+            }
+            figure{
+                width: 30%;
+                img{
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) { 
+    .about-page{
+        margin: 20px;
+        padding: 20px;
+        .about-me{
+            flex-direction: column;
+            .arrow{
+                margin: 20px 0;
+                svg{
+                    transform: rotate(0deg);
+                }
+            }
+            .photos{
+                width: 50%;
+                grid-template-columns: 1fr 1fr;
+                margin-bottom: 20px;
+            }
+            figure{
+                width: 50%;
+                margin-bottom: 20px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+}

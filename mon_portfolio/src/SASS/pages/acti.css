@@ -1,11 +1,25 @@
 .activites-page {
+  background: linear-gradient(95deg, #21262D, #8B949E, #21262D, #8B949E);
+  background-size: 400% 400%;
+  animation: gradient-shift 5s ease infinite;
   position: relative;
   z-index: 1;
   background-color: grey;
   border-radius: 10px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
+}
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .activites-page h1 {
   text-align: center;
@@ -170,4 +184,46 @@
   color: white;
   border-radius: 20px;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .activites-page {
+    margin: 10px;
+    padding: 10px;
+  }
+  .activites-page .projects-container .projects-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .activites-page .projects-container .projects-list a {
+    margin-bottom: 20px;
+  }
+  .activites-page .projects-container .projects-list a img {
+    width: 200px;
+    height: 50px;
+  }
+  .activites-page .formation-section {
+    margin-bottom: 20px;
+  }
+  .activites-page .formation-section .activities-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .activites-page .formation-section .activities-list .activity-card {
+    width: 90%;
+  }
+  .activites-page .formation-section .activities-list .activity-card .activity-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .activites-page .formation-section .activities-list .activity-card .activity-info img {
+    width: 80px;
+    height: 80px;
+  }
+  .activites-page .modal-overlay .modal-content {
+    width: 90%;
+  }
+  .activites-page .modal-overlay .modal-content img {
+    width: 80%;
+  }
 }/*# sourceMappingURL=acti.css.map */
