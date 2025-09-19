@@ -7,6 +7,10 @@
         flex-direction: column;
         width: 40%;
         gap: 10px;
+        label{
+            text-align: center;
+            color: white;
+        }
         input{
             height: 25px;
             border-radius: 5px;

@@ -18,11 +18,10 @@ function Footer () {
                 <div>
                     <a 
                         href="mailto:hairou.houmadi@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="mail-btn"
                         >
-                        <i className="fa fa-envelope"></i>
+                        <i className="fa fa-envelope" aria-hidden="true"></i>
+                        <span className="sr-only">Envoyer un e-mail</span>
                     </a>
                 </div>
             </div>

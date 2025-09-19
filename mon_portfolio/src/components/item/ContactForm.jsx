@@ -68,7 +68,9 @@ function ContactForm() {
   return (
     <div className="contact-content">
       <form onSubmit={handleSubmit}>
+        <label htmlFor="nom">Nom</label>
         <input
+          id="nom"
           type="text"
           name="nom"
           placeholder="Nom"
@@ -77,7 +79,9 @@ function ContactForm() {
           required
           disabled={loading}
         />
+        <label htmlFor="email">Email</label>
         <input
+          id="email"
           type="email"
           name="email"
           placeholder="Votre e-mail"
@@ -86,7 +90,9 @@ function ContactForm() {
           required
           disabled={loading}
         />
+        <label htmlFor="message">Message</label>
         <textarea
+          id="message"
           className="message"
           name="message"
           placeholder="Votre message"
