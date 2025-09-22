@@ -58,7 +58,7 @@
 }
 .activites-page .projects-container .projects-list .project-card .see-more-btn {
   background: grey;
-  color: #3fb950;
+  color: #3FB950;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
@@ -68,7 +68,7 @@
   transition: background-color 0.3s ease;
 }
 .activites-page .projects-container .projects-list .project-card .see-more-btn:hover {
-  background: linear-gradient(to right, #58a6ff, #3fb950);
+  background: linear-gradient(to right, #58A6FF, #3FB950);
   color: white;
   border-radius: 40px;
 }
@@ -92,7 +92,7 @@
   border-bottom: solid 1px black;
   border-radius: 10px;
   color: white;
-  background: linear-gradient(to right, #58a6ff, #3fb950);
+  background: linear-gradient(to right, #58A6FF, #3FB950);
 }
 .activites-page .formation-section .activities-list .activity-card .activity-info img {
   background: white;
@@ -180,7 +180,7 @@
   margin-top: 10px;
 }
 .activites-page .modal-overlay .modal-content a:hover {
-  background: linear-gradient(to right, #58a6ff, #3fb950);
+  background: linear-gradient(to right, #58A6FF, #3FB950);
   color: white;
   border-radius: 20px;
   font-weight: bold;

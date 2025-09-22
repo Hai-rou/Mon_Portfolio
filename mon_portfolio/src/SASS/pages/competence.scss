@@ -1,3 +1,4 @@
+@import '../_variables';
 .competences-page{
     position: relative;
     overflow: hidden;
@@ -5,7 +6,7 @@
     padding: 10px;
     max-width: 1440px;
     margin: 0 auto;
-    background: linear-gradient(45deg, #58a6ff, #3fb950,#58a6ff, #3fb950);
+    background: linear-gradient(45deg, $color-primary, $color-green, $color-primary, $color-green);
    
     .orbs-bg{
         position: absolute;
@@ -74,7 +75,7 @@
             h4{
                 width: 100%;
                 text-align: center;
-                color: #58a6ff;
+                color: $color-primary;
                 font-weight: bold;
                 font-size: 20px;
             }
@@ -85,7 +86,7 @@
                 padding: 10px;
                 border-radius: 10px;
                 width: 100%;
-                background-color: #21262d;
+                background-color: $color-bg-dark;
             .tech-list{
                     display: flex;
                     justify-content: space-around;
@@ -93,7 +94,7 @@
                     gap: 10px;
                     width: 100%;
                     height: 90px;
-                    background: linear-gradient(to right, #58a6ff, #3fb950);
+                    background: linear-gradient(to right, $color-primary, $color-green);
                     border-radius: 10px;
                     .tech-card{
                         display: flex;
@@ -102,11 +103,11 @@
                         gap: 5px;
                         i{
                             font-size: 2rem;
-                            color: #ffffff;
+                            color: $color-white;
                         }
                         span{
                             font-size: 1rem;
-                            color: #ffffff;
+                            color: $color-white;
                         }
                     }
                 }

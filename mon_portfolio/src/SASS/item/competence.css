@@ -18,7 +18,7 @@
 }
 .skills-container .skills .skill .skill-info .skill-label {
   font-weight: bold;
-  color: black;
+  color: #000;
   font-size: 16px;
 }
 .skills-container .skills .skill .skill-info .skill-label i {
@@ -27,7 +27,7 @@
 }
 .skills-container .skills .skill .skill-info .percentage {
   font-weight: bold;
-  color: black;
+  color: #000;
   font-size: 14px;
 }
 .skills-container .skills .skill .bar {

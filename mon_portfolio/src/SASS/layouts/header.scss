@@ -1,14 +1,15 @@
+@import '../variables';
 .navbar {
     display: flex;
     width: 100%;
-    transition: all 0.3s ease;
-    background-color: #0D1117  ;
+    transition: all $transition-fast ease;
+    background-color: $color-bg;
     position: relative;
     .name{
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #58A6FF;
+        color: $color-primary;
         font-weight: bold;
         font-size: 1.2rem;
         width: 20%;
@@ -18,15 +19,16 @@
         display: none; // caché par défaut
         background: none;
         border: none;
-        color: white;
+    color: $color-white;
         cursor: pointer;
         outline: none;
         &:focus {
-            outline: 2px solid #58A6FF;
+            @import '../variables';
+            outline: 2px solid $color-primary;
             outline-offset: 2px;
         }
     }
-    
+                    background-color: $color-bg;
     .nav-links {
         width: 100%;
         display: flex;
@@ -112,12 +114,12 @@
             }
         }
         .nav-links.open {
-            display: flex;
+            border-top: solid 5px $color-primary;
             flex-direction: column;
             align-items: center;
-            background-color: #0D1117;
-            border-left: solid 5px #58A6FF;
-            border-bottom: solid 5px #58A6FF;
+            background-color: $color-bg;
+            border-left: solid 5px $color-primary;
+            border-bottom: solid 5px $color-primary;
             position: absolute;
             right: 10px;
             top: 40px;

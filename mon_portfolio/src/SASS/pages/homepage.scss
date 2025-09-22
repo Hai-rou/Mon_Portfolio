@@ -1,3 +1,4 @@
+@import '../_variables';
 .homepage{
     max-width: 1440px;
     margin: 0 auto; 
@@ -13,13 +14,13 @@
             border-bottom: solid 2px grey;
             border-bottom-width: medium;
             width: 20%;
-            color: #E6EDF3 ;
+            color: $color-grey-light ;
             margin-bottom: 20px;
             padding-bottom: 10px;
         }
     }
     .presentation{
-        background-color: #21262D ;
+    background-color: $color-bg-dark ;
         height: 400px;
         .pres-content{
             display: flex;
@@ -52,7 +53,7 @@
                 gap: 10px;
                 p{
                     margin: 0;
-                    color: #8B949E;
+                    color: $color-grey;
                 }
                 img{
                     width: 200px;
@@ -61,7 +62,7 @@
                 }
             }
             .info{
-                color: #8B949E ;
+                color: $color-grey ;
                 text-align: center;
                 width: 40%;
             }
@@ -71,11 +72,11 @@
                 gap: 10px;
                 border-radius: 10px;
                 padding: 15px;
-                background-color: #21262D;
+                background-color: $color-bg-dark;
                 width: 20%;
                 p{
                     font-size: 10px;
-                    color: #58A6FF;
+                    color: $color-primary;
                     text-transform: uppercase;
                     font-weight: bold;
                     text-align: center;
@@ -111,7 +112,7 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 10px;
-        background-color: #21262D;
+    background-color: $color-bg-dark;
         h2{
             right: 0;
             width: 70%;

@@ -1,17 +1,20 @@
+
+@import 'variables';
+
 @font-face {
     font-family: 'Rajdhani';
     src: url("/public/assets/Font/Rajdhani/Rajdhani-Regular.ttf");
 }
 
-html{
+html {
     margin: 0;
     padding: 0;
-    body{
+    body {
         width: 100%;
         margin: 0 auto;
         height: 100%;
-        background: #0D1117;
-        font-family: 'Rajdhani', Arial, sans-serif;
+        background: $color-bg;
+        font-family: $font-main;
     }
 }
 

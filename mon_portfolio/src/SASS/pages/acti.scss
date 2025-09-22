@@ -1,5 +1,6 @@
+@import '../_variables';
 .activites-page {
-    background: linear-gradient(95deg, #21262D, #8B949E, #21262D, #8B949E);
+    background: linear-gradient(95deg, $color-bg-dark, $color-grey, $color-bg-dark, $color-grey);
     background-size: 400% 400%;
     animation: gradient-shift 5s ease infinite;
     position: relative;
@@ -49,7 +50,7 @@
                
                 .see-more-btn{
                     background: grey;
-                    color: #3fb950;
+                    color: $color-green;
                     border: none;
                     padding: 8px 12px;
                     border-radius: 5px;
@@ -58,7 +59,7 @@
                     cursor: pointer;
                     transition: background-color 0.3s ease;
                     &:hover{
-                        background: linear-gradient(to right, #58a6ff, #3fb950);
+                        background: linear-gradient(to right, $color-primary, $color-green);
                         color: white;
                         border-radius: 40px;
                     }
@@ -87,7 +88,7 @@
                     border-bottom: solid 1px black;
                     border-radius: 10px;
                     color: white;
-                    background: linear-gradient(to right, #58a6ff, #3fb950);
+                    background: linear-gradient(to right, $color-primary, $color-green);
                     img{
                         background: white;
                         width: 120px;
@@ -176,7 +177,7 @@
                 text-decoration: none;
                 margin-top: 10px;
                 &:hover{
-                    background: linear-gradient(to right, #58a6ff, #3fb950);
+                    background: linear-gradient(to right, $color-primary, $color-green);
                     color: white;
                     border-radius: 20px;
                     font-weight: bold;

@@ -1,32 +1,32 @@
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #0D1117 ;
-    padding: 10px;
-    color: #E6EDF3;
-    .footnav{
+@import '../variables';
+
+.footer {
+    width: 100%;
+    background: $color-bg;
+    color: $color-white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    font-size: 1rem;
+    z-index: 10;
+    border-top: 1px solid $color-primary;
+    .footer-content {
         display: flex;
-        margin-bottom: 10px;
-        margin-top: 20px;
-        .github-btn{
-            cursor: pointer;
-            img{
-                background-color: white;
-                border-radius: 54%;
-                width: 40%;
-            }
-        }
-        .mail-btn{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .footer-links {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            gap: 5px;
-            cursor: pointer;
-            .fa-envelope{
-                width: 20%;
-                color: #E6EDF3 ;
+            gap: 15px;
+            a {
+                color: $color-primary;
+                text-decoration: none;
+                transition: color $transition-fast;
+                &:hover {
+                    color: $color-white;
+                }
             }
         }
     }

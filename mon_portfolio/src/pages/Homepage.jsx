@@ -37,11 +37,11 @@ function Homepage () {
                     <div className='tech'>
                         <p>Nouvelle technologie abordée pour le projet</p>
                         <div className='tech-item'>
-                            <img src="../assets/realisation/astro.svg" alt="Logo de la technologie Astro" />
+                            <img src="/assets/realisation/astro.svg" alt="Logo de la technologie Astro" />
                             <span>Astro</span>
                         </div>
                         <div className='tech-item'>
-                            <img src="../assets/realisation/tailwind2.webp" alt="Logo de la technologie Tailwind" />
+                            <img src="/assets/realisation/tailwind2.webp" alt="Logo de la technologie Tailwind" />
                             <span>Tailwind</span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ function Homepage () {
             <section id="competences" className="competences">
                 <h2>Compétences</h2>
                 <div className='competences-container'>
-                    <img src="../assets/logo-H..webp" alt="Logo avec mon Pseudo" />
+                    <img src="/assets/logo-H..webp" alt="Logo avec mon Pseudo" />
                     <SkillsComponent /> 
                 </div>
                 

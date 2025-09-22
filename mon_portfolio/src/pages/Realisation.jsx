@@ -52,7 +52,7 @@ function Realisation() {
                 </p>
                 <div className="reves">
                   <div className="reves-maquette">
-                      <img src="/assets/realisation/Page d'accueil.png" alt="Maquette de reves d'exploration" />
+                      <img src="/assets/realisation/Page d'accueil.webp" alt="Maquette de reves d'exploration" />
                   </div>
                   <div className="reves-item">
                     <ToggleSection title="Objectif du site">

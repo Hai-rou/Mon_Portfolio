@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: #fff;
 }
 .banner .banner-content .typing-wrapper {
   position: relative;
@@ -85,7 +85,7 @@
   top: 0;
   width: 2px;
   height: 1.2em;
-  background: black;
+  background: #000;
   pointer-events: none;
   animation: caretMove 6s forwards, blink 0.7s step-end infinite;
 }

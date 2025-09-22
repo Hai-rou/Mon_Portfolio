@@ -4,6 +4,7 @@
   transition: all 0.3s ease;
   background-color: #0D1117;
   position: relative;
+  background-color: #0D1117;
 }
 .navbar .name {
   display: flex;
@@ -18,7 +19,7 @@
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: #fff;
   cursor: pointer;
   outline: none;
 }
@@ -107,7 +108,7 @@
     font-size: 11px;
   }
   .navbar .nav-links.open {
-    display: flex;
+    border-top: solid 5px #58A6FF;
     flex-direction: column;
     align-items: center;
     background-color: #0D1117;

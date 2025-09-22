@@ -41,7 +41,7 @@ function About () {
             </p>
             <section className='about-me'>
                 <figure>
-                    <img src="/assets/about/lycee_coutances.JPG" alt="Projet de reconnaissance des végétaux au Lycée agricole de Coutances" />
+                    <img src="/assets/about/lycee_coutances.webp" alt="Projet de reconnaissance des végétaux au Lycée agricole de Coutances" />
                     <figcaption>Projet de reconnaissance des végétaux au Lycée agricole de Coutances</figcaption>
                 </figure>
                 {/* Flèche SVG */}
@@ -51,10 +51,10 @@ function About () {
                     </svg>
                 </div>
                 <figure className='photos'>
-                    <img className='item' src="/assets/about/bvs_beaune.png" alt="Photo du magasin BVS Beaune" />
-                    <img className='item' src="/assets/about/casto_Quimper.jpg" alt="Photo du magasin de Castorama de Quimper" />
-                    <img className='item' src="/assets/about/fransbonhomme.jpg" alt="Photo du dépôt FransBohomme de Beaune" />
-                    <img className='item' src="/assets/about/prolians_beaune.png" alt="Photo du magasin de Prolians de Beaune" />
+                    <img className='item' src="/assets/about/bvs_beaune.webp" alt="Photo du magasin BVS Beaune" />
+                    <img className='item' src="/assets/about/casto_Quimper.webp" alt="Photo du magasin de Castorama de Quimper" />
+                    <img className='item' src="/assets/about/fransbonhomme.webp" alt="Photo du dépôt FransBohomme de Beaune" />
+                    <img className='item' src="/assets/about/prolians_beaune.webp" alt="Photo du magasin de Prolians de Beaune" />
                 </figure>
                 {/* Flèche SVG */}
                 <div className="arrow">
@@ -63,7 +63,7 @@ function About () {
                     </svg>
                 </div>
                 <figure>
-                    <img src="/assets/about/integrateur.png" alt="Image qui illustre le metier d'intégrateur web" />
+                    <img src="/assets/about/integrateur.webp" alt="Image qui illustre le metier d'intégrateur web" />
                     <figcaption>Le métier de développeur web</figcaption>
                 </figure>
             </section>

@@ -1,3 +1,4 @@
+@import '../variables';
 .bubbles-background {
     position: absolute;
     top: 0; 
@@ -12,7 +13,7 @@
         bottom: 0;
         width: 30px;
         height: 30px;
-        background: linear-gradient(to right, #0D1117, #8B949E);
+    background: linear-gradient(to right, $color-bg, $color-grey);
         border-radius: 50%;
         animation: rise 8s infinite linear;
         left: calc(2% + 96% * var(--i));

@@ -1,8 +1,9 @@
+@import '../variables';
 // Container principal des compétences
 .skills-container {
   width: 100%;
-  background: linear-gradient(to right, #E6EDF3, #8B949E);
-  border-radius: 10px;
+  background: linear-gradient(to right, $color-grey-light, $color-grey);
+  border-radius: $border-radius;
   // Section des compétences
   .skills {
     max-width: 600px;
@@ -22,7 +23,7 @@
         // Label de la compétence
         .skill-label {
           font-weight: bold;
-          color: black;
+          color: $color-black;
           font-size: 16px;
 
           // Icône
@@ -35,15 +36,15 @@
         // Pourcentage
         .percentage {
           font-weight: bold;
-          color: black;
+          color: $color-black;
           font-size: 14px;
         }
       }
 
       // Barre de progression
       .bar {
-        background: #e9ecef;
-        border-radius: 25px;
+  background: #e9ecef;
+  border-radius: 25px;
         overflow: hidden;
         height: 12px;
         position: relative;

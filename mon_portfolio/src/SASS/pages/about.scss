@@ -1,9 +1,10 @@
+@import '../_variables';
 .about-page{
-    background: linear-gradient(45deg, #21262D, #8B949E, #21262D, #8B949E);
+    background: linear-gradient(45deg, $color-bg-dark, $color-grey, $color-bg-dark, $color-grey);
     background-size: 400% 400%;
     animation: gradient-shift 5s ease infinite;
     padding: 20px;
-    border: solid 2px #58A6FF;
+    border: solid 2px $color-primary;
     border-radius: 10px;
     max-width: 1440px;
     margin: 0 auto;
@@ -14,11 +15,11 @@
     }
     h1{
         text-align: center;
-        color: #58A6FF;
+    color: $color-primary;
     }
     h2{
         text-align: center;
-        color: #3FB950;
+    color: $color-green;
     }
     .about-me{
         display: flex;
