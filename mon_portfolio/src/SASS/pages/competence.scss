@@ -1,4 +1,4 @@
-@import '../_variables';
+@use '../variables' as *;
 .competences-page{
     position: relative;
     overflow: hidden;

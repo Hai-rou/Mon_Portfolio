@@ -1,19 +1,18 @@
 import '../SASS/pages/competence.scss'
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Icon } from '@iconify/react';
 import SkillsComponent from '../components/item/SkillsComponent'
 import { useEffect,useRef } from 'react';
 import { gsap } from 'gsap';
 
 const techStackFrontEnd = [
-    { name: 'HTML', icon: 'fab fa-html5' },
-    { name: 'CSS', icon: 'fab fa-css3-alt' },
-    { name: 'JavaScript', icon: 'fab fa-js' },
-    { name: 'React', icon: 'fab fa-react' },
-    { name: 'Sass', icon: 'fab fa-sass' },
-    { name: 'vite', icon: 'fas fa-bolt' },
+    { name: 'HTML', icon: 'skill-icons:html' },
+    { name: 'CSS', icon: 'skill-icons:css' },
+    { name: 'JavaScript', icon: 'skill-icons:javascript' },
+    { name: 'React', icon: 'skill-icons:react-dark' },
+    { name: 'Sass', icon: 'skill-icons:sass' }
 ];
 const techStackBackEnd = [
-    { name: 'Python', icon: 'fab fa-python' },
+    { name: 'Python', icon: 'skill-icons:python-dark' },
 ];
 function initOrbs(ref) {
     const container = ref;
@@ -125,7 +124,7 @@ function Competence() {
                         <div className='tech-list'>
                             {techStackFrontEnd.map((tech, index) => (
                                 <div className='tech-card' key={index}>
-                                    <i className={tech.icon}></i>
+                                    <Icon icon={tech.icon} width="24" height="24" />
                                     <span>{tech.name}</span>
                                 </div>
                             ))}
@@ -136,7 +135,7 @@ function Competence() {
                         <div className='tech-list'>
                             {techStackBackEnd.map((tech, index) => (
                                 <div className='tech-card' key={index}>
-                                    <i className={tech.icon}></i>
+                                    <Icon icon={tech.icon} width="24" height="24" />
                                     <span>{tech.name}</span>
                                 </div>
                             ))}

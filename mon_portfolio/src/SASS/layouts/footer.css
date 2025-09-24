@@ -10,6 +10,7 @@
   font-size: 1rem;
   z-index: 10;
   border-top: 1px solid #58A6FF;
+  margin-top: auto;
 }
 .footer .footer-content {
   display: flex;
@@ -21,11 +22,42 @@
   display: flex;
   gap: 15px;
 }
-.footer .footer-content .footer-links a {
-  color: #58A6FF;
-  text-decoration: none;
-  transition: color 0.3s;
+.footer .footer-content .footer-links .github-btn img {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
 }
-.footer .footer-content .footer-links a:hover {
+.footer .footer-content .footer-links .mail-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
   color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    font-size: 0.95rem;
+  }
+  .footer .footer-content .footer-links {
+    gap: 10px;
+  }
+  .footer .footer-content .footer-links .mail-btn {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.9rem;
+  }
+  .footer .footer-content .footer-links {
+    gap: 5px;
+  }
 }/*# sourceMappingURL=footer.css.map */

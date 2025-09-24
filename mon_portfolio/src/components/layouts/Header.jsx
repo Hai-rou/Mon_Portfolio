@@ -1,4 +1,4 @@
-import "../../SASS/layouts/header.css"
+import "../../SASS/layouts/header.scss"
 import { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom"
 

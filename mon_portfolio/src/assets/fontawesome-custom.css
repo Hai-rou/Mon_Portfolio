@@ -1,0 +1,17 @@
+/* Import seulement les styles FontAwesome nécessaires */
+@import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+@import '@fortawesome/fontawesome-free/css/brands.min.css';
+@import '@fortawesome/fontawesome-free/css/solid.min.css';
+
+/* Optimisation : inclure seulement les icônes utilisées */
+.fa-html5::before { content: "\f13b"; }
+.fa-css3-alt::before { content: "\f38b"; }
+.fa-js::before { content: "\f3b8"; }
+.fa-react::before { content: "\f41b"; }
+.fa-sass::before { content: "\f41e"; }
+.fa-bolt::before { content: "\f0e7"; }
+.fa-python::before { content: "\f3e2"; }
+.fa-linkedin::before { content: "\f08c"; }
+.fa-github::before { content: "\f09b"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-download::before { content: "\f019"; }

@@ -1,4 +1,4 @@
-@import '../variables';
+@use '../variables' as *;
 // Container principal des compétences
 .skills-container {
   width: 100%;

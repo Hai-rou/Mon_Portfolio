@@ -1,4 +1,4 @@
-@import '../variables';
+@use '../variables' as *;
 .toggle-section{
     width: 100%;
     background: linear-gradient(to right, $color-grey, $color-grey-light);

@@ -1,7 +1,6 @@
 import "../SASS/pages/realisation.css"
 import BubblesBackground from "../components/item/BubblesBackground";
 import ToggleSection from "../components/item/ToggleSection";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Icon } from '@iconify/react';
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
@@ -70,16 +69,16 @@ function Realisation() {
                           <h4>FrontEnd</h4>
                           <div className="techno-list">
                             <Icon icon="simple-icons:astro" width="18" height="18" style={{marginRight: '8px'}} /> Astro
-                            <i className="fab fa-html5" style={{color: '#E34F26', marginRight: '8px'}}></i> HTML5
+                            <Icon icon="skill-icons:html" width="18" height="18" style={{marginRight: '8px'}} /> HTML5
                             <Icon icon="simple-icons:tailwindcss" width="18" height="18" style={{color: '#06B6D4', marginRight: '8px', marginLeft: '16px'}} /> TailwindCSS
-                            <i className="fab fa-css3-alt" style={{color: '#1572B6', marginRight: '8px', marginLeft: '16px'}}></i> CSS3
-                            <i className="fab fa-js-square" style={{color: '#F7DF1E', marginRight: '8px', marginLeft: '16px'}}></i> JavaScript
+                            <Icon icon="skill-icons:css" width="18" height="18" style={{marginRight: '8px', marginLeft: '16px'}} /> CSS3
+                            <Icon icon="skill-icons:javascript" width="18" height="18" style={{marginRight: '8px', marginLeft: '16px'}} /> JavaScript
                           </div>
                         </div>
                         <div className="front-back">
                           <h4>BackEnd</h4>
                           <div className="techno-list">
-                            <i className="fab fa-python" style={{color: '#777BB4', marginRight: '8px'}}></i> Python
+                            <Icon icon="skill-icons:python-dark" width="18" height="18" style={{marginRight: '8px'}} /> Python
                           </div>
                         </div>
                       </div>                          

@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://votre-domaine.com/sitemap.xml
+
+# Optimisations pour les crawlers
+Crawl-delay: 1
+
+# Autoriser l'indexation de toutes les pages
+Allow: /about
+Allow: /realisation
+Allow: /activites
+Allow: /competence
+
+# Bloquer les fichiers temporaires ou de développement
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.map$
+Disallow: /dist/
+Disallow: /.git/
+
+# Autoriser les ressources importantes pour le rendu
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.woff2
+Allow: /*.webp
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.svg

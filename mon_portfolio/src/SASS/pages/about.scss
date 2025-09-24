@@ -1,4 +1,4 @@
-@import '../_variables';
+@use '../variables' as *;
 .about-page{
     background: linear-gradient(45deg, $color-bg-dark, $color-grey, $color-bg-dark, $color-grey);
     background-size: 400% 400%;
@@ -8,6 +8,9 @@
     border-radius: 10px;
     max-width: 1440px;
     margin: 0 auto;
+    min-height: 100vh; // Assure une hauteur complète
+    padding-bottom: 120px; // Espace pour le footer
+    
     @keyframes gradient-shift {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }

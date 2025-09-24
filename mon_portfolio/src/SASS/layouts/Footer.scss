@@ -1,4 +1,4 @@
-@import '../variables';
+@use '../variables' as *;
 
 .footer {
     width: 100%;
@@ -6,12 +6,13 @@
     color: $color-white;
     text-align: center;
     padding: 20px 0;
-    position: relative;
+    position: relative; // Changé de fixed à relative
     bottom: 0;
     left: 0;
     font-size: 1rem;
     z-index: 10;
     border-top: 1px solid $color-primary;
+    margin-top: auto; // Pour pousser le footer vers le bas
     .footer-content {
         display: flex;
         flex-direction: column;
@@ -20,13 +21,51 @@
         .footer-links {
             display: flex;
             gap: 15px;
-            a {
-                color: $color-primary;
-                text-decoration: none;
-                transition: color $transition-fast;
-                &:hover {
-                    color: $color-white;
+            .github-btn {
+                img{
+                    width: 40px;
+                    height: 40px;
+                    background-color: $color-white;
+                    border-radius: 50%;
                 }
+            }
+            .mail-btn{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                padding: 10px 15px;
+                color: $color-white;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        font-size: 0.95rem;
+        .footer-content {
+            .footer-links {
+                gap: 10px;
+                .mail-btn{
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.9rem;
+        .footer-content {
+            .footer-links {
+                gap: 5px;
             }
         }
     }

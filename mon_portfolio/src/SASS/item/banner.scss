@@ -1,4 +1,4 @@
-@import '../variables';
+@use '../variables' as *;
 // Variables
 $animation-duration: 6s;
 $animation-easing: ease-in-out;

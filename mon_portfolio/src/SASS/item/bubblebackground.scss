@@ -1,4 +1,4 @@
-@import '../variables';
+@use '../variables' as *;
 .bubbles-background {
     position: absolute;
     top: 0; 

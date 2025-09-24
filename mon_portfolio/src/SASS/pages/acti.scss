@@ -1,4 +1,4 @@
-@import '../_variables';
+@use '../variables' as *;
 .activites-page {
     background: linear-gradient(95deg, $color-bg-dark, $color-grey, $color-bg-dark, $color-grey);
     background-size: 400% 400%;
@@ -10,6 +10,9 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    min-height: calc(100vh - 200px); // Hauteur minimale
+    padding-bottom: 120px; // Espace pour le footer
+    
     @keyframes gradient-shift {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
@@ -29,14 +32,13 @@
             padding: 20px;
             a{
                 display: flex;
-                flex-wrap: wrap;
                 align-items: center;
                 gap: 10px;
                 text-decoration: none;
                 color: white;
                 img{
-                    width: 40%;
-                    height: 30px;
+                    width: 50%;
+                    height: 50px;
                     padding: 10px;
                     border-radius: 10px;
                     background-color: rgb(212, 202, 202);

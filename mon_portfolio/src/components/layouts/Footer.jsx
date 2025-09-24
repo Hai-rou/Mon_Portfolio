@@ -1,26 +1,24 @@
-import "../../SASS/layouts/footer.css"
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "../../SASS/layouts/footer.scss"
+import { Icon } from '@iconify/react';
 
 function Footer () {
     return(
-        <footer>
-            <div className="footnav">
-                <div>
-                   <a 
-                    href="https://github.com/Hai-rou?tab=repositories"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="github-btn"
+        <footer className="footer">
+            <div className="footer-content">
+                <div className="footer-links">
+                    <a 
+                        href="https://github.com/Hai-rou?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="github-btn"
                     >
-                    <img src="/assets/github-mark.svg" alt="logo du site github" />
-                    </a> 
-                </div>
-                <div>
+                        <img src="/assets/github-mark.svg" alt="logo du site github" />
+                    </a>
                     <a 
                         href="mailto:hairou.houmadi@gmail.com"
                         className="mail-btn"
-                        >
-                        <i className="fa fa-envelope" aria-hidden="true"></i>
+                    >
+                        <Icon icon="mdi:email" width="20" height="20" />
                         <span className="sr-only">Envoyer un e-mail</span>
                     </a>
                 </div>

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "../../SASS/item/bubblebackground.scss";
 
 function random(min, max) {
@@ -5,13 +6,16 @@ function random(min, max) {
 }
 
 function BubblesBackground() {
+  // Réduire le nombre de bulles pour améliorer les performances
+  const bubbleCount = 12; // Réduit de 20 à 12
+  
   return (
     <div className="bubbles-background">
-      {[...Array(20)].map((_, i) => {
-        const size = random(10, 90); // Taille entre 20px et 60px
-        const duration = random(6, 12); // Durée entre 6s et 12s
-        const left = random(0, 90); // Position de départ
-        const delay = random(0, 5); // Délai d'animation
+      {[...Array(bubbleCount)].map((_, i) => {
+        const size = random(15, 60); // Taille optimisée
+        const duration = random(8, 15); // Durée plus longue pour moins de calculs
+        const left = random(5, 85); // Position de départ
+        const delay = random(0, 3); // Délai d'animation réduit
         return (
           <span
             key={i}
@@ -30,4 +34,5 @@ function BubblesBackground() {
   );
 }
 
-export default BubblesBackground;
+// Mémorisation pour éviter les re-renders inutiles
+export default memo(BubblesBackground);

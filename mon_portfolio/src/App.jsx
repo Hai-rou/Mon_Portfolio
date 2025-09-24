@@ -1,18 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef, useState, lazy, Suspense } from "react";
 import HomeIntro from "./pages/HomeIntro";
 import Header from "./components/layouts/Header";
-import Footer from "./components/layouts/Footer"; // Assure-toi que ce fichier existe
+import Footer from "./components/layouts/Footer";
 import { AnimatedBanner } from "./components/item/AnimatedBanner";
-// pages
-import Homepage from "./pages/Homepage.jsx";
-import Error from "./pages/Error.jsx";
-import About from "./pages/About.jsx";
-import Realisation from "./pages/Realisation.jsx";
-import Activites from "./pages/Acti.jsx";
-import Competence from "./pages/Competence.jsx";
-//gsap
 import gsap from "gsap";
+
+// Lazy loading des pages
+const Homepage = lazy(() => import("./pages/Homepage.jsx"));
+const Error = lazy(() => import("./pages/Error.jsx"));
+const About = lazy(() => import("./pages/About.jsx"));
+const Realisation = lazy(() => import("./pages/Realisation.jsx"));
+const Activites = lazy(() => import("./pages/Acti.jsx"));
+const Competence = lazy(() => import("./pages/Competence.jsx"));
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -47,6 +47,7 @@ function App() {
         <>
           <AnimatedBanner animate={bannerAnimate} />
           <Header />
+          <Suspense fallback={<div>Chargement...</div>}>
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/about" element={<About />} />
@@ -55,6 +56,7 @@ function App() {
               <Route path="/competence" element={<Competence />} />
               <Route path="*" element={<Error />} />
             </Routes>
+          </Suspense>
           <Footer />
         </>
       )}
