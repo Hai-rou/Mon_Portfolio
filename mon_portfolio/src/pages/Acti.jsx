@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import "../SASS/pages/acti.scss";
+import "../SASS/pages/acti.css";
 import { projectsData } from "../data/projetsData";
 import { activitesData } from "../data/activitesData";
 import gsap from "gsap";

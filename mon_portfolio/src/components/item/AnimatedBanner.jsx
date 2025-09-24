@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import "../../SASS/item/banner.scss";
+import "../../SASS/item/banner.css";
 
 // Animation des particules
 function initParticles(canvas) {

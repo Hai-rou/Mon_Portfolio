@@ -1,4 +1,4 @@
-import '../../SASS/item/competence.scss';
+import '../../SASS/item/competence.css';
 import { Icon } from '@iconify/react';
 
 const SkillsComponent = () => {

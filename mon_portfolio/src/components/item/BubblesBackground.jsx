@@ -1,5 +1,5 @@
 import { memo } from "react";
-import "../../SASS/item/bubblebackground.scss";
+import "../../SASS/item/bubblebackground.css";
 
 function random(min, max) {
   return Math.random() * (max - min) + min;

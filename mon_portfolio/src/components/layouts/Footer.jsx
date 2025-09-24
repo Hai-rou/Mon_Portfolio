@@ -1,4 +1,4 @@
-import "../../SASS/layouts/footer.scss"
+import "../../SASS/layouts/footer.css"
 import { Icon } from '@iconify/react';
 
 function Footer () {

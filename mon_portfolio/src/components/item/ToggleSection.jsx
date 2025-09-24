@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../SASS/item/togglesection.scss"
+import "../../SASS/item/togglesection.css"
 
 function ToggleSection({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);

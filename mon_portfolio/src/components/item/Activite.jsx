@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../SASS/item/activites.scss';
+import '../../SASS/item/activites.css';
 
 // Données des projets avec descriptions
 import { projectsData } from '../../data/projetsData';

@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import "../SASS/pages/homeintro.scss";
+import "../SASS/pages/homeintro.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 

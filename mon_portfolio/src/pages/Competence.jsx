@@ -1,4 +1,4 @@
-import '../SASS/pages/competence.scss'
+import '../SASS/pages/competence.css'
 import { Icon } from '@iconify/react';
 import SkillsComponent from '../components/item/SkillsComponent'
 import { useEffect,useRef } from 'react';
