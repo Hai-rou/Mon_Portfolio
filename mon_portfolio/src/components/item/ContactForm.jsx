@@ -19,10 +19,8 @@ function ContactForm() {
     setLoading(true);
 
     try {
-      // Utilisation de la variable d'environnement (Vite)
-      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
-      
-      const response = await fetch(`${apiUrl}/send`, {
+      // Pour Vercel, l'API est accessible via /api/send
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
