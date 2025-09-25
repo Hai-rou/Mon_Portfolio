@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:vercel": "vercel dev",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "setup:env": "node setup-env.cjs",
+    "test:api": "node debug-api.cjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

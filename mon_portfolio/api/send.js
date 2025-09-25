@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Autoriser uniquement les requêtes POST
   if (req.method !== 'POST') {
     return res.status(405).json({ 
@@ -29,6 +29,21 @@ export default async function handler(req, res) {
     });
   }
 
+  // Log pour debug
+  console.log('Variables environnement:', {
+    EMAIL_USER: process.env.EMAIL_USER ? 'Défini' : 'Non défini',
+    EMAIL_PASS: process.env.EMAIL_PASS ? 'Défini' : 'Non défini'
+  });
+
+  // Vérifier les variables d'environnement
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.error('Variables d\'environnement manquantes');
+    return res.status(500).json({ 
+      success: false, 
+      message: "Configuration du serveur manquante" 
+    });
+  }
+
   try {
     // Configuration du transport
     let transporter = nodemailer.createTransporter({
@@ -39,10 +54,14 @@ export default async function handler(req, res) {
       },
     });
 
+    // Vérifier la connexion
+    await transporter.verify();
+    console.log('Connexion SMTP vérifiée avec succès');
+
     // Options du mail
     let mailOptions = {
-      from: process.env.EMAIL_USER, // Utiliser votre email comme expéditeur
-      replyTo: email, // L'email du visiteur comme reply-to
+      from: process.env.EMAIL_USER,
+      replyTo: email,
       to: process.env.EMAIL_USER,
       subject: `Nouveau message de ${nom} - Portfolio`,
       text: message,
@@ -61,8 +80,9 @@ export default async function handler(req, res) {
       `,
     };
 
-    // Envoi
+    console.log('Tentative d\'envoi d\'email...');
     await transporter.sendMail(mailOptions);
+    console.log('Email envoyé avec succès');
 
     return res.status(200).json({ 
       success: true, 
@@ -70,10 +90,16 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Erreur envoi email:', error);
+    console.error('Erreur détaillée:', {
+      message: error.message,
+      code: error.code,
+      command: error.command,
+      response: error.response
+    });
+    
     return res.status(500).json({ 
       success: false, 
-      message: "Erreur lors de l'envoi du message" 
+      message: `Erreur: ${error.message}` 
     });
   }
 }

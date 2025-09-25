@@ -18,8 +18,13 @@ function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
+    console.log("🚀 Début de l'envoi du formulaire...");
+    console.log("Données à envoyer:", formData);
+
     try {
       // Pour Vercel, l'API est accessible via /api/send
+      console.log("📡 Envoi de la requête à /api/send");
+      
       const response = await fetch("/api/send", {
         method: "POST",
         headers: { 
@@ -29,15 +34,28 @@ function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      // Vérifier si la réponse est OK
-      if (!response.ok) {
-        throw new Error(`Erreur HTTP: ${response.status}`);
+      console.log("📥 Réponse reçue - Statut:", response.status);
+
+      let data;
+      try {
+        data = await response.json();
+        console.log("📄 Données de la réponse:", data);
+      } catch (jsonError) {
+        console.error("❌ Erreur lors du parsing JSON:", jsonError);
+        throw new Error("Réponse du serveur invalide");
       }
 
-      const data = await response.json();
+      // Vérifier si la réponse est OK
+      if (!response.ok) {
+        const errorMessage = data?.message || `Erreur HTTP: ${response.status}`;
+        console.error("❌ Erreur HTTP:", errorMessage);
+        throw new Error(errorMessage);
+      }
       
       if (data.success) {
+        console.log("✅ Message envoyé avec succès");
         alert("✅ Message envoyé avec succès !");
+        
         // Réinitialiser le formulaire
         setFormData({
           nom: "",
@@ -45,21 +63,38 @@ function ContactForm() {
           message: "",
         });
       } else {
-        alert("❌ Erreur lors de l'envoi du message");
+        const errorMessage = data.message || "Erreur lors de l'envoi du message";
+        console.error("❌ Échec de l'envoi:", errorMessage);
+        alert(`❌ ${errorMessage}`);
       }
     } catch (error) {
-      console.error("Erreur:", error);
+      console.error("💥 Erreur complète:", error);
       
-      // Messages d'erreur plus informatifs
+      let userMessage = "❌ ";
+      
       if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        alert("❌ Impossible de contacter le serveur. Vérifiez que votre serveur est démarré sur le port 5000.");
-      } else if (error.message.includes('Failed to fetch')) {
-        alert("❌ Problème de connexion. Vérifiez votre serveur et la configuration CORS.");
+        userMessage += "Impossible de contacter le serveur API. Vérifiez que Vercel dev est lancé.";
+        console.error("💡 Suggestion: Lancez 'vercel dev' pour démarrer l'environnement local");
+      } else if (error.message.includes('JSON')) {
+        userMessage += "Erreur de communication avec le serveur.";
       } else {
-        alert(`❌ Erreur: ${error.message}`);
+        userMessage += error.message;
+      }
+      
+      alert(userMessage);
+      
+      // En mode développement, afficher plus d'infos
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log("🔧 Mode développement détecté");
+        console.log("🔍 Vérifiez que:");
+        console.log("  1. Vercel CLI est installé: npm i -g vercel");
+        console.log("  2. Vercel dev est lancé: vercel dev");
+        console.log("  3. Variables d'environnement configurées (.env.local)");
+        console.log("  4. Port correct (généralement 3000)");
       }
     } finally {
       setLoading(false);
+      console.log("🏁 Fin de la tentative d'envoi");
     }
   };
 
