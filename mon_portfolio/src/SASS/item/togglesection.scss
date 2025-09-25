@@ -1,8 +1,7 @@
 @use '../variables' as *;
 .toggle-section{
     width: 100%;
-    background: linear-gradient(to right, $color-grey, $color-grey-light);
-    border: solid 5px $color-primary;
+    background: rgb(212, 202, 202);
     border-radius: 10px;
     margin-bottom: 10px;
     padding: 10px;
