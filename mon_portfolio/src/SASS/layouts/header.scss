@@ -34,21 +34,24 @@
         justify-content: center;
         gap: 10px;
         padding: 10px;
-       
-        li{
-            border-radius: 20px;
-            list-style: none;
+        a{
             text-decoration: none;
-            color: #3FB950;
-            text-transform: uppercase;
-            display: block;
-            padding: 10px;
-            &:hover {
-                background: linear-gradient(to right,#58A6FF, #3FB950 ) !important;
+           li{
                 border-radius: 20px;
-                color: white;
-            }
+                list-style: none;
+                text-decoration: none;
+                color: #3FB950;
+                text-transform: uppercase;
+                display: block;
+                padding: 10px;
+                &:hover {
+                    background: linear-gradient(to right,#58A6FF, #3FB950 ) !important;
+                    border-radius: 20px;
+                    color: white;
+                }
+            } 
         }
+        
     }
 }
 
@@ -97,7 +100,8 @@
         }
         .menu-btn {
             display: block; // afficher le bouton hamburger
-            padding-right: 40px;
+            font-size: 1.5rem;
+            padding-right: 60px;
         }
         .nav-links {
             display: none;

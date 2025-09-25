@@ -79,7 +79,7 @@ const Header = () => {
           href="/assets/CV/CV 2025.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          >CV</a>
+          ><li>CV</li></a>
         </ul>
       </nav>
       {isSticky && <div style={{ height: `${navbarHeight}px` }} />}
