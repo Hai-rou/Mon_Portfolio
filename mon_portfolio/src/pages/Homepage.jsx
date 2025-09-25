@@ -12,10 +12,10 @@ function Homepage () {
                 <div className='pres-content'>
                     <img src="/assets/logo-h.webp" alt="Logo avec mon Pseudo" />
                      <p>
-                        Longtemps passionné par le domaine du codage information, 
+                        Longtemps passionné par le domaine du codage informatique, 
                         j'ai l'occasion aujourd'hui de pouvoir transformer mon hobby en métier.<br />
-                        Actuellement développeur web, je conçois des sites web sous react. 
-                        Dans un avenir proche, je vais commencer à faire du Back-end sous Python avec le framework Django.
+                        Actuellement développeur web, je conçois des sites web sous React. 
+                        Dans un avenir proche, je prévois de faire du Back-end sous Python avec le framework Django.
                     </p>
                 </div>
             </section>
@@ -28,14 +28,14 @@ function Homepage () {
                         <p>test@revesexploration.com</p>
                     </div>
                     <p className='info'>
-                        Rêves d’exploration est une agence de voyage à domicile qui vous offre un service personnalisé, 
+                        " Rêves d’exploration est une agence de voyage à domicile qui vous offre un service personnalisé, 
                         directement chez vous ou à distance, selon vos préférences.<br />
                         Avec plus de six ans d’expérience et des milliers de voyageurs comblés, 
-                        j’inaugure ma propre agence de voyages sur mesure.<br />
+                        j’inaugure ma propre agence de voyages sur mesure. "<br />
                         
                     </p>
                     <div className='tech'>
-                        <p>Nouvelle technologie abordée pour le projet</p>
+                        <p>Nouvelles technologies abordées pour le projet</p>
                         <div className='tech-item'>
                             <img src="/assets/realisation/astro.svg" alt="Logo de la technologie Astro" />
                             <span>Astro</span>
@@ -61,7 +61,7 @@ function Homepage () {
                 
             </section>
             <section id="contact" className="contact">
-                <h2>Demarrons un projet ensemble, n'hesitez pas à me contacter</h2>
+                <h2>Démarrons un projet ensemble, n'hésitez pas à me contacter</h2>
                 <ContactForm />
             </section>
         </div>

@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   const scrollToNav = () => {
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('#page-top');
     if (nav) {
       nav.scrollIntoView({ behavior: 'smooth' });
     }
@@ -67,7 +67,7 @@ const Header = () => {
             <li>Présentation</li>
           </Link>
           <Link to="/realisation" onClick={scrollToNav}>
-            <li>Réalisation</li>
+            <li>Réalisations</li>
           </Link>
           <Link to="/activites" onClick={scrollToNav}>
             <li>Activités</li>

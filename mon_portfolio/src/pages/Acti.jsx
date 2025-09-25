@@ -21,7 +21,8 @@ function Activites() {
 
     return (
         <div className="activites-page" ref={containerRef}>
-            <h1>Activites</h1>
+            <div id="page-top"></div>
+            <h1>Activités</h1>
             <p>
                 Ici, je présentes mes activités, projets et contributions en dehors de mes réalisations principales.
                 Cela peut inclure des projets personnels, des contributions à des projets open source, etc.
@@ -56,8 +57,7 @@ function Activites() {
                 <Modal selectedProject={selectedProject} setShowModal={setShowModal} />
             )}
             <div className="formation-section">
-                <h2>Formations</h2>
-                <p>Voici une liste de mes formations récentes.</p>
+                <h2>Mes formations</h2>
                 <div className="activities-list">
                     {activitesData.map((activity) => (
                         <div key={activity.id} className="activity-card">
@@ -66,7 +66,7 @@ function Activites() {
                                 <div className="activity-text">
                                     <h3>{activity.title}</h3>
                                     <span>{activity.description}</span>
-                                    <p>{activity.certification}</p>
+                                    <span>{activity.certification}</span>
                                 </div>
                             </div>
                             <div className="activity-body">

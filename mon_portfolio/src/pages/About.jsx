@@ -25,21 +25,20 @@ function About () {
                 J'aime créer des sites web modernes et fonctionnels en utilisant les dernières technologies.
             </p>
             <p>
-                Mon parcours professionnel a débuté dans le secteur agricole, où j'ai obtenu un Bac Pro PH (Production Horticole) et poursuivis sur un BTSA au Lycée Agricole de Coutances. 
-                Durant cette période, j'ai eu l'opportunité de travailler sur un projet de reconnaissance des végétaux tout public grâce au QR code. 
-                Ce projet m'a permis de développer mes compétences et analyse de données, tout en renforçant ma passion pour la technologie.
+                Mon parcours professionnel a débuté dans le secteur agricole, où j'ai obtenu un Bac Pro PH (Production Horticole) et poursuivi sur un BTSA au Lycée Agricole de Coutances. 
+                Durant cette période, j'ai eu l'opportunité de travailler sur un projet de reconnaissance des végétaux tout public grâce aux QR codes. 
+                Ce projet m'a permis de développer mes compétences en analyse de données, tout en renforçant ma passion pour la technologie.
             </p>
             <p>
                 Avant de devenir développeur web, j'ai travaillé dans le domaine de la vente pendant plusieurs années. 
-                J'ai acquis de nombreuses compétences en communication, en gestion de projet et en travail d'équipe.
+                J'y ai acquis de nombreuses compétences en communication, en gestion de projets et en travail d'équipe.
                 Ces compétences me sont très utiles dans mon travail de développeur web, où la collaboration avec les clients et les collègues est essentielle.
             </p>
             <p>
-                De Castorama à Prolians, de conseiller de vente à magasinier, le domaine de la vente a été un challenge plein de rebondissement et d'imprévu. 
-                Le domaine de la vente et ces nombreuses methodes de travail nécessite de la fléxibiliter. Ce que je retiens de ces expériences, c'est l'organisation et la gestion. 
-                Des points primordiaux pour continuer de progresser.
+                De Castorama à Prolians, de conseiller de vente à magasinier, le domaine de la vente a été un challenge plein de rebondissements et d'imprévus. 
+                J'ai appris à m'adapter rapidement aux situations changeantes et à gérer efficacement les priorités, des compétences qui me servent aujourd'hui dans le développement web.
             </p>
-            <section className='about-me'>
+            <section className='about-me'> 
                 <figure>
                     <img src="/assets/about/lycee_coutances.webp" alt="Projet de reconnaissance des végétaux au Lycée agricole de Coutances" />
                     <figcaption>Projet de reconnaissance des végétaux au Lycée agricole de Coutances</figcaption>
@@ -70,14 +69,14 @@ function About () {
             <section className='formation'>
                 <h2>Formation </h2>
                 <p>
-                    J'ai suivi une formation intensive de développeur web front-end chez OpenClassrooms, où j'ai appris les bases du HTML, CSS, JavaScript, React et d'autres technologies web.
-                    J'ai également travaillé sur plusieurs projets pratiques pour mettre en pratique mes compétences et développer mon portfolio.
+                    J'ai suivi une formation intensive de développeur web front-end chez OpenClassrooms, lors de laquelle j'ai appris les bases du HTML, CSS, JavaScript, React et d'autres technologies web.
+                    J'ai également travaillé sur plusieurs projets différents pour mettre en pratique mes compétences et développer mon portfolio.
                 </p>
                 <p>
                     En plus de ma formation chez OpenClassrooms, j'ai également suivi des cours en ligne et lu de nombreux livres sur le développement web pour approfondir mes connaissances et rester à jour avec les dernières tendances et technologies.
                 </p>
                 <p>
-                    Je suis convaincu que le développement web est un domaine en constante évolution, et je suis déterminé à continuer à apprendre et à m'améliorer en tant que développeur web tout au long de ma carrière.
+                    Le développement web est un domaine en constante évolution, et je suis déterminé à continuer à apprendre et à m'améliorer en tant que développeur web tout au long de ma carrière.
                 </p>
                 <p>
                     Je suis toujours à la recherche de nouveaux défis et de nouvelles opportunités pour apprendre et grandir en tant que développeur. 

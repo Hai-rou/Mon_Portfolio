@@ -20,7 +20,7 @@ export const activitesData = [
         category: 'Formation',
         periode: '3 ans',
         year: '2025',
-        information: 'Formation complète en horticulture, incluant la botanique, l\'écologie et les techniques de culture. Apprenez les techniques de production des végétaux. Ce cursus allie savoir-faire horticole, gestion d\'exploitation et respect des normes environnementales.',
+        information: 'Formation complète en horticulture, incluant la botanique, l\'écologie et les techniques de culture. Apprentissage des techniques de production des végétaux. Ce cursus allie savoir-faire horticole, gestion d\'exploitation et respect des normes environnementales.',
         skills: ['Botanique', 'Écologie', 'Techniques de culture', 'Gestion d\'exploitation', 'Normes environnementales']
     }
 ];

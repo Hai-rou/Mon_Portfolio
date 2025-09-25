@@ -4,6 +4,7 @@ import HomeIntro from "./pages/HomeIntro";
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
 import { AnimatedBanner } from "./components/item/AnimatedBanner";
+import ScrollToTop from "./components/item/ScrollToTop";
 import gsap from "gsap";
 
 // Lazy loading des pages
@@ -58,6 +59,7 @@ function App() {
             </Routes>
           </Suspense>
           <Footer />
+          <ScrollToTop />
         </>
       )}
     </>

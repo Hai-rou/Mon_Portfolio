@@ -3,10 +3,10 @@ import { Icon } from '@iconify/react';
 
 const SkillsComponent = () => {
   const skills = [
-    { name: 'HTML5', icon: 'skill-icons:html', percentage: 94, type: 'iconify' },
-    { name: 'CSS3', icon: 'skill-icons:css', percentage: 88, type: 'iconify' },
+    { name: 'HTML5', icon: 'skill-icons:html', percentage: 80, type: 'iconify' },
+    { name: 'CSS3', icon: 'skill-icons:css', percentage: 80, type: 'iconify' },
     { name: 'JavaScript', icon: 'skill-icons:javascript', percentage: 50, type: 'iconify' },
-    { name: 'React', icon: 'skill-icons:react-dark', percentage: 82, type: 'iconify' },
+    { name: 'React', icon: 'skill-icons:react-dark', percentage: 60, type: 'iconify' },
     { name: 'Python', icon: 'skill-icons:python-dark', percentage: 20, type: 'iconify' },
     { name: 'Astro', icon: 'simple-icons:astro', percentage: 20, type: 'iconify'}
   ];

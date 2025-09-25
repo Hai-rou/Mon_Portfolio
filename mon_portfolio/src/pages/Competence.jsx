@@ -102,7 +102,7 @@ function Competence() {
                 </div>
                 <SkillsComponent />
                 <p>
-                    Note: Les pourcentages indiqués reflètent mon niveau de compétence actuel et sont susceptibles d'évoluer à mesure que j'acquiers de nouvelles connaissances et expériences.
+                    Note: Les pourcentages indiqués reflètent mon niveau actuel et sont susceptibles d'évoluer à mesure que j'acquiers de nouvelles connaissances et compétences.
                 </p>
                 <p>
                     Durant ma formation chez OpenClassrooms, j'ai eu l'occasion de travailler sur plusieurs projets pratiques qui m'ont permis de mettre en application les compétences acquises. 
@@ -142,7 +142,7 @@ function Competence() {
                         </div>
                     </div>
                 </div>
-                <h4>Découverte et Apprentissage</h4>
+                <h2>Découvertes et Apprentissages</h2>
                 <p>
                     En plus des technologies mentionnées ci-dessus, je suis également en train d'explorer et d'apprendre d'autres outils et frameworks qui sont pertinents pour le développement web. 
                     Actuellement, je me concentre sur l'apprentissage de Git pour la gestion de version, ainsi que sur des frameworks CSS comme Tailwind CSS pour améliorer la rapidité et l'efficacité du développement front-end.
@@ -152,14 +152,14 @@ function Competence() {
                 <p>
                     Durant le développement de mon portfolio, j'ai également eu l'occasion d'explorer des outils de déploiement et d'hébergement tels que Netlify et Vercel, qui facilitent la mise en ligne rapide de projets web.
                 </p>
-                <h5>Découverte durant le développement</h5>
-                <h6>GSAP</h6>
+                <h3>Découverte durant le développement : GSAP</h3>
+               
                 <p>
                     J'ai également découvert GSAP (GreenSock Animation Platform), une bibliothèque JavaScript puissante pour créer des animations fluides et performantes. 
                     Je prévois d'intégrer GSAP dans mes futurs projets pour améliorer l'expérience utilisateur grâce à des animations attrayantes.
                 </p>
                 <div className='avantage-gsap'>
-                    <h6>Avantage GSAP</h6>
+                    <h4>Avantages GSAP</h4>
                     <ul>
                         <li>Performance élevée : GSAP est optimisé pour des performances rapides, même avec des animations complexes.</li>
                         <li>Compatibilité multi-navigateurs : Fonctionne de manière cohérente sur tous les principaux navigateurs.</li>

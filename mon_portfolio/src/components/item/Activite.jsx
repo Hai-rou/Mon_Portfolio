@@ -75,7 +75,7 @@ function Activites() {
         <div className="act-container">
             {/* Section GitHub */}
             <div className="git-container">
-                <p>Derniers dépôts GitHub récemment mis à jour</p>
+                <p>Derniers dépôts GitHub mis à jour</p>
                 <div className="Act-Bank">
                     {projectsData.map((project) => (
                         <a

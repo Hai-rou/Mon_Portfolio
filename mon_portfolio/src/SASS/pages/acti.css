@@ -1,5 +1,5 @@
 .activites-page {
-  background: linear-gradient(95deg, #21262D, #8B949E, #21262D, #8B949E);
+  background: linear-gradient(45deg, #21262D, #5a5f64);
   background-size: 400% 400%;
   animation: gradient-shift 5s ease infinite;
   position: relative;
@@ -25,6 +25,14 @@
 }
 .activites-page h1 {
   text-align: center;
+  color: #3FB950;
+}
+.activites-page h2 {
+  text-align: center;
+  color: #3FB950;
+}
+.activites-page p {
+  color: #58A6FF;
 }
 .activites-page .projects-container {
   display: flex;
@@ -142,8 +150,12 @@
   width: 40%;
 }
 .activites-page .modal-overlay .modal-content h2 {
+  color: #000;
   text-align: center;
   font-size: 30px;
+}
+.activites-page .modal-overlay .modal-content p {
+  color: #000;
 }
 .activites-page .modal-overlay .modal-content .close-btn {
   width: 40px;

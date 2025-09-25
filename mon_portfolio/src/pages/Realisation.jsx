@@ -25,7 +25,7 @@ function Realisation() {
   return (
     <div className="vers-realisation" ref={containerRef}>
       <BubblesBackground />
-      <h1>Réalisation</h1>
+      <h1>Réalisations</h1>
       <p>
         Ici, vous trouverez mes projets en cours.  
         Chaque réalisation est accompagnée d'une description détaillée, des technologies utilisées et des défis relevés. 
@@ -43,7 +43,7 @@ function Realisation() {
                 Le site est en cours de développement et je suis enthousiaste à l'idée de le partager une fois qu'il sera terminé.
             </p>
             <div>
-                <h2>Reves d'exploration</h2>
+                <h2>Rêves d'exploration</h2>
                 <p>
                     Rêves d'exploration est un site web dédié aux passionnés de voyages et d'aventures.
                     Il offre des guides de voyage, des récits d'aventures et des conseils pratiques pour les explorateurs en herbe.
@@ -54,7 +54,7 @@ function Realisation() {
                       <img src="/assets/realisation/Page d'accueil.webp" alt="Maquette de reves d'exploration" />
                   </div>
                   <div className="reves-item">
-                    <ToggleSection title="Objectif du site">
+                    <ToggleSection title="Objectifs du site">
                       <ul>
                         <li><h4>Site vitrine :</h4><br/> Fournir des informations détaillées.</li>
                         <li><h4>Blog :</h4><br/> Partager des récits et conseils pratiques.</li>

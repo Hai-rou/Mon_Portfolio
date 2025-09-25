@@ -1,6 +1,6 @@
 @use '../variables' as *;
 .activites-page {
-    background: linear-gradient(95deg, $color-bg-dark, $color-grey, $color-bg-dark, $color-grey);
+    background: linear-gradient(45deg, $color-bg-dark, $color-grey);
     background-size: 400% 400%;
     animation: gradient-shift 5s ease infinite;
     position: relative;
@@ -20,6 +20,14 @@
     }
     h1{
         text-align: center;
+        color: $color-green;
+    }
+    h2{
+        text-align: center;
+        color: $color-green;
+    }
+    p{
+        color: $color-primary;
     }
     .projects-container{
         display: flex;
@@ -70,7 +78,6 @@
         }
     }
     .formation-section{
-        
         .activities-list{
             display: flex;
             justify-content: center;
@@ -141,8 +148,12 @@
                 width: 40%;
             }
             h2{
+                color: $color-black;
                 text-align: center;
                 font-size: 30px;
+            }
+            p{
+                color: $color-black;
             }
             .close-btn{
                 width: 40px;
