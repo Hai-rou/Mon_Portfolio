@@ -1,6 +1,7 @@
-const { Resend } = require('resend');
+import { Resend } from 'resend';
 
-module.exports = async function handler(req, res) {
+// Remplacer "module.exports = async function" par:
+export default async function handler(req, res) {
   // Autoriser uniquement les requêtes POST
   if (req.method !== 'POST') {
     return res.status(405).json({ 
