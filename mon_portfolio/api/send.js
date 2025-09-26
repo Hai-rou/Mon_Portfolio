@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require('resend');
 
 module.exports = async function handler(req, res) {
   // Autoriser uniquement les requêtes POST
@@ -45,28 +45,13 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    // Configuration du transport
-    let transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true, // true pour 465, false pour les autres ports
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    // Vérifier la connexion
-    await transporter.verify();
-    console.log('Connexion SMTP vérifiée avec succès');
-
-    // Options du mail
-    let mailOptions = {
-      from: process.env.EMAIL_USER,
-      replyTo: email,
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    
+    const { data, error } = await resend.emails.send({
+      from: 'Portfolio <onboarding@resend.dev>', // Remplacer par votre domaine une fois vérifié
       to: process.env.EMAIL_USER,
+      reply_to: email,
       subject: `Nouveau message de ${nom} - Portfolio`,
-      text: message,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #58A6FF;">Nouveau message depuis votre portfolio</h2>
@@ -79,18 +64,12 @@ module.exports = async function handler(req, res) {
             </div>
           </div>
         </div>
-      `,
-    };
-
-    console.log('Tentative d\'envoi d\'email...');
-    await transporter.sendMail(mailOptions);
-    console.log('Email envoyé avec succès');
-
-    return res.status(200).json({ 
-      success: true, 
-      message: "Message envoyé avec succès !" 
+      `
     });
-
+    
+    if (error) throw new Error(error.message);
+    
+    return res.status(200).json({ success: true, message: "Message envoyé avec succès !" });
   } catch (error) {
     console.error('Erreur détaillée:', {
       message: error.message,
