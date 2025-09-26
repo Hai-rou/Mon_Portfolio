@@ -9,7 +9,7 @@ function ContactForm() {
         style={{ maxWidth: '500px', margin: '0 auto' }}
       >
         <input type="hidden" name="_subject" value="Nouveau message du portfolio !" />
-        <input type="hidden" name="_next" value="https://votre-site.com/merci" />
+        <input type="hidden" name="_next" value="https://houmadi-hairou-z9fj.vercel.app/merci" />
 
         <label htmlFor="nom">Nom</label>
         <input
