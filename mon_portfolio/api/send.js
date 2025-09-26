@@ -35,9 +35,13 @@ module.exports = async function handler(req, res) {
     EMAIL_PASS: process.env.EMAIL_PASS ? 'Défini' : 'Non défini'
   });
 
-  // Vérifier les variables d'environnement
-  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-    console.error('Variables d\'environnement manquantes');
+  // Vérifier TOUTES les variables d'environnement nécessaires
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.RESEND_API_KEY) {
+    console.error('Variables d\'environnement manquantes', {
+      EMAIL_USER: process.env.EMAIL_USER ? 'Défini' : 'Non défini',
+      EMAIL_PASS: process.env.EMAIL_PASS ? 'Défini' : 'Non défini',
+      RESEND_API_KEY: process.env.RESEND_API_KEY ? 'Défini' : 'Non défini'
+    });
     return res.status(500).json({ 
       success: false, 
       message: "Configuration du serveur manquante" 
