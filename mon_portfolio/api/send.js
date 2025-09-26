@@ -46,7 +46,7 @@ module.exports = async function handler(req, res) {
 
   try {
     // Configuration du transport
-    let transporter = nodemailer.createTransporter({
+    let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
