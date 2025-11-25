@@ -129,6 +129,48 @@
         flex-direction: column;
         gap: $spacing-2xl;
         
+        .form-message {
+          display: flex;
+          align-items: center;
+          gap: $spacing-md;
+          padding: $spacing-lg $spacing-xl;
+          border-radius: $border-radius-lg;
+          font-weight: 600;
+          animation: slideDown 0.4s ease-out;
+          
+          svg {
+            flex-shrink: 0;
+          }
+          
+          p {
+            margin: 0;
+            line-height: 1.5;
+          }
+          
+          &.success {
+            background: rgba($color-accent, 0.1);
+            border: 2px solid $color-accent;
+            color: $color-accent;
+          }
+          
+          &.error {
+            background: rgba($color-danger, 0.1);
+            border: 2px solid $color-danger;
+            color: $color-danger;
+          }
+          
+          @keyframes slideDown {
+            from {
+              opacity: 0;
+              transform: translateY(-20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+        
         .form-group {
           position: relative;
           
@@ -266,6 +308,19 @@
           
           .btn-icon {
             transition: transform 0.3s ease;
+            
+            &.spinning {
+              animation: spin 1s linear infinite;
+            }
+          }
+          
+          @keyframes spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
           }
           
           .btn-shine {
@@ -283,7 +338,7 @@
             transition: left 0.6s ease;
           }
           
-          &:hover {
+          &:hover:not(:disabled) {
             transform: translateY(-4px);
             box-shadow: 
               0 12px 32px rgba($color-primary, 0.4),
@@ -294,13 +349,18 @@
               height: 300px;
             }
             
-            .btn-icon {
+            .btn-icon:not(.spinning) {
               transform: translateX(4px);
             }
             
             .btn-shine {
               left: 100%;
             }
+          }
+          
+          &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
           }
           
           &:active {

@@ -13,6 +13,7 @@ function ContactForm() {
     email: false,
     message: false
   });
+  const [status, setStatus] = useState(''); // '', 'sending', 'success', 'error'
 
   const handleChange = (e) => {
     setFormData({
@@ -28,6 +29,41 @@ function ContactForm() {
   const handleBlur = (field) => {
     if (!formData[field]) {
       setFocused({ ...focused, [field]: false });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/contacthh.dev@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          nom: formData.nom,
+          email: formData.email,
+          message: formData.message,
+          _subject: 'Nouveau message du portfolio !',
+          _captcha: 'false'
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ nom: '', email: '', message: '' });
+        setFocused({ nom: false, email: false, message: false });
+        setTimeout(() => setStatus(''), 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus(''), 5000);
+      }
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus(''), 5000);
     }
   };
 
@@ -68,13 +104,22 @@ function ContactForm() {
 
         <div className="contact-form-wrapper">
           <form
-            action="https://formsubmit.co/contacthh.dev@gmail.com"
-            method="POST"
+            onSubmit={handleSubmit}
             className="contact-form"
           >
-            <input type="hidden" name="_subject" value="Nouveau message du portfolio !" />
-            <input type="hidden" name="_next" value="https://houmadi-hairou-z9fj.vercel.app/" />
-            <input type="hidden" name="_captcha" value="false" />
+            {status === 'success' && (
+              <div className="form-message success">
+                <Icon icon="mdi:check-circle" width="24" height="24" />
+                <p>Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.</p>
+              </div>
+            )}
+            
+            {status === 'error' && (
+              <div className="form-message error">
+                <Icon icon="mdi:alert-circle" width="24" height="24" />
+                <p>Erreur lors de l'envoi. Veuillez réessayer ou m'envoyer un email directement.</p>
+              </div>
+            )}
 
             <div className={`form-group ${focused.nom || formData.nom ? 'focused' : ''}`}>
               <label htmlFor="nom">
@@ -133,9 +178,16 @@ function ContactForm() {
               <div className="input-border"></div>
             </div>
 
-            <button type="submit" className="submit-btn">
-              <span className="btn-text">Envoyer le message</span>
-              <Icon icon="mdi:send" width="20" height="20" className="btn-icon" />
+            <button type="submit" className="submit-btn" disabled={status === 'sending'}>
+              <span className="btn-text">
+                {status === 'sending' ? 'Envoi en cours...' : 'Envoyer le message'}
+              </span>
+              <Icon 
+                icon={status === 'sending' ? 'mdi:loading' : 'mdi:send'} 
+                width="20" 
+                height="20" 
+                className={`btn-icon ${status === 'sending' ? 'spinning' : ''}`}
+              />
               <div className="btn-shine"></div>
             </button>
           </form>
