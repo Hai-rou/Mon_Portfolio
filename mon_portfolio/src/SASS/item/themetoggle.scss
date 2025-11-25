@@ -1,0 +1,64 @@
+@use '../variables' as *;
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background: rgba($color-primary, 0.1);
+  border: 1px solid rgba($color-primary, 0.3);
+  border-radius: $border-radius-full;
+  color: $color-primary;
+  cursor: pointer;
+  transition: all $transition-base;
+  font-family: $font-main;
+  font-size: $text-sm;
+  font-weight: 600;
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: transform $transition-base;
+  }
+  
+  .theme-label {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  &:hover {
+    background: rgba($color-primary, 0.2);
+    border-color: $color-primary;
+    transform: translateY(-2px);
+    
+    svg {
+      transform: rotate(15deg);
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+  }
+}
+
+// Mobile
+@media (max-width: $breakpoint-md) {
+  .theme-toggle {
+    padding: $spacing-xs $spacing-sm;
+    
+    .theme-label {
+      display: none;
+    }
+    
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

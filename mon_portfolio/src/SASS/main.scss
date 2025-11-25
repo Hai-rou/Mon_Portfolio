@@ -1,28 +1,75 @@
 
 @use 'variables' as *;
 
+// Import des composants item
+@use 'item/banner';
+@use 'item/activites';
+@use 'item/competence';
+@use 'item/contact';
+@use 'item/bubblebackground';
+@use 'item/scrolltotop';
+@use 'item/themetoggle';
+@use 'item/togglesection';
+
 @font-face {
     font-family: 'Rajdhani';
     src: url("/assets/Font/Rajdhani/Rajdhani-Regular.ttf");
+    font-display: swap;
 }
 
-* {
+// Variables CSS pour les thèmes
+:root {
+    --color-bg: #{$color-bg};
+    --color-bg-dark: #{$color-bg-dark};
+    --color-bg-elevated: #{$color-bg-elevated};
+    --color-text-primary: #{$color-text-primary};
+    --color-text-secondary: #{$color-text-secondary};
+    --color-text-muted: #{$color-text-muted};
+    --color-primary: #{$color-primary};
+    --color-primary-hover: #{$color-primary-hover};
+    --shadow-md: #{$shadow-md};
+    --shadow-lg: #{$shadow-lg};
+    --shadow-xl: #{$shadow-xl};
+}
+
+// Thème clair
+[data-theme="light"] {
+    --color-bg: #FFFFFF;
+    --color-bg-dark: #F3F4F6;
+    --color-bg-elevated: #E5E7EB;
+    --color-text-primary: #111827;
+    --color-text-secondary: #4B5563;
+    --color-text-muted: #6B7280;
+    --color-primary: #2563EB;
+    --color-primary-hover: #1D4ED8;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+// Reset moderne
+*, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    margin: 0;
-    padding: 0;
     height: 100%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     
     body {
         width: 100%;
-        margin: 0;
-        padding: 0;
         min-height: 100vh;
-        background: $color-bg;
+        background: var(--color-bg);
+        color: var(--color-text-primary);
         font-family: $font-main;
+        font-size: $text-base;
+        line-height: 1.6;
         overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 }
 
@@ -36,16 +83,220 @@ html {
 // Container principal des pages
 main, .page-container {
     flex: 1;
-    padding-bottom: 100px; // Espace pour le footer
-    min-height: calc(100vh - 200px); // Hauteur minimale moins header/footer
+    padding-bottom: $spacing-3xl;
+    min-height: calc(100vh - 200px);
 }
 
 // Classes utilitaires pour les pages
 .page-content {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 20px;
+    padding: $spacing-lg;
     min-height: calc(100vh - 300px);
+}
+
+// Typographie moderne
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    color: $color-text-primary;
+    margin-bottom: $spacing-md;
+}
+
+h1 { font-size: $text-3xl; }
+h2 { font-size: $text-2xl; }
+h3 { font-size: $text-xl; }
+h4 { font-size: $text-lg; }
+
+p {
+    margin-bottom: $spacing-md;
+    color: var(--color-text-secondary);
+}
+    
+a {
+    color: $color-primary;
+    text-decoration: none;
+    transition: color $transition-fast;
+    
+    &:hover {
+        color: $color-primary-hover;
+    }
+    
+    &:focus-visible {
+        outline: 2px solid $color-primary;
+        outline-offset: 2px;
+        border-radius: $border-radius-sm;
+    }
+}
+
+// Boutons modernes
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-xl;
+    border: none;
+    border-radius: $border-radius;
+    font-family: $font-main;
+    font-size: $text-base;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-base;
+    text-decoration: none;
+    
+    &:focus-visible {
+        outline: 2px solid $color-primary;
+        outline-offset: 3px;
+    }
+    
+    &-primary {
+        background: $color-primary;
+        color: $color-white;
+        box-shadow: $shadow-md;
+        
+        &:hover {
+            background: $color-primary-hover;
+            transform: translateY(-2px);
+            box-shadow: $shadow-lg;
+        }
+        
+        &:active {
+            transform: translateY(0);
+        }
+    }
+    
+    &-secondary {
+        background: $color-bg-dark;
+        color: $color-text-primary;
+        border: 1px solid $color-text-muted;
+        
+        &:hover {
+            background: $color-bg-elevated;
+            border-color: $color-primary;
+        }
+    }
+    
+    &-ghost {
+        background: transparent;
+        color: $color-primary;
+        
+        &:hover {
+            background: rgba($color-primary, 0.1);
+        }
+    }
+}
+
+// Cards modernes
+.card {
+    background: var(--color-bg-dark);
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    box-shadow: var(--shadow-md);
+    transition: all $transition-base;
+    border: 1px solid rgba($color-text-muted, 0.2);
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+        border-color: rgba($color-primary, 0.3);
+    }
+}
+
+// Grid moderne
+.grid {
+    display: grid;
+    gap: $spacing-xl;
+    
+    &-cols-2 {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    &-cols-3 {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+// Accessibilité - respect des préférences utilisateur
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+// Images responsives
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Focus visible pour l'accessibilité
+:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+}
+
+// Scrollbar personnalisée (Webkit)
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-dark);
+    border-radius: $border-radius-full;
+    border: 2px solid var(--color-bg);
+    
+    &:hover {
+        background: var(--color-text-muted);
+    }
+}
+
+// Selection de texte
+::selection {
+    background: rgba($color-primary, 0.3);
+    color: $color-white;
 }
 
 

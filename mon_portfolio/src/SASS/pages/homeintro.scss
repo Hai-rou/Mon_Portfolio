@@ -1,141 +1,371 @@
+@use '../variables' as *;
+
 .home-intro {
-  height: 100vh;
-  background: linear-gradient(120deg, #e0eaff 0%, #3b82f6 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  .intro-content {
-    background: rgba(255,255,255,0.85);
-    padding: 48px 64px;
-    border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(59,130,246,0.12);
-    text-align: center;
-
-    h1 {
-      font-size: 2.5rem;
-      color: #3b82f6;
-      margin-bottom: 24px;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 32px;
-      color: #222;
-    }
-    .dezea-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      border: solid 2px #00fff7;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      padding: 0;
-      cursor: pointer;
-      position: relative;
-      overflow: visible;
-      z-index: 1;
-      transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        background 0.2s,
-        border-color 0.4s;
-
-      .circle-border {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    overflow: hidden;
+    perspective: 2000px;
+    
+    // Canvas de particules
+    .intro-canvas {
         position: absolute;
-        left: 0; top: 0;
-        width: 100%; height: 100%;
-        pointer-events: none;
-        z-index: 2;
-        stroke: #00fff7;
-        stroke-width: 3px;
-        fill: none;
-        stroke-dasharray: 440;
-        stroke-dashoffset: 440;
-        transition: stroke 0.3s;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        inset: -16px;
-        border-radius: 50%;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s;
+        inset: 0;
+        width: 100%;
+        height: 100%;
         z-index: 0;
-        animation: none;
-        transform-origin: 50% 50%;
-        transform: rotate(0deg);
-      }
-
-      .arrow {
-        opacity: 0;
-        color: #3b82f6;
-        pointer-events: none;
-        transition: opacity 0.3s, transform 0.4s cubic-bezier(.6,-0.28,.74,.05), filter 0.3s;
-        filter: drop-shadow(0 0 0px black);
-        z-index: 1;
-        width: 32px;
-        height: 32px;
-      }
-
-      span {
-        z-index: 1;
-        color: black;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.3s, transform 0.3s;
-        font-size: 1rem;
-        font-weight: 600;
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      &.hovered {
-        span {
-          opacity: 0;
-          pointer-events: none;
-        }
-        .arrow {
-          opacity: 1;
-          color: #3b82f6;
-          pointer-events: auto;
-          transform: scale(1.2);
-        }
-      }
-
-      &:hover {
-        border: none;
-        .circle-border {
-          animation: dashCircle 0.5s linear forwards;
-        }
-        &::after {
-          opacity: 0.8;
-          animation: rotateCircle 0.5s linear infinite;
-          border-color: #00fff7;
-        }
-      }
     }
-  }
+    
+    // Gradients animés en arrière-plan
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.15;
+        animation: float-orb 12s ease-in-out infinite;
+    }
+    
+    &::before {
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, $color-primary, transparent);
+        top: -200px;
+        left: -200px;
+    }
+    
+    &::after {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, $color-accent, transparent);
+        bottom: -150px;
+        right: -150px;
+        animation-delay: 6s;
+    }
+    
+    @keyframes float-orb {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        33% {
+            transform: translate(50px, -50px) scale(1.1);
+        }
+        66% {
+            transform: translate(-30px, 30px) scale(0.9);
+        }
+    }
+    
+    // Portes avec effet 3D
+    .door {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100vh;
+        z-index: 10;
+        will-change: transform;
+        backface-visibility: hidden;
+        background: linear-gradient(135deg, 
+            var(--color-bg-dark) 0%, 
+            var(--color-bg) 50%, 
+            var(--color-bg-elevated) 100%
+        );
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba($color-primary, 0.1) 50%, 
+                transparent 100%
+            );
+        }
+        
+        &.left-door {
+            left: 0;
+            box-shadow: inset -1px 0 0 rgba($color-primary, 0.2);
+        }
+        
+        &.right-door {
+            right: 0;
+            box-shadow: inset 1px 0 0 rgba($color-primary, 0.2);
+        }
+    }
+    
+    // Contenu principal
+    .intro-content {
+        position: relative;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-2xl;
+        max-width: 800px;
+        padding: $spacing-3xl;
+        background: rgba($color-bg-dark, 0.7);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-radius: 10px;
+        border: 1px solid rgba($color-primary, 0.15);
+        box-shadow: 
+            0 20px 60px rgba($color-black, 0.3),
+            0 0 0 1px rgba($color-primary, 0.1) inset;
+        
+        .intro-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, $color-primary, $color-accent);
+            border-radius: $border-radius-xl;
+            color: $color-white;
+            box-shadow: 0 10px 40px rgba($color-primary, 0.4);
+            animation: logo-float 3s ease-in-out infinite;
+            
+            @keyframes logo-float {
+                0%, 100% {
+                    transform: translateY(0) rotate(0deg);
+                }
+                50% {
+                    transform: translateY(-10px) rotate(5deg);
+                }
+            }
+        }
+        
+        .intro-title {
+            margin: 0;
+            font-size: clamp($text-2xl, 5vw, $text-3xl);
+            font-weight: 800;
+            text-align: center;
+            line-height: 1.2;
+            background: linear-gradient(135deg, 
+                $color-primary 0%, 
+                $color-accent 50%, 
+                $color-primary 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease infinite;
+            
+            @keyframes gradient-shift {
+                0%, 100% {
+                    background-position: 0% center;
+                }
+                50% {
+                    background-position: 100% center;
+                }
+            }
+        }
+        
+        .intro-subtitle {
+            margin: 0;
+            font-size: clamp($text-base, 2vw, $text-lg);
+            color: var(--color-text-secondary);
+            text-align: center;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+        
+        .intro-features {
+            display: flex;
+            gap: $spacing-lg;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: $spacing-md;
+            
+            .feature-item {
+                display: flex;
+                align-items: center;
+                gap: $spacing-sm;
+                padding: $spacing-sm $spacing-lg;
+                background: rgba($color-primary, 0.1);
+                border: 1px solid rgba($color-primary, 0.2);
+                border-radius: $border-radius-full;
+                color: var(--color-text-primary);
+                font-size: $text-sm;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                
+                svg {
+                    color: $color-primary;
+                    transition: transform 0.3s ease;
+                }
+                
+                &:hover {
+                    background: rgba($color-primary, 0.15);
+                    border-color: $color-primary;
+                    transform: translateY(-2px);
+                    
+                    svg {
+                        transform: scale(1.1) rotate(10deg);
+                    }
+                }
+            }
+        }
+        
+        .enter-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: $spacing-sm;
+            margin: $spacing-xl auto 0;
+            padding: $spacing-lg $spacing-3xl;
+            border: 2px solid $color-primary;
+            border-radius: $border-radius-full;
+            font-size: $text-lg;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            color: $color-white;
+            background: linear-gradient(135deg, $color-primary, $color-accent);
+            box-shadow: 
+                0 10px 40px rgba($color-primary, 0.5),
+                0 0 60px rgba($color-accent, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            opacity: 1 !important;
+            visibility: visible !important;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: calc(100% + 16px);
+                height: calc(100% + 16px);
+                transform: translate(-50%, -50%);
+                background: linear-gradient(135deg, $color-primary, $color-accent);
+                border-radius: $border-radius-full;
+                opacity: 0;
+                filter: blur(25px);
+                z-index: -1;
+                transition: opacity 0.4s ease;
+            }
+            
+            .btn-text {
+                display: flex;
+                align-items: center;
+                gap: $spacing-sm;
+                transition: all 0.3s ease;
+            }
+            
+            &:hover {
+                transform: translateY(-6px) scale(1.08);
+                box-shadow: 
+                    0 20px 60px rgba($color-primary, 0.7),
+                    0 0 80px rgba($color-accent, 0.5);
+                border-color: $color-accent;
+                
+                &::before {
+                    opacity: 1;
+                    animation: pulse-glow 1.5s ease-in-out infinite;
+                }
+            }
+            
+            &.hovered {
+                .btn-text {
+                    gap: $spacing-md;
+                }
+            }
+            
+            &:active {
+                transform: translateY(-2px) scale(1.02);
+            }
+            
+            @keyframes pulse-glow {
+                0%, 100% {
+                    opacity: 0.6;
+                }
+                50% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
 
-// Animation du cercle qui tourne
-@keyframes rotateCircle {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+
+// Responsive
+@media (max-width: 1024px) {
+    .home-intro {
+        .intro-content {
+            padding: $spacing-2xl;
+            max-width: 600px;
+            
+            .intro-logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .intro-features {
+                .feature-item {
+                    font-size: $text-xs;
+                    padding: $spacing-xs $spacing-md;
+                    
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
 }
 
-// Animation du cercle qui se dessine
-@keyframes dashCircle {
-  from { stroke-dashoffset: 440; }
-  to { stroke-dashoffset: 0; }
-}
-
-.door {
-  will-change: transform;
-  backface-visibility: hidden;
+@media (max-width: 768px) {
+    .home-intro {
+        &::before,
+        &::after {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .intro-content {
+            padding: $spacing-xl;
+            gap: $spacing-lg;
+            
+            .intro-logo {
+                width: 80px;
+                height: 80px;
+                
+                svg {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+            
+            .intro-title {
+                font-size: $text-xl;
+            }
+            
+            .intro-subtitle {
+                font-size: $text-sm;
+            }
+            
+            .intro-features {
+                flex-direction: column;
+                gap: $spacing-sm;
+                
+                .feature-item {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+            
+            .enter-btn {
+                width: 100%;
+                padding: $spacing-md $spacing-xl;
+                font-size: $text-base;
+            }
+        }
+    }
 }

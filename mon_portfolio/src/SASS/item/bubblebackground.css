@@ -13,11 +13,14 @@
   bottom: 0;
   width: 30px;
   height: 30px;
-  background: linear-gradient(to right, #0D1117, #5a5f64);
+  background: radial-gradient(circle, rgba(88, 166, 255, 0.3), rgba(63, 185, 80, 0.1));
+  border: 1px solid rgba(88, 166, 255, 0.2);
   border-radius: 50%;
   animation: rise 8s infinite linear;
   left: calc(2% + 96% * var(--i));
   animation-delay: calc(0.5s * var(--i));
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 
 @keyframes rise {

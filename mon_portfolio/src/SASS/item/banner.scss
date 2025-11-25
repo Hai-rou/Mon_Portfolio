@@ -1,132 +1,356 @@
 @use '../variables' as *;
-// Variables
-$animation-duration: 6s;
-$animation-easing: ease-in-out;
-$float-distance: -20px;
-$rotation-angle: 180deg;
-.banner{    
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: $color-bg;
-    img{
-        z-index: 1;
+    justify-content: center;
+    background: var(--color-bg);
+    overflow: hidden;
+    
+    // Background avec canvas
+    .banner-background {
         position: absolute;
-    }
-    .banner-3{
-        height: 400px;
-        width: 100%;
-        height: 100vh;
-        background: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        canvas{
-            width: 100%;
-        } 
-    }
-   
-    .banner-content {
-        position: absolute;
-        z-index: 2;
-        top: 10%;
-        left: 10%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    color: $color-white;
+        inset: 0;
+        z-index: 0;
         
-        .typing-wrapper {
-            position: relative;
-            display: inline-block;
-            font-family: $font-mono;
-            font-size: 2rem;
-            /* sert au “saut à la ligne” du curseur */
-            .line {
-                display: inline-block;
-                overflow: hidden;
-                white-space: nowrap;
-                }
-            /* Ligne 1 : 22 caractères */
-            .line1 {
-                width: 0;
-                animation: type1 3s steps(22, end) forwards;
-                }
-            @keyframes type1 {
-                from { width: 0 }
-                to   { width: 22ch }
-            }
-
-            /* Ligne 2 : 15 caractères, démarre après la ligne 1 */
-            .line2 {
-                width: 0;
-                animation: type2 3s steps(15, end) forwards;
-                animation-delay: 3s; /* même durée que la ligne 1 */
-            }
-            @keyframes type2 {
-                from { width: 0 }
-                to   { width: 15ch }
-            }
-
-            /* Curseur unique qui suit les 2 lignes */
-            .caret {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 2px;
-                height: 1.2em;
-                background: $color-black;
-                pointer-events: none;
-                animation:
-                    caretMove 6s forwards,      /* 3s + 3s */
-                    blink 0.7s step-end infinite;
-            }
-
-            /* Déplacement du curseur : 
-            - 0→50% : tape 22ch sur la 1ʳᵉ ligne en 22 “steps”
-            - à 50% : saute à la 2ᵉ ligne
-            - 50→100% : tape 15ch sur la 2ᵉ ligne en 15 “steps”
-            */
-            @keyframes caretMove {
-                0%   { top: 0;      transform: translateX(0);    animation-timing-function: steps(22, end); }
-                50%  { top: 0;      transform: translateX(22ch); }
-                50.01% { top: 1.4em; transform: translateX(0);    animation-timing-function: steps(15, end); }
-                100% { top: 1.4em;  transform: translateX(15ch); }
-            }
-
-            /* Clignotement du curseur */
-            @keyframes blink {
-                from, to { opacity: 0 }
-                50%      { opacity: 1 }
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                circle at 20% 50%,
+                rgba($color-primary, 0.08),
+                transparent 50%
+            );
+            pointer-events: none;
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                circle at 80% 50%,
+                rgba($color-accent, 0.06),
+                transparent 50%
+            );
+            pointer-events: none;
+        }
+    }
+    
+    // Contenu principal
+    .banner-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 $spacing-3xl;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-4xl;
+        align-items: center;
+        
+        .banner-logo {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            filter: drop-shadow(0 20px 60px rgba($color-primary, 0.3));
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            &:hover {
+                transform: scale(1.05) rotate(2deg);
+                filter: drop-shadow(0 25px 80px rgba($color-primary, 0.4));
             }
         }
-
+        
+        .banner-text {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-2xl;
+            
+            .banner-greeting {
+                margin: 0;
+                font-size: clamp($text-lg, 3vw, $text-2xl);
+                font-weight: 600;
+                color: var(--color-text-secondary);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                background: linear-gradient(135deg, $color-primary, $color-accent);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .typing-wrapper {
+                position: relative;
+                font-family: $font-mono;
+                font-size: clamp($text-2xl, 5vw, 4rem);
+                font-weight: 800;
+                line-height: 1.2;
+                color: var(--color-text-primary);
+                margin: 0;
+                
+                .line {
+                    display: inline-block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                
+                .line1 {
+                    width: 0;
+                    animation: type1 2.5s steps(16, end) forwards;
+                }
+                
+                @keyframes type1 {
+                    from { width: 0; }
+                    to { width: 16ch; }
+                }
+                
+                .line2 {
+                    width: 0;
+                    background: linear-gradient(135deg, $color-primary, $color-accent);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    animation: type2 2s steps(16, end) forwards;
+                    animation-delay: 2.5s;
+                }
+                
+                @keyframes type2 {
+                    from { width: 0; }
+                    to { width: 16ch; }
+                }
+                
+                .caret {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 3px;
+                    height: 1.1em;
+                    background: $color-primary;
+                    box-shadow: 0 0 12px $color-primary;
+                    animation:
+                        caretMove 4.5s forwards,
+                        blink 0.8s step-end infinite;
+                }
+                
+                @keyframes caretMove {
+                    0% { 
+                        top: 0;
+                        transform: translateX(0);
+                        animation-timing-function: steps(16, end);
+                    }
+                    55% {
+                        top: 0;
+                        transform: translateX(16ch);
+                    }
+                    55.01% {
+                        top: 1.3em;
+                        transform: translateX(0);
+                        animation-timing-function: steps(16, end);
+                    }
+                    100% {
+                        top: 1.3em;
+                        transform: translateX(16ch);
+                    }
+                }
+                
+                @keyframes blink {
+                    from, to { opacity: 0; }
+                    50% { opacity: 1; }
+                }
+            }
+            
+            .banner-subtitle {
+                margin: 0;
+                font-size: clamp($text-base, 2vw, $text-xl);
+                font-weight: 500;
+                color: var(--color-text-secondary);
+                line-height: 1.6;
+            }
+            
+            .banner-cta {
+                display: flex;
+                gap: $spacing-lg;
+                margin-top: $spacing-xl;
+                
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: $spacing-sm;
+                    padding: $spacing-lg $spacing-2xl;
+                    border: none;
+                    border-radius: $border-radius-lg;
+                    font-size: $text-base;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    cursor: pointer;
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    position: relative;
+                    overflow: hidden;
+                    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.3);
+                        transform: translate(-50%, -50%);
+                        transition: width 0.6s ease, height 0.6s ease;
+                    }
+                    
+                    span, svg {
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    svg {
+                        transition: transform 0.3s ease;
+                    }
+                }
+                
+                .cta-primary {
+                    background: linear-gradient(135deg, $color-primary, $color-accent);
+                    color: $color-white;
+                    box-shadow: 0 8px 24px rgba($color-primary, 0.3);
+                    
+                    &:hover {
+                        transform: translateY(-4px);
+                        box-shadow: 0 12px 32px rgba($color-primary, 0.4);
+                        
+                        &::before {
+                            width: 300px;
+                            height: 300px;
+                        }
+                        
+                        svg {
+                            transform: translateX(4px);
+                        }
+                    }
+                    
+                    &:active {
+                        transform: translateY(-2px);
+                    }
+                }
+                
+                .cta-secondary {
+                    background: transparent;
+                    border: 2px solid $color-primary;
+                    color: $color-primary;
+                    
+                    &:hover {
+                        background: rgba($color-primary, 0.1);
+                        transform: translateY(-4px);
+                        box-shadow: 0 8px 20px rgba($color-primary, 0.2);
+                        
+                        svg {
+                            transform: scale(1.1);
+                        }
+                    }
+                    
+                    &:active {
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+            
+            .social-links {
+                display: flex;
+                gap: $spacing-lg;
+                margin-top: $spacing-2xl;
+                
+                .social-link {
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba($color-primary, 0.08);
+                    border: 2px solid rgba($color-primary, 0.15);
+                    border-radius: $border-radius-lg;
+                    color: $color-primary;
+                    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+                    
+                    &:hover {
+                        transform: translateY(-8px) rotate(8deg);
+                        background: $color-primary;
+                        color: $color-white;
+                        border-color: $color-primary;
+                        box-shadow: 0 12px 30px rgba($color-primary, 0.4);
+                    }
+                    
+                    &:active {
+                        transform: translateY(-4px) rotate(4deg);
+                    }
+                }
+            }
+        }
+    }
+    
+    // Indicateur de scroll
+    .scroll-indicator {
+        position: absolute;
+        bottom: $spacing-3xl;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        color: $color-primary;
+        animation: bounce 2s ease-in-out infinite;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+            transform: translate(-50%, 0);
+        }
+        50% {
+            transform: translate(-50%, 10px);
+        }
     }
 }
 
+// Responsive
 @media (max-width: 1024px) {
-    .banner{
+    .banner {
         .banner-content {
-            top: 5%;
-            left: 5%;
-            .typing-wrapper {
-                font-size: 1.5rem;
-                .line1 {
-                    animation: type1-tablette 3s steps(22, end) forwards;
+            grid-template-columns: 1fr;
+            gap: $spacing-3xl;
+            text-align: center;
+            padding: $spacing-2xl;
+            
+            .banner-logo {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .banner-text {
+                align-items: center;
+                
+                .banner-cta {
+                    justify-content: center;
                 }
-                @keyframes type1-tablette {
-                    from { width: 0 }
-                    to   { width: 22ch }
-                }
-                .line2 {
-                    animation: type2-tablette 3s steps(15, end) forwards;
-                    animation-delay: 3s; /* même durée que la ligne 1 */
-                }
-                @keyframes type2-tablette {
-                    from { width: 0 }
-                    to   { width: 15ch }
+                
+                .social-links {
+                    justify-content: center;
                 }
             }
         }
@@ -134,39 +358,45 @@ $rotation-angle: 180deg;
 }
 
 @media (max-width: 768px) {
-    .banner{
-        img{
-            width: 80%;
-            height: auto;
-        }
-
+    .banner {
         .banner-content {
-            top: 5%;
-            left: 5%;
-            .subtitle{
-                width: 100%;
-                position: absolute;
-                bottom: -400%;
-                left: 85%;
+            padding: $spacing-xl;
+            
+            .banner-logo {
+                max-width: 300px;
             }
-            .typing-wrapper {
-                font-size: 1rem;
-                .line1 {
-                    animation: type1-mobile 3s steps(22, end) forwards;
+            
+            .banner-text {
+                .typing-wrapper {
+                    font-size: clamp($text-xl, 6vw, $text-3xl);
+                    
+                    .line1,
+                    .line2 {
+                        display: block;
+                    }
                 }
-                @keyframes type1-mobile {
-                    from { width: 0 }
-                    to   { width: 22ch }
+                
+                .banner-cta {
+                    flex-direction: column;
+                    width: 100%;
+                    
+                    button {
+                        width: 100%;
+                        justify-content: center;
+                    }
                 }
-                .line2 {
-                    animation: type2-mobile 3s steps(15, end) forwards;
-                    animation-delay: 3s; /* même durée que la ligne 1 */
-                }
-                @keyframes type2-mobile {
-                    from { width: 0 }
-                    to   { width: 15ch }
+                
+                .social-links {
+                    .social-link {
+                        width: 45px;
+                        height: 45px;
+                    }
                 }
             }
+        }
+        
+        .scroll-indicator {
+            bottom: $spacing-xl;
         }
     }
 }

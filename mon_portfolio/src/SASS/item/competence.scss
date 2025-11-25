@@ -1,121 +1,334 @@
 @use '../variables' as *;
-// Container principal des compétences
-.skills-container {
+
+// Showcase moderne des compétences
+.skills-showcase {
   width: 100%;
-  background: linear-gradient(to right, $color-grey-light, $color-grey);
-  border-radius: $border-radius;
-  // Section des compétences
-  .skills {
-    max-width: 600px;
-    margin: 20px auto;
-
-    // Compétence individuelle
-    .skill {
-      margin: 25px 0;
-
-      // Informations de la compétence (nom + pourcentage)
-      .skill-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 8px;
-
-        // Label de la compétence
-        .skill-label {
-          font-weight: bold;
-          color: $color-black;
-          font-size: 16px;
-
-          // Icône
-          i {
-            margin-right: 8px;
-            font-size: 18px;
+  padding: 0;
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: $spacing-2xl;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .skill-card {
+      background: var(--color-bg-dark);
+      border-radius: $border-radius-xl;
+      padding: $spacing-2xl;
+      border: 1px solid rgba($color-primary, 0.12);
+      box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1),
+        0 20px 60px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(30px);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, $color-primary, $color-accent, transparent);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba($color-primary, 0.06),
+          transparent 70%
+        );
+        animation: float-subtle 15s ease-in-out infinite;
+        pointer-events: none;
+      }
+      
+      &.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 
+          0 8px 30px rgba(0, 0, 0, 0.15),
+          0 30px 80px rgba(0, 0, 0, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        border-color: rgba($color-primary, 0.25);
+        
+        &::before {
+          opacity: 1;
+        }
+        
+        .skill-icon-wrapper {
+          transform: scale(1.1) rotate(5deg);
+          
+          .icon-glow {
+            opacity: 0.3;
+            transform: scale(1.5);
           }
         }
-
-        // Pourcentage
-        .percentage {
-          font-weight: bold;
-          color: $color-black;
-          font-size: 14px;
+        
+        .progress-fill {
+          &::after {
+            animation: shimmer-progress 1.5s ease-in-out infinite;
+          }
         }
       }
-
-      // Barre de progression
-      .bar {
-  background: #e9ecef;
-  border-radius: 25px;
-        overflow: hidden;
-        height: 12px;
-        position: relative;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-
-        // Remplissage de la barre
-        .fill {
-          height: 100%;
-          border-radius: 25px;
-          transition: width 1.5s ease-in-out;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+      
+      .skill-header {
+        display: flex;
+        align-items: center;
+        gap: $spacing-lg;
+        margin-bottom: $spacing-xl;
+        
+        .skill-icon-wrapper {
           position: relative;
-
-          // Couleurs spécifiques par technologie
-          &.html5 {
-            background-color: #e44d26;
-          }
-
-          &.css3 {
-            background-color: #1572b6;
-          }
-
-          &.javascript {
-            background-color: #f7df1e;
-          }
-
-          &.react {
-            background-color: #61dafb;
-          }
-
-          &.astro {
-            background-color: #339933;
-          }
-
-          &.python {
-            background-color: #3776ab;
+          width: 72px;
+          height: 72px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba($color-primary, 0.05);
+          border-radius: $border-radius-lg;
+          border: 2px solid rgba($color-primary, 0.1);
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          
+          .icon-glow {
+            position: absolute;
+            inset: -10px;
+            border-radius: $border-radius-lg;
+            opacity: 0;
+            filter: blur(20px);
+            transition: all 0.4s ease;
+            z-index: -1;
           }
         }
+        
+        .skill-info {
+          flex: 1;
+          
+          .skill-name {
+            margin: 0 0 $spacing-xs 0;
+            font-size: $text-xl;
+            font-weight: 800;
+            color: var(--color-text-primary);
+            letter-spacing: -0.5px;
+          }
+          
+          .skill-category {
+            display: inline-block;
+            font-size: $text-xs;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: $spacing-xs $spacing-md;
+            background: rgba($color-primary, 0.08);
+            border-radius: $border-radius-full;
+            border: 1px solid rgba($color-primary, 0.15);
+          }
+        }
+      }
+      
+      .skill-stats {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-xl;
+        padding: $spacing-lg;
+        background: rgba($color-primary, 0.03);
+        border-radius: 10px;
+        border-left: 3px solid rgba($color-primary, 0.3);
+        
+        .stat-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          
+          .stat-label {
+            font-size: $text-sm;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+          }
+          
+          .stat-value {
+            font-size: $text-sm;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            padding: $spacing-xs $spacing-md;
+            background: rgba($color-accent, 0.1);
+            border-radius: $border-radius-sm;
+          }
+          
+          .stat-percentage {
+            font-size: $text-xl;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+          }
+        }
+      }
+      
+      .progress-container {
+        position: relative;
+        margin-bottom: $spacing-xl;
+        
+        .progress-bar {
+          height: 12px;
+          background: rgba($color-primary, 0.08);
+          border-radius: $border-radius-full;
+          overflow: hidden;
+          position: relative;
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+          
+          .progress-fill {
+            height: 100%;
+            border-radius: $border-radius-full;
+            position: relative;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+              0 2px 8px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+              );
+            }
+            
+            .progress-shine {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 50%;
+              background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.3),
+                transparent
+              );
+              border-radius: $border-radius-full $border-radius-full 0 0;
+            }
+          }
+        }
+        
+        .progress-trail {
+          position: absolute;
+          top: -6px;
+          right: -6px;
+          bottom: -6px;
+          left: -6px;
+          border: 2px solid transparent;
+          border-radius: $border-radius-full;
+          opacity: 0.3;
+        }
+      }
+      
+      .skill-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-xs;
+        padding: $spacing-sm $spacing-lg;
+        background: transparent;
+        border: 2px solid;
+        border-radius: $border-radius-full;
+        font-size: $text-sm;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px currentColor;
+        }
+      }
+    }
+    
+    // Animation de l'apparition progressive
+    @for $i from 1 through 6 {
+      .skill-card:nth-child(#{$i}) {
+        transition-delay: #{$i * 0.1}s;
       }
     }
   }
 }
 
+// Animations keyframes
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(15px, -15px) rotate(3deg);
+  }
+  66% {
+    transform: translate(-10px, 10px) rotate(-2deg);
+  }
+}
+
+@keyframes shimmer-progress {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+// Responsive
 @media (max-width: 1024px) {
-  .competences-container{
-    flex-direction: column;
-    align-items: center;
-    img{
-      display: none;
+  .skills-showcase {
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: $spacing-xl;
     }
-    .skills-container {
-      width: 80%;
-    }
-  } 
+  }
 }
 
 @media (max-width: 768px) {
-  .competences-container{
-    img{
-      display: none;
-    }
-    .skills-container {
-      width: 100%;
-      .skills {
-        .skill {
+  .skills-showcase {
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+      
+      .skill-card {
+        padding: $spacing-xl;
+        
+        .skill-header {
+          .skill-icon-wrapper {
+            width: 60px;
+            height: 60px;
+          }
+          
           .skill-info {
-            align-items: flex-start;
-            gap: 5px;
+            .skill-name {
+              font-size: $text-lg;
+            }
           }
         }
       }
     }
-  } 
+  }
 }

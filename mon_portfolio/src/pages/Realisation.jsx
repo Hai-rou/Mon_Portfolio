@@ -1,4 +1,4 @@
-import "../SASS/pages/realisation.css"
+import "../SASS/pages/realisation.scss"
 import BubblesBackground from "../components/item/BubblesBackground";
 import ToggleSection from "../components/item/ToggleSection";
 import { Icon } from '@iconify/react';
@@ -25,114 +25,199 @@ function Realisation() {
   return (
     <div className="vers-realisation" ref={containerRef}>
       <BubblesBackground />
-      <h1>Réalisations</h1>
-      <p>
-        Ici, vous trouverez mes projets en cours.  
-        Chaque réalisation est accompagnée d'une description détaillée, des technologies utilisées et des défis relevés. 
-        N'hésitez pas à explorer mon portfolio pour découvrir la diversité et la qualité de mon travail.
-      </p>
-      <section className="projet-en-cours">
-            <h2>Projet professionnel en cours</h2>
-            <p>
-                Actuellement, je travaille sur un projet de site web pour une entreprise basée dans le Calvados.
-            </p>
-            <p>
-                Ce projet est une excellente opportunité pour moi de mettre en pratique mes compétences en développement web et d'apprendre de nouvelles technologies.
-            </p>
-            <p>
-                Le site est en cours de développement et je suis enthousiaste à l'idée de le partager une fois qu'il sera terminé.
-            </p>
-            <div>
-                <h2>Rêves d'exploration</h2>
-                <p>
-                    Rêves d'exploration est un site web dédié aux passionnés de voyages et d'aventures.
-                    Il offre des guides de voyage, des récits d'aventures et des conseils pratiques pour les explorateurs en herbe.
-                    Le site est conçu pour être une source d'inspiration et d'information pour ceux qui rêvent de découvrir le monde.
-                </p>
-                <div className="reves">
-                  <div className="reves-maquette">
-                      <img src="/assets/realisation/Page d'accueil.webp" alt="Maquette de reves d'exploration" />
-                  </div>
-                  <div className="reves-item">
-                    <ToggleSection title="Objectifs du site">
-                      <ul>
-                        <li><h4>Site vitrine :</h4><br/> Fournir des informations détaillées.</li>
-                        <li><h4>Blog :</h4><br/> Partager des récits et conseils pratiques.</li>
-                        <li><h4>Communauté :</h4><br/> Permettre aux utilisateurs de partager.</li>
-                        <li><h4>Ressources :</h4><br/> Guides téléchargeables.</li>
-                        <li><h4>Clientèle :</h4><br/> Formulaire de contact.</li>
-                      </ul>
-                    </ToggleSection>
-                    <ToggleSection title="Technologies utilisées">
-                      <div className="technologies">
-                        <div className="front-back">
-                          <h4>FrontEnd</h4>
-                          <div className="techno-list">
-                            <Icon icon="simple-icons:astro" width="18" height="18" style={{marginRight: '8px'}} /> Astro
-                            <Icon icon="skill-icons:html" width="18" height="18" style={{marginRight: '8px'}} /> HTML5
-                            <Icon icon="simple-icons:tailwindcss" width="18" height="18" style={{color: '#06B6D4', marginRight: '8px', marginLeft: '16px'}} /> TailwindCSS
-                            <Icon icon="skill-icons:css" width="18" height="18" style={{marginRight: '8px', marginLeft: '16px'}} /> CSS3
-                            <Icon icon="skill-icons:javascript" width="18" height="18" style={{marginRight: '8px', marginLeft: '16px'}} /> JavaScript
-                          </div>
-                        </div>
-                        <div className="front-back">
-                          <h4>BackEnd</h4>
-                          <div className="techno-list">
-                            <Icon icon="skill-icons:python-dark" width="18" height="18" style={{marginRight: '8px'}} /> Python
-                          </div>
-                        </div>
-                      </div>                          
-                    </ToggleSection>
-                    <ToggleSection title="Nouvelles technologies utilisées">
-                      <ul>
-                        <li><h4>Astro :</h4><br/> Framework moderne pour construire des sites web rapides.</li>
-                        <li><h4>TailwindCSS :</h4><br/> Framework CSS utilitaire pour un design rapide et réactif. </li>
-                      </ul>
-                    </ToggleSection>
-                    <ToggleSection title="Outils et plateformes">
-                      <ul>
-                        <li><h4>Hébergement :</h4><br/> Netlify pour le déploiement du site.</li>
-                        <li><h4>Versioning :</h4><br/> Git et GitHub pour la gestion du code source.</li>
-                        <li><h4>Design :</h4><br/> Figma pour la création des maquettes.</li>
-                        <li><h4>SEO :</h4><br/> Google Analytics pour le suivi des performances.</li>
-                      </ul>
-                    </ToggleSection>
-                    <ToggleSection title="Durée du projet">
-                      <ul>
-                        <li><h4>Début :</h4><br/> Mai 2025</li>
-                        <li><h4>Estimation de fin :</h4><br/> Inconnu </li>
-                        <li><h4>Statut actuel :</h4><br/> En cours de développement</li>
-                      </ul>
-                    </ToggleSection>
-                    <ToggleSection title="Rôle dans le projet">
-                      <ul>
-                        <li><h4>Intégration web :</h4><br/> Traduction des maquettes en code HTML/CSS.</li>
-                        <li><h4>Développement front-end :</h4><br/> Création d'interfaces utilisateur interactives.</li>
-                        <li><h4>Tests et optimisation :</h4><br/> Assurer la performance et la compatibilité multi-navigateurs.</li>
-                        <li><h4>Mise à jour du contenu :</h4><br/> Gestion et actualisation des informations sur le site.</li>
-                      </ul>
-                    </ToggleSection>
-                    <ToggleSection title="Fonctionnalités clés">
-                      <ul>
-                        <li><h4>Design responsive :</h4><br/> Adapté à tous les appareils.</li>
-                        <li><h4>Blog interactif :</h4><br/> Articles avec commentaires.</li>
-                        <li><h4>Galerie multimédia :</h4><br/> Photos et vidéos des voyages.</li>
-                        <li><h4>Formulaire de contact :</h4><br/> Pour questions et collaborations.</li>
-                        <li><h4>Optimisation SEO :</h4><br/> Meilleure visibilité en ligne.</li>
-                      </ul>
-                    </ToggleSection>
-                    <ToggleSection title="Défis rencontrés">
-                      <ul>
-                        <li><h4>Conception responsive :</h4><br/> Adapter le design pour tous les appareils.</li>
-                        <li><h4>Optimisation des performances :</h4><br/> Assurer des temps de chargement rapides.</li>
-                        <li><h4>SEO :</h4><br/> Optimiser le contenu pour les moteurs de recherche.</li>
-                        <li><h4>Accessibilité :</h4><br/> Rendre le site utilisable par tous.</li>
-                        <li><h4>Intégration de contenu dynamique :</h4><br/> Permettre aux utilisateurs de soumettre des articles.</li>
-                      </ul>
-                    </ToggleSection>
-                  </div>
+      <div className="page-header">
+        <h1>Réalisations</h1>
+        <p className="page-subtitle">
+          Découvrez mes projets professionnels et personnels, reflétant mon engagement envers l'excellence technique et la créativité.
+        </p>
+      </div>
+
+      <section className="project-showcase">
+        <div className="project-card featured">
+          <div className="project-badge">
+            <Icon icon="mdi:star" width="20" height="20" />
+            <span>En cours</span>
+          </div>
+          
+          <div className="project-header">
+            <div className="project-title-section">
+              <h2>Rêves d'Exploration</h2>
+              <p className="project-subtitle">Plateforme de voyage et d'aventures</p>
+              <a href="https://reve-exploration.vercel.app/" target="_blank" rel="noopener noreferrer">Visiter le projet en ligne mais toujours en développement</a>
+            </div>
+            <div className="project-meta">
+              <div className="meta-item">
+                <Icon icon="mdi:calendar" width="18" height="18" />
+                <span>Mai 2025 - En cours</span>
+              </div>
+              <div className="meta-item">
+                <Icon icon="mdi:account" width="18" height="18" />
+                <span>Intégrateur Web</span>
               </div>
             </div>
+          </div>
+
+          <div className="project-content">
+            <div className="project-visual">
+              <div className="mockup-container">
+                <div className="mockup-frame">
+                  <div className="browser-bar">
+                    <div className="browser-dots">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div className="browser-url">revesdexploration.com</div>
+                  </div>
+                  <img src="/assets/realisation/Page d'accueil.webp" alt="Maquette Rêves d'Exploration" />
+                </div>
+              </div>
+            </div>
+
+            <div className="project-details">
+              <div className="detail-section">
+                <h3>
+                  <Icon icon="mdi:target" width="24" height="24" />
+                  Vue d'ensemble
+                </h3>
+                <p>
+                  Site web dédié aux passionnés de voyages, offrant des guides détaillés, 
+                  des récits d'aventures et une communauté interactive pour partager des expériences.
+                </p>
+              </div>
+
+              <div className="detail-section">
+                <h3>
+                  <Icon icon="mdi:cog" width="24" height="24" />
+                  Technologies
+                </h3>
+                <div className="tech-stack">
+                  <div className="tech-category">
+                    <span className="category-label">Frontend</span>
+                    <div className="tech-items">
+                      <div className="tech-chip">
+                        <Icon icon="simple-icons:astro" width="16" height="16" />
+                        <span>Astro</span>
+                      </div>
+                      <div className="tech-chip">
+                        <Icon icon="simple-icons:tailwindcss" width="16" height="16" />
+                        <span>TailwindCSS</span>
+                      </div>
+                      <div className="tech-chip">
+                        <Icon icon="skill-icons:javascript" width="16" height="16" />
+                        <span>JavaScript</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="tech-category">
+                    <span className="category-label">Backend</span>
+                    <div className="tech-items">
+                      <div className="tech-chip">
+                        <Icon icon="skill-icons:python-dark" width="16" height="16" />
+                        <span>Python</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="tech-category">
+                    <span className="category-label">Outils</span>
+                    <div className="tech-items">
+                      <div className="tech-chip">
+                        <Icon icon="simple-icons:figma" width="16" height="16" />
+                        <span>Figma</span>
+                      </div>
+                      <div className="tech-chip">
+                        <Icon icon="mdi:git" width="16" height="16" />
+                        <span>Git</span>
+                      </div>
+                      <div className="tech-chip">
+                        <Icon icon="simple-icons:netlify" width="16" height="16" />
+                        <span>Netlify</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="detail-section">
+                <h3>
+                  <Icon icon="mdi:briefcase" width="24" height="24" />
+                  Responsabilités
+                </h3>
+                <div className="responsibilities-grid">
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:code-tags" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Intégration web</h4>
+                      <p>Traduction des maquettes Figma en code HTML/CSS performant</p>
+                    </div>
+                  </div>
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:palette" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Design responsive</h4>
+                      <p>Adaptation fluide sur tous les types d'appareils</p>
+                    </div>
+                  </div>
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:speedometer" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Optimisation</h4>
+                      <p>Performance, SEO et accessibilité web</p>
+                    </div>
+                  </div>
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:puzzle" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Développement</h4>
+                      <p>Création d'interfaces utilisateur interactives</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="detail-section highlights">
+                <h3>
+                  <Icon icon="mdi:star-circle" width="24" height="24" />
+                  Points clés
+                </h3>
+                <div className="highlights-list">
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>Blog interactif avec système de commentaires</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>Galerie multimédia optimisée pour tous formats</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>Architecture SEO-friendly pour meilleure visibilité</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>Formulaire de contact avec validation avancée</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="coming-soon-section">
+          <div className="coming-soon-content">
+            <Icon icon="mdi:rocket-launch" width="48" height="48" />
+            <h3>Nouveaux projets en préparation</h3>
+            <p>D'autres réalisations seront bientôt disponibles. Restez connecté pour découvrir mes prochaines créations !</p>
+          </div>
+        </div>
       </section>
     </div>
   )

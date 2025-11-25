@@ -1,11 +1,11 @@
 .competences-page {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  padding: 10px;
+  background: var(--color-bg);
   max-width: 1440px;
   margin: 0 auto;
-  background: linear-gradient(45deg, #58A6FF, #3FB950, #58A6FF, #3FB950);
+  padding: clamp(2rem, 5vw, 5rem) 2rem;
+  min-height: 100vh;
 }
 .competences-page .orbs-bg {
   position: absolute;
@@ -16,147 +16,528 @@
 .competences-page .orb {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(31, 33, 35, 0.8), transparent);
-  filter: blur(1px);
+  background: radial-gradient(circle, rgba(88, 166, 255, 0.15), transparent);
+  filter: blur(50px);
   pointer-events: none;
   z-index: 0;
 }
-.competences-page p {
-  width: 70%;
-  text-align: center;
-}
 .competences-page .competence-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
   z-index: 1;
 }
-.competences-page .competence-content .logo-anime {
-  margin: 20px auto;
+.competences-page .competence-content .page-hero {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.competences-page .competence-content .page-hero .logo-section {
+  margin-bottom: 3rem;
+}
+.competences-page .competence-content .page-hero .logo-section .logo-anime {
+  margin: 4rem auto;
   width: 300px;
   height: 300px;
-  animation: rotateScale 4s infinite;
+  animation: rotateScale 5s infinite ease-in-out;
 }
-.competences-page .competence-content .logo-anime img {
+.competences-page .competence-content .page-hero .logo-section .logo-anime img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(88, 166, 255, 0.4));
 }
 @keyframes rotateScale {
   0% {
     transform: rotate(0deg) scale(1);
   }
   50% {
-    transform: rotate(180deg) scale(1.2);
+    transform: rotate(180deg) scale(1.1);
   }
   100% {
     transform: rotate(360deg) scale(1);
   }
 }
-.competences-page .competence-content .title-competence {
-  margin-bottom: 40px;
-}
-.competences-page .competence-content .title-competence h1 {
-  text-align: center;
-}
-.competences-page .competence-content .title-competence p {
+.competences-page .competence-content .page-hero .hero-text {
+  max-width: 900px;
   margin: 0 auto;
 }
-.competences-page .competence-content .tech-portfolio {
+.competences-page .competence-content .page-hero .hero-text h1 {
+  font-size: clamp(1.125rem, 1.05rem + 0.5vw, 1.375rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #58A6FF, #3FB950);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+.competences-page .competence-content .page-hero .hero-text .hero-subtitle {
+  font-size: clamp(1.125rem, 1.05rem + 0.5vw, 1.375rem);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+.competences-page .competence-content .skills-section {
+  margin-bottom: 6rem;
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.03), rgba(63, 185, 80, 0.03));
+  border-radius: 1.5rem;
+  border: 1px solid rgba(88, 166, 255, 0.1);
+}
+.competences-page .competence-content .skills-section .skills-note {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  width: 100%;
+  margin-top: 2rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  color: var(--color-text-secondary);
+  font-style: italic;
 }
-.competences-page .competence-content .tech-portfolio h4 {
-  width: 100%;
-  text-align: center;
+.competences-page .competence-content .skills-section .skills-note .iconify {
   color: #58A6FF;
-  font-weight: bold;
-  font-size: 20px;
 }
-.competences-page .competence-content .tech-portfolio .tech-item {
+.competences-page .competence-content .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  background-color: #21262D;
+  gap: 1rem;
 }
-.competences-page .competence-content .tech-portfolio .tech-item .tech-list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  height: 90px;
-  background: linear-gradient(to right, #58A6FF, #3FB950);
-  border-radius: 10px;
+.competences-page .competence-content .section-header .iconify {
+  color: #58A6FF;
 }
-.competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card {
+.competences-page .competence-content .section-header h2 {
+  font-size: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  position: relative;
+}
+.competences-page .competence-content .section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #58A6FF, #3FB950);
+  border-radius: 9999px;
+}
+.competences-page .competence-content .section-header p {
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.7;
+}
+.competences-page .competence-content .tech-stack-section {
+  margin-bottom: 6rem;
+}
+.competences-page .competence-content .tech-stack-section .tech-grid {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  margin-top: 3rem;
+}
+.competences-page .competence-content .tech-stack-section .tech-category {
+  background: var(--color-bg-dark);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.competences-page .competence-content .tech-stack-section .tech-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #58A6FF, #3FB950);
+}
+.competences-page .competence-content .tech-stack-section .tech-category:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(88, 166, 255, 0.3);
+}
+.competences-page .competence-content .tech-stack-section .tech-category .category-header {
+  margin-bottom: 2rem;
+  display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 1rem;
 }
-.competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card i {
-  font-size: 2rem;
-  color: #fff;
+.competences-page .competence-content .tech-stack-section .tech-category .category-header .iconify {
+  color: #58A6FF;
 }
-.competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card span {
-  font-size: 1rem;
-  color: #fff;
+.competences-page .competence-content .tech-stack-section .tech-category .category-header h3 {
+  font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+  font-weight: 700;
+  color: #58A6FF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(88, 166, 255, 0.05);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card:hover {
+  background: rgba(88, 166, 255, 0.12);
+  transform: translateX(8px);
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card:hover .tech-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-icon {
+  font-size: 2.5rem;
+  color: #58A6FF;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-icon .iconify {
+  display: block;
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-info .tech-name {
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-info .tech-level {
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+.competences-page .competence-content .tech-stack-section .tools-category {
+  grid-column: 1/-1;
+}
+.competences-page .competence-content .tech-stack-section .tools-category .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+.competences-page .competence-content .tech-stack-section .tools-category .tool-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(88, 166, 255, 0.05);
+  border-radius: 9999px;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.competences-page .competence-content .tech-stack-section .tools-category .tool-chip:hover {
+  transform: translateY(-4px);
+  background: rgba(88, 166, 255, 0.1);
+  border-color: #58A6FF;
+  box-shadow: var(--shadow-lg);
+}
+.competences-page .competence-content .tech-stack-section .tools-category .tool-chip:hover .iconify {
+  transform: scale(1.2);
+}
+.competences-page .competence-content .tech-stack-section .tools-category .tool-chip .iconify {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.competences-page .competence-content .tech-stack-section .tools-category .tool-chip span {
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.competences-page .competence-content .learning-section {
+  margin-bottom: 6rem;
+}
+.competences-page .competence-content .learning-section .learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.competences-page .competence-content .learning-section .learning-card {
+  background: var(--color-bg-dark);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(88, 166, 255, 0.1);
+  position: relative;
+}
+.competences-page .competence-content .learning-section .learning-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(88, 166, 255, 0.3);
+}
+.competences-page .competence-content .learning-section .learning-card.featured {
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(63, 185, 80, 0.1));
+  border: 2px solid #58A6FF;
+}
+.competences-page .competence-content .learning-section .learning-card.featured .learning-icon .iconify {
+  color: #3FB950;
+}
+.competences-page .competence-content .learning-section .learning-card .learning-icon {
+  margin-bottom: 1.5rem;
+}
+.competences-page .competence-content .learning-section .learning-card .learning-icon .iconify {
+  color: #58A6FF;
+}
+.competences-page .competence-content .learning-section .learning-card h3 {
+  font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+  font-weight: 700;
+  color: #58A6FF;
+  margin: 0 0 1.5rem 0;
+}
+.competences-page .competence-content .learning-section .learning-card p {
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+.competences-page .competence-content .discovery-section {
+  margin-bottom: 3rem;
+}
+.competences-page .competence-content .discovery-section .discovery-card {
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.08), rgba(63, 185, 80, 0.08));
+  border-radius: 1.5rem;
+  padding: 4rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+}
+.competences-page .competence-content .discovery-section .discovery-card .discovery-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.competences-page .competence-content .discovery-section .discovery-card .discovery-header .discovery-icon .iconify {
+  color: #88CE02;
+}
+.competences-page .competence-content .discovery-section .discovery-card .discovery-header h2 {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+.competences-page .competence-content .discovery-section .discovery-card .discovery-header .discovery-subtitle {
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin: 0.25rem 0 0 0;
+}
+.competences-page .competence-content .discovery-section .discovery-card .discovery-description {
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 4rem;
+  max-width: 900px;
+}
+.competences-page .competence-content .discovery-section .discovery-card .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.competences-page .competence-content .discovery-section .discovery-card .feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-bg);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+.competences-page .competence-content .discovery-section .discovery-card .feature-item:hover {
+  transform: translateX(8px);
+  background: rgba(88, 166, 255, 0.05);
+  border-color: rgba(88, 166, 255, 0.2);
+}
+.competences-page .competence-content .discovery-section .discovery-card .feature-item > .iconify {
+  color: #58A6FF;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.competences-page .competence-content .discovery-section .discovery-card .feature-item > div {
+  flex: 1;
+}
+.competences-page .competence-content .discovery-section .discovery-card .feature-item > div h4 {
+  color: var(--color-text-primary);
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+.competences-page .competence-content .discovery-section .discovery-card .feature-item > div p {
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
   .competences-page {
-    margin: 10px;
+    padding: 3rem 1.5rem;
   }
-  .competences-page .competence-content .logo-anime {
-    width: 250px;
-    height: 250px;
+  .competences-page .competence-content .page-hero .logo-section .logo-anime {
+    width: 240px;
+    height: 240px;
   }
-  .competences-page .competence-content .tech-portfolio {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .competences-page .competence-content .page-hero .hero-text h1 {
+    font-size: clamp(2rem, 1.7rem + 1.5vw, 3rem);
   }
-  .competences-page .competence-content .tech-portfolio .tech-item {
-    width: 70%;
-    padding: 0;
+  .competences-page .competence-content .tech-stack-section .tech-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .competences-page .competence-content .tech-portfolio .tech-item .tech-list {
-    flex-wrap: wrap;
-    height: auto;
-  }
-  .competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card {
-    padding: 10px;
+  .competences-page .competence-content .learning-section .learning-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (max-width: 768px) {
   .competences-page {
-    margin: 10px;
+    padding: 2rem 1rem;
   }
-  .competences-page .competence-content .logo-anime {
-    width: 200px;
-    height: 200px;
+  .competences-page .competence-content .page-hero {
+    margin-bottom: 3rem;
   }
-  .competences-page .competence-content .tech-portfolio {
+  .competences-page .competence-content .page-hero .logo-section .logo-anime {
+    width: 180px;
+    height: 180px;
+    margin: 3rem auto;
+  }
+  .competences-page .competence-content .page-hero .hero-text h1 {
+    font-size: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  }
+  .competences-page .competence-content .page-hero .hero-text .hero-subtitle {
+    font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  }
+  .competences-page .competence-content .section-header {
+    margin-bottom: 3rem;
+  }
+  .competences-page .competence-content .section-header .iconify {
+    width: 24px;
+    height: 24px;
+  }
+  .competences-page .competence-content .section-header h2 {
+    font-size: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  }
+  .competences-page .competence-content .skills-section {
+    padding: 3rem 1.5rem;
+  }
+  .competences-page .competence-content .tech-stack-section .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .competences-page .competence-content .tech-stack-section .tech-category {
+    padding: 1.5rem;
+  }
+  .competences-page .competence-content .tech-stack-section .tech-category .category-header .iconify {
+    width: 24px;
+    height: 24px;
+  }
+  .competences-page .competence-content .tech-stack-section .tech-category .category-header h3 {
+    font-size: clamp(1.125rem, 1.05rem + 0.5vw, 1.375rem);
+  }
+  .competences-page .competence-content .tech-stack-section .tech-category .tech-card {
+    padding: 1rem;
+  }
+  .competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-icon {
+    font-size: 2rem;
+  }
+  .competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-icon .iconify {
+    width: 32px;
+    height: 32px;
+  }
+  .competences-page .competence-content .tech-stack-section .tech-category .tech-card .tech-info .tech-name {
+    font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  }
+  .competences-page .competence-content .tech-stack-section .tools-category .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  .competences-page .competence-content .tech-stack-section .tool-chip {
+    padding: 0.5rem 1rem;
+  }
+  .competences-page .competence-content .tech-stack-section .tool-chip .iconify {
+    width: 20px;
+    height: 20px;
+  }
+  .competences-page .competence-content .tech-stack-section .tool-chip span {
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  }
+  .competences-page .competence-content .learning-section .learning-grid {
+    gap: 1.5rem;
+  }
+  .competences-page .competence-content .learning-section .learning-card {
+    padding: 1.5rem;
+  }
+  .competences-page .competence-content .learning-section .learning-card .learning-icon .iconify {
+    width: 28px;
+    height: 28px;
+  }
+  .competences-page .competence-content .learning-section .learning-card h3 {
+    font-size: clamp(1.125rem, 1.05rem + 0.5vw, 1.375rem);
+  }
+  .competences-page .competence-content .learning-section .learning-card p {
+    font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  }
+  .competences-page .competence-content .discovery-section .discovery-card {
+    padding: 2rem;
+  }
+  .competences-page .competence-content .discovery-section .discovery-card .discovery-header {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
-  .competences-page .competence-content .tech-portfolio .tech-item {
-    padding: 0;
+  .competences-page .competence-content .discovery-section .discovery-card .discovery-header .discovery-icon .iconify {
+    width: 40px;
+    height: 40px;
   }
-  .competences-page .competence-content .tech-portfolio .tech-item .tech-list {
-    flex-wrap: wrap;
-    height: auto;
+  .competences-page .competence-content .discovery-section .discovery-card .discovery-header h2 {
+    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
   }
-  .competences-page .competence-content .tech-portfolio .tech-item .tech-list .tech-card {
-    padding: 10px;
+  .competences-page .competence-content .discovery-section .discovery-card .discovery-description {
+    font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  }
+  .competences-page .competence-content .discovery-section .discovery-card .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .competences-page .competence-content .discovery-section .discovery-card .feature-item {
+    padding: 1rem;
+  }
+  .competences-page .competence-content .discovery-section .discovery-card .feature-item > .iconify {
+    width: 20px;
+    height: 20px;
+  }
+  .competences-page .competence-content .discovery-section .discovery-card .feature-item h4 {
+    font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  }
+  .competences-page .competence-content .discovery-section .discovery-card .feature-item p {
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   }
 }/*# sourceMappingURL=competence.css.map */

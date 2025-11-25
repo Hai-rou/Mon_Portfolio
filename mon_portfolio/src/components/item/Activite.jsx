@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../SASS/item/activites.css';
+import '../../SASS/item/activites.scss';
 
 // Données des projets avec descriptions
 import { projectsData } from '../../data/projetsData';
@@ -72,54 +72,56 @@ function Activites() {
     };
 
     return (
-        <div className="act-container">
-            {/* Section GitHub */}
-            <div className="git-container">
-                <p>Derniers dépôts GitHub mis à jour</p>
-                <div className="Act-Bank">
-                    {projectsData.map((project) => (
-                        <a
-                            key={project.id}
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={project.className}
-                            onMouseEnter={(e) => handleMouseEnter(project, e)}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <img src={project.image} alt={`Image ${project.title}`} />
-                            {project.title}
-                        </a>
-                    ))}
-                </div>
-            </div>
-
-            {/* Section diplôme */}
-            <div className="diplo-container">
-                <p>Dernier diplôme, emploi et projet</p>
-                <div className="item">
-                    <img src="/assets/openclassrooms.webp" alt="Logo Openclassrooms" />
-                    <div className="context">
-                        <h3>Intégrateur Web</h3>
-                        <span>OpenClassrooms</span>
+        <div className="activites">
+            <div className="act-container">
+                {/* Section GitHub */}
+                <div className="git-container">
+                    <p>Derniers dépôts GitHub mis à jour</p>
+                    <div className="Act-Bank">
+                        {projectsData.map((project) => (
+                            <a
+                                key={project.id}
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={project.className}
+                                onMouseEnter={(e) => handleMouseEnter(project, e)}
+                                onMouseMove={handleMouseMove}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <img src={project.image} alt={`Image ${project.title}`} />
+                                {project.title}
+                            </a>
+                        ))}
                     </div>
-                    <span>Formations</span>
-                    <span>2025</span>
                 </div>
-            </div>
 
-            {/* Section réseaux */}
-            <div className="reseau-container">
-                <p>Connectez-vous avec moi</p>
-            </div>
+                {/* Section diplôme */}
+                <div className="diplo-container">
+                    <p>Dernier diplôme, emploi et projet</p>
+                    <div className="item">
+                        <img src="/assets/openclassrooms.webp" alt="Logo Openclassrooms" />
+                        <div className="context">
+                            <h3>Intégrateur Web</h3>
+                            <span>OpenClassrooms</span>
+                        </div>
+                        <span>Formations</span>
+                        <span>2025</span>
+                    </div>
+                </div>
 
-            {/* Modal */}
-            <ProjectModal
-                project={hoveredProject}
-                position={mousePosition}
-                isVisible={!!hoveredProject}
-            />
+                {/* Section réseaux */}
+                <div className="reseau-container">
+                    <p>Connectez-vous avec moi</p>
+                </div>
+
+                {/* Modal */}
+                <ProjectModal
+                    project={hoveredProject}
+                    position={mousePosition}
+                    isVisible={!!hoveredProject}
+                />
+            </div>
         </div>
     );
 }

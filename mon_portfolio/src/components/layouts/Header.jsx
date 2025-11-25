@@ -1,6 +1,7 @@
-import "../../SASS/layouts/header.css"
+import "../../SASS/layouts/header.scss"
 import { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom"
+import ThemeToggle from '../item/ThemeToggle'
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false)
@@ -46,19 +47,24 @@ const Header = () => {
         className={`navbar ${isSticky ? 'sticky' : ''}`}
       >
         <div className="name">&lt;/&gt; HHoumadi</div>
-        <button
-          className="menu-btn"
-          onClick={() => {
-            if (!isOpen && navbarRef.current) {
-              setIsOpen(true);
-              navbarRef.current.scrollIntoView({ behavior: "smooth" });
-            } else {
-              setIsOpen(false);
-            }
-          }}
-        >
-          {isOpen ? "✖" : "☰"}
-        </button>
+        
+        <div className="nav-actions">
+          <ThemeToggle />
+          <button
+            className="menu-btn"
+            onClick={() => {
+              if (!isOpen && navbarRef.current) {
+                setIsOpen(true);
+                navbarRef.current.scrollIntoView({ behavior: "smooth" });
+              } else {
+                setIsOpen(false);
+              }
+            }}
+          >
+            {isOpen ? "✖" : "☰"}
+          </button>
+        </div>
+        
         <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
           <Link to="/" onClick={scrollToTop}>
             <li>Accueil</li>

@@ -1,4 +1,5 @@
 @use '../variables' as *;
+
 .bubbles-background {
     position: absolute;
     top: 0; 
@@ -8,16 +9,21 @@
     z-index: 0;
     overflow: hidden;
     pointer-events: none;
+    
     .bubble {
         position: absolute;
         bottom: 0;
         width: 30px;
         height: 30px;
-    background: linear-gradient(to right, $color-bg, $color-grey);
+        background: radial-gradient(circle, 
+            rgba($color-primary, 0.3), 
+            rgba($color-accent, 0.1));
+        border: 1px solid rgba($color-primary, 0.2);
         border-radius: 50%;
         animation: rise 8s infinite linear;
         left: calc(2% + 96% * var(--i));
         animation-delay: calc(0.5s * var(--i));
+        backdrop-filter: blur(2px);
     }
 }
 

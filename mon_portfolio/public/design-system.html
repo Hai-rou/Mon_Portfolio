@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            padding: 2rem;
+            background: #0D1117;
+            color: #E6EDF3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #58A6FF, #3FB950);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: #3FB950;
+        }
+        
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .color-card {
+            background: #21262D;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 100px;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .color-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #E6EDF3;
+        }
+        
+        .color-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #9CA3AF;
+        }
+        
+        .spacing-demo {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #21262D;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .spacing-box {
+            background: linear-gradient(135deg, #58A6FF, #3FB950);
+            border-radius: 0.5rem;
+        }
+        
+        .spacing-label {
+            font-family: 'Courier New', monospace;
+            color: #9CA3AF;
+        }
+        
+        .typography-demo {
+            background: #21262D;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        
+        .typography-demo > * {
+            margin-bottom: 1rem;
+        }
+        
+        .shadow-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .shadow-box {
+            background: #21262D;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .btn-demo {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.625rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #58A6FF, #3FB950);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(88, 166, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #21262D;
+            color: #E6EDF3;
+            border: 1px solid #5A5F64;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #58A6FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Design System Portfolio</h1>
+        <p style="margin-bottom: 3rem; font-size: 1.2rem; color: #9CA3AF;">
+            Palette de couleurs, espacements et composants du portfolio professionnel
+        </p>
+        
+        <h2>Couleurs - Mode Dark</h2>
+        <div class="colors-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0D1117;"></div>
+                <div class="color-name">Background</div>
+                <div class="color-value">#0D1117</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #21262D;"></div>
+                <div class="color-name">BG Dark</div>
+                <div class="color-value">#21262D</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #161B22;"></div>
+                <div class="color-name">BG Elevated</div>
+                <div class="color-value">#161B22</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #58A6FF;"></div>
+                <div class="color-name">Primary</div>
+                <div class="color-value">#58A6FF</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #3FB950;"></div>
+                <div class="color-name">Accent</div>
+                <div class="color-value">#3FB950</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #E6EDF3;"></div>
+                <div class="color-name">Text Primary</div>
+                <div class="color-value">#E6EDF3</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #9CA3AF;"></div>
+                <div class="color-name">Text Secondary</div>
+                <div class="color-value">#9CA3AF</div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #5A5F64;"></div>
+                <div class="color-name">Text Muted</div>
+                <div class="color-value">#5A5F64</div>
+            </div>
+        </div>
+        
+        <h2>Espacements</h2>
+        <div class="spacing-demo">
+            <div class="spacing-item">
+                <div class="spacing-box" style="width: 4px; height: 40px;"></div>
+                <span class="spacing-label">$spacing-xs: 0.25rem (4px)</span>
+            </div>
+            <div class="spacing-item">
+                <div class="spacing-box" style="width: 8px; height: 40px;"></div>
+                <span class="spacing-label">$spacing-sm: 0.5rem (8px)</span>
+            </div>
+            <div class="spacing-item">
+                <div class="spacing-box" style="width: 16px; height: 40px;"></div>
+                <span class="spacing-label">$spacing-md: 1rem (16px)</span>
+            </div>
+            <div class="spacing-item">
+                <div class="spacing-box" style="width: 24px; height: 40px;"></div>
+                <span class="spacing-label">$spacing-lg: 1.5rem (24px)</span>
+            </div>
+            <div class="spacing-item">
+                <div class="spacing-box" style="width: 32px; height: 40px;"></div>
+                <span class="spacing-label">$spacing-xl: 2rem (32px)</span>
+            </div>
+            <div class="spacing-item">
+                <div class="spacing-box" style="width: 48px; height: 40px;"></div>
+                <span class="spacing-label">$spacing-2xl: 3rem (48px)</span>
+            </div>
+            <div class="spacing-item">
+                <div class="spacing-box" style="width: 64px; height: 40px;"></div>
+                <span class="spacing-label">$spacing-3xl: 4rem (64px)</span>
+            </div>
+        </div>
+        
+        <h2>Typographie</h2>
+        <div class="typography-demo">
+            <h1 style="margin: 0;">Heading 1 - $text-3xl</h1>
+            <h2 style="margin: 0;">Heading 2 - $text-2xl</h2>
+            <h3 style="margin: 0;">Heading 3 - $text-xl</h3>
+            <h4 style="margin: 0;">Heading 4 - $text-lg</h4>
+            <p style="margin: 0;">Paragraph - $text-base (clamp responsive)</p>
+            <small style="display: block;">Small text - $text-sm</small>
+        </div>
+        
+        <h2>Ombres</h2>
+        <div class="shadow-demo">
+            <div class="shadow-box" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);">
+                Shadow SM
+            </div>
+            <div class="shadow-box" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);">
+                Shadow MD
+            </div>
+            <div class="shadow-box" style="box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);">
+                Shadow LG
+            </div>
+            <div class="shadow-box" style="box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);">
+                Shadow XL
+            </div>
+        </div>
+        
+        <h2>Boutons</h2>
+        <div class="btn-demo">
+            <button class="btn btn-primary">Primary Button</button>
+            <button class="btn btn-secondary">Secondary Button</button>
+        </div>
+    </div>
+</body>
+</html>
