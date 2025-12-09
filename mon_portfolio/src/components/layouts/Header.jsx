@@ -82,7 +82,7 @@ const Header = () => {
             <li>Compétences</li>
           </Link>
           <a 
-          href="/assets/CV/CV internet 2025.pdf"
+          href="/assets/CV/CV 2025 Web.pdf"
           target="_blank"
           rel="noopener noreferrer"
           ><li>CV</li></a>
