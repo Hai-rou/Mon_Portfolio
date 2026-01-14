@@ -211,6 +211,184 @@ function Realisation() {
           </div>
         </div>
 
+        <div className="project-card">
+          <div className="project-header">
+            <div className="project-title-section">
+              <h2>Haacchi Music</h2>
+              <p className="project-subtitle">Haacchi Music - Gestionnaire de bibliothèque musicale PWA</p>
+              <p className="project-subtitle">
+                Application web progressive développée avec Angular 19, 
+                permettant aux utilisateurs de gérer et écouter leur collection musicale personnelle directement depuis leur navigateur.
+              </p>
+              <p className="projet-subtitle">
+                Philosophie :<br />
+                Haacchi remet l'utilisateur au centre de sa musique, sans dépendre de plateformes de streaming. 
+                Inspiré de l'esprit MySpace où la musique définissait l'identité numérique.
+              </p>
+              <a href="https://music-projet.vercel.app/" target="_blank" rel="noopener noreferrer">Visiter le projet en ligne</a>
+            </div>
+            <div className="project-meta">
+              <div className="meta-item">
+                <Icon icon="mdi:calendar" width="18" height="18" />
+                <span>2026</span>
+              </div>
+              <div className="meta-item">
+                <Icon icon="mdi:account" width="18" height="18" />
+                <span>Développeur Frontend</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-content">
+            <div className="project-visual">
+              <div className="mockup-container">
+                <div className="mockup-frame">
+                  <div className="browser-bar">
+                    <div className="browser-dots">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div className="browser-url">haacchimusic.com</div>
+                  </div>
+                  <img src="/assets/realisation/haacchi-homepage.png" alt="Maquette Haacchi Music" />
+                </div>
+              </div>
+            </div>
+
+            <div className="project-details">
+              <div className="detail-section">
+                <h3>
+                  <Icon icon="mdi:target" width="24" height="24" />
+                  Vue d'ensemble
+                </h3>
+                <p>
+                  Progressive Web App permettant de transformer sa bibliothèque musicale locale en playlists intelligentes. 
+                  Scanne automatiquement les dossiers, extrait les métadonnées et offre une expérience d'écoute fluide, 
+                  installable sur mobile comme une app native.
+                </p>
+              </div>
+
+              <div className="detail-section">
+                <h3>
+                  <Icon icon="mdi:cog" width="24" height="24" />
+                  Technologies
+                </h3>
+                <div className="tech-stack">
+                  <div className="tech-category">
+                    <span className="category-label">Frontend</span>
+                    <div className="tech-items">
+                      <div className="tech-chip">
+                        <Icon icon="simple-icons:angular" width="16" height="16" />
+                        <span>Angular</span>
+                      </div>
+                      <div className="tech-chip">
+                        <Icon icon="skill-icons:typescript" width="16" height="16" />
+                        <span>TypeScript</span>
+                      </div>
+                      <div className="tech-chip">
+                        <Icon icon="simple-icons:sass" width="16" height="16" />
+                        <span>SCSS</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="tech-category">
+                    <span className="category-label">Outils</span>
+                    <div className="tech-items">
+                      <div className="tech-chip">
+                        <Icon icon="mdi:git" width="16" height="16" />
+                        <span>Git</span>
+                      </div>
+                      <div className="tech-chip">
+                        <Icon icon="simple-icons:vercel" width="16" height="16" />
+                        <span>Vercel</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="detail-section">
+                <h3>
+                  <Icon icon="mdi:briefcase" width="24" height="24" />
+                  Responsabilités
+                </h3>
+                <div className="responsibilities-grid">
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:code-tags" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Développement Angular</h4>
+                      <p>Création de composants réutilisables et modulaires</p>
+                    </div>
+                  </div>
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:music" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Lecteur audio</h4>
+                      <p>Intégration d'un lecteur audio avec contrôles avancés</p>
+                    </div>
+                  </div>
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:database" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Gestion des données</h4>
+                      <p>Services Angular pour la gestion de l'état et des données</p>
+                    </div>
+                  </div>
+                  <div className="responsibility-item">
+                    <div className="resp-icon">
+                      <Icon icon="mdi:responsive" width="20" height="20" />
+                    </div>
+                    <div className="resp-content">
+                      <h4>Interface responsive</h4>
+                      <p>Design adaptatif pour tous les appareils</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="detail-section highlights">
+                <h3>
+                  <Icon icon="mdi:star-circle" width="24" height="24" />
+                  Points clés
+                </h3>
+                <div className="highlights-list">
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>📂 Scan intelligent : Parcours récursif des dossiers musicaux avec File System Access API</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>🎵 Playlists automatiques : Création de playlists basées sur l'arborescence des dossiers</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>🎨 Métadonnées enrichies : Extraction automatique des titres, artistes, albums et pochettes via music-metadata-browser</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>💾 Persistance locale : Sauvegarde des playlists dans IndexedDB pour éviter le rescan</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>🔀 Lecteur avancé : Lecture aléatoire, navigation suivant/précédent, barre de progression interactive</span>
+                  </div>
+                  <div className="highlight-item">
+                    <Icon icon="mdi:check-circle" width="20" height="20" />
+                    <span>📱 Installation mobile : PWA installable avec manifest et service worker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="coming-soon-section">
           <div className="coming-soon-content">
             <Icon icon="mdi:rocket-launch" width="48" height="48" />

@@ -11,7 +11,9 @@ const SkillsComponent = () => {
     { name: 'JavaScript', icon: 'skill-icons:javascript', percentage: 50, color: '#f7df1e', category: 'Front-end' },
     { name: 'React', icon: 'skill-icons:react-dark', percentage: 60, color: '#61dafb', category: 'Framework' },
     { name: 'Python', icon: 'skill-icons:python-dark', percentage: 20, color: '#3776ab', category: 'Back-end' },
-    { name: 'Astro', icon: 'simple-icons:astro', percentage: 20, color: '#ff5d01', category: 'Framework' }
+    { name: 'Astro', icon: 'simple-icons:astro', percentage: 20, color: '#ff5d01', category: 'Framework' },
+    { name: 'Angular', icon: 'skill-icons:angular-dark', percentage: 30, color: '#dd0031', category: 'Framework' },
+    { name: 'SASS', icon: 'skill-icons:sass', percentage: 60, color: '#cc6699', category: 'Style' },
   ];
 
   useEffect(() => {

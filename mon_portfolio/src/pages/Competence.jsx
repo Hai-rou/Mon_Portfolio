@@ -9,7 +9,8 @@ const techStackFrontEnd = [
     { name: 'CSS3', icon: 'skill-icons:css', level: 'Expert' },
     { name: 'JavaScript', icon: 'skill-icons:javascript', level: 'Avancé' },
     { name: 'React', icon: 'skill-icons:react-dark', level: 'Avancé' },
-    { name: 'Sass', icon: 'skill-icons:sass', level: 'Avancé' }
+    { name: 'Sass', icon: 'skill-icons:sass', level: 'Avancé' },
+    { name: 'Angular', icon: 'skill-icons:angular-dark', level: 'Apprentissage' },
 ];
 
 const techStackBackEnd = [
