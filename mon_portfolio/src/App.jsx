@@ -14,7 +14,7 @@ const About = lazy(() => import("./pages/About.jsx"));
 const Realisation = lazy(() => import("./pages/Realisation.jsx"));
 const Activites = lazy(() => import("./pages/Acti.jsx"));
 const Competence = lazy(() => import("./pages/Competence.jsx"));
-const Cv = lazy(() => import("./pages/Cv.jsx"));
+const CurriculumVitae = lazy(() => import("./pages/CurriculumVitae.jsx"));
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -56,7 +56,7 @@ function App() {
               <Route path="/realisation" element={<Realisation />} />
               <Route path="/activites" element={<Activites />} />
               <Route path="/competence" element={<Competence />} />
-              <Route path="/cv" element={<Cv />} />
+              <Route path="/cv" element={<CurriculumVitae />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </Suspense>

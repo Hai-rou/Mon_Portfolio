@@ -322,7 +322,7 @@ function Cv() {
       <div className="cv-actions">
         <button className="download-btn">
           <Icon icon="mdi:download" width="20" height="20" />
-          <span>Télécharger le CV (PDF)</span>
+          <a href="/assets/CV/newCVdoubleskills.pdf" download>Télécharger le CV (PDF)</a>
         </button>
       </div>
     </div>
