@@ -34,16 +34,20 @@ export default async function handler(req, res) {
       }
     );
 
+    // result contient le document dans result.value (si pas undefined)
+    const viewCount = result?.count || result?.value?.count || 1;
+
     return res.status(200).json({
       success: true,
-      views: result.count
+      views: viewCount
     });
 
   } catch (error) {
     console.error('Erreur API views:', error);
     return res.status(500).json({
       success: false,
-      error: 'Erreur lors de la récupération des vues'
+      error: 'Erreur lors de la récupération des vues',
+      details: error.message
     });
   }
 }
