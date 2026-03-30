@@ -1,0 +1,69 @@
+@import '../variables';
+
+.view-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0;
+  background: linear-gradient(135deg, $color-bg-elevated 0%, $color-bg-dark 100%);
+  border-radius: 8px;
+  border: 1px solid rgba($color-primary, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba($color-primary, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($color-primary, 0.15);
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    animation: blink 3s ease-in-out infinite;
+  }
+
+  &__number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-primary;
+    font-family: $font-mono;
+    letter-spacing: 0.05em;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    color: $color-text-secondary;
+    text-transform: lowercase;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .view-counter {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+
+    &__icon {
+      font-size: 1rem;
+    }
+
+    &__number {
+      font-size: 1rem;
+    }
+
+    &__text {
+      font-size: 0.85rem;
+    }
+  }
+}

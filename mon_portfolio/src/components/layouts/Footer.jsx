@@ -1,5 +1,6 @@
 import "../../SASS/layouts/footer.css"
 import { Icon } from '@iconify/react';
+import ViewCounter from '../item/ViewCounter';
 
 function Footer () {
     return(
@@ -24,6 +25,7 @@ function Footer () {
                         <span>Me contacter</span>
                     </a>
                 </div>
+                <ViewCounter />
                 <p>© 2025 Haïrou HOUMADI • Tous droits réservés</p>
             </div>
         </footer>

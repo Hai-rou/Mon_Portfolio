@@ -1,0 +1,60 @@
+.view-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0;
+  background: linear-gradient(135deg, #161B22 0%, #21262D 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.view-counter:hover {
+  border-color: rgba(88, 166, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
+}
+.view-counter__icon {
+  font-size: 1.25rem;
+  animation: blink 3s ease-in-out infinite;
+}
+.view-counter__number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #58A6FF;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  letter-spacing: 0.05em;
+}
+.view-counter__text {
+  font-size: 0.9rem;
+  color: #9CA3AF;
+  text-transform: lowercase;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+@media (max-width: 768px) {
+  .view-counter {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .view-counter__icon {
+    font-size: 1rem;
+  }
+  .view-counter__number {
+    font-size: 1rem;
+  }
+  .view-counter__text {
+    font-size: 0.85rem;
+  }
+}
+
+/*# sourceMappingURL=viewcounter.css.map */
