@@ -6,8 +6,6 @@ const options = {
   maxIdleTimeMS: 20000,
   connectTimeoutMS: 10000,
   socketTimeoutMS: 30000,
-  tls: true,
-  tlsAllowInvalidCertificates: false,
 };
 
 let cachedClient = null;
@@ -23,7 +21,8 @@ async function connectToDatabase() {
     throw new Error('Variable d\'environnement MONGODB_URI manquante');
   }
 
-  const client = new MongoClient(uri, options);
+  // Options minimales pour éviter les problèmes SSL
+  const client = new MongoClient(uri);
   await client.connect();
   cachedClient = client;
   
