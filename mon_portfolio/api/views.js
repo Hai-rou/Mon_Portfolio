@@ -1,11 +1,5 @@
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.MONGODB_URI;
-
-if (!uri) {
-  throw new Error('Variable d\'environnement MONGODB_URI manquante');
-}
-
 const options = {
   maxPoolSize: 5,
   minPoolSize: 0,
@@ -19,6 +13,12 @@ let cachedClient = null;
 async function connectToDatabase() {
   if (cachedClient) {
     return cachedClient;
+  }
+
+  const uri = process.env.MONGODB_URI;
+  
+  if (!uri) {
+    throw new Error('Variable d\'environnement MONGODB_URI manquante');
   }
 
   const client = new MongoClient(uri, options);
