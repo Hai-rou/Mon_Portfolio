@@ -16,11 +16,24 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('[API Views] Début de la requête');
+    
+    // Vérifier la variable d'environnement
+    if (!process.env.MONGODB_URI) {
+      console.error('[API Views] MONGODB_URI manquante');
+      return res.status(500).json({
+        success: false,
+        error: 'Configuration MongoDB manquante'
+      });
+    }
+
     // Connexion réutilisée grâce au client initialisé en dehors du handler
+    console.log('[API Views] Connexion à MongoDB...');
     const client = await clientPromise;
     const db = client.db('portfolio');
     const collection = db.collection('views');
 
+    console.log('[API Views] Incrémentation du compteur...');
     // Incrémenter le compteur de vues (atomic operation)
     const result = await collection.findOneAndUpdate(
       { _id: 'global_views' },
@@ -34,8 +47,12 @@ export default async function handler(req, res) {
       }
     );
 
-    // result contient le document dans result.value (si pas undefined)
-    const viewCount = result?.count || result?.value?.count || 1;
+    console.log('[API Views] Résultat:', JSON.stringify(result));
+
+    // Avec le driver MongoDB moderne, le document est dans result (pas result.value)
+    const viewCount = result?.count || 1;
+
+    console.log('[API Views] Compteur:', viewCount);
 
     return res.status(200).json({
       success: true,
@@ -43,11 +60,12 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Erreur API views:', error);
+    console.error('[API Views] Erreur complète:', error);
     return res.status(500).json({
       success: false,
       error: 'Erreur lors de la récupération des vues',
-      details: error.message
+      details: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 }
