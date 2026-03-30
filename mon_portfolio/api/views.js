@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
     console.log('[API Views] Incrémentation du compteur...');
     // Incrémenter le compteur de vues (atomic operation)
-    const result = await collection.findOneAndUpdate(
+    const updateResult = await collection.findOneAndUpdate(
       { _id: 'global_views' },
       { 
         $inc: { count: 1 },
@@ -47,12 +47,29 @@ export default async function handler(req, res) {
       }
     );
 
-    console.log('[API Views] Résultat:', JSON.stringify(result));
+    console.log('[API Views] Type de résultat:', typeof updateResult);
+    console.log('[API Views] Résultat complet:', JSON.stringify(updateResult));
+    console.log('[API Views] updateResult.value:', JSON.stringify(updateResult?.value));
+    console.log('[API Views] updateResult.count:', updateResult?.count);
 
-    // Avec le driver MongoDB moderne, le document est dans result (pas result.value)
-    const viewCount = result?.count || 1;
+    // Selon le driver MongoDB, le document peut être dans .value ou directement dans updateResult
+    // Ou alors c'est le document lui-même
+    let viewCount;
+    if (updateResult && typeof updateResult === 'object') {
+      if (updateResult.count !== undefined) {
+        viewCount = updateResult.count;
+      } else if (updateResult.value && updateResult.value.count !== undefined) {
+        viewCount = updateResult.value.count;
+      } else {
+        // Fallback: récupérer le document
+        const doc = await collection.findOne({ _id: 'global_views' });
+        viewCount = doc?.count || 1;
+      }
+    } else {
+      viewCount = 1;
+    }
 
-    console.log('[API Views] Compteur:', viewCount);
+    console.log('[API Views] Compteur final:', viewCount);
 
     return res.status(200).json({
       success: true,
@@ -61,6 +78,7 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('[API Views] Erreur complète:', error);
+    console.error('[API Views] Stack:', error.stack);
     return res.status(500).json({
       success: false,
       error: 'Erreur lors de la récupération des vues',
