@@ -6,6 +6,8 @@ const options = {
   maxIdleTimeMS: 20000,
   connectTimeoutMS: 10000,
   socketTimeoutMS: 30000,
+  tls: true,
+  tlsAllowInvalidCertificates: false,
 };
 
 let cachedClient = null;
